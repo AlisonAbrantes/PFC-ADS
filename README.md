@@ -11,13 +11,11 @@ Para que isso acontecea o usuário deverá responder um pequeno questionário, o
 
 1ª Fase - “Qual categoria de produto deseja?” 
 
-2ª Fase – “Qual produto deseja?” 
+2ª Fase - “Qual a finalidade do produto?” 
 
-3ª Fase - “Qual a finalidade do produto?” 
+3ª Fase - Será questionado ao usuário, a resposta da pergunta anterior, pois assim o sistema será mais preciso ao identificar a necessidade do usuário.
 
-4ª Fase - Será questionado ao usuário, a resposta da pergunta anterior, pois assim o sistema será mais preciso ao identificar a necessidade do usuário.
-
-5ª Fase – Resultado.
+4ª Fase – Resultado.
 
 # DESENVOLVEDORES:
 Alison de Abrantes Duarte.
