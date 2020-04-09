@@ -1,0 +1,370 @@
+body{
+    overflow-x: hidden;
+}
+.navbar{
+    background-color: #fff;
+    height: 90px;
+    color:#000;
+}
+
+/* ESSE MEDIA É PARA CELULARES */
+@media only screen and (max-width: 667px) {
+    .navbar-nav{
+        background-color: azure;
+        text-align: center;
+        width:100%;
+    }
+    .navbar-nav li{
+        width:100%;
+        height:50px;   
+    }
+    .navbar-nav li:hover{
+        border:1px solid #000;
+    }
+    
+
+  }
+  /* FIM DO MEDIA PARA CELULARES :) */
+
+  .collapse{
+    align-items: center;
+  }
+.navbar-brand h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#0489B1;
+    text-shadow: 1px 2px 1px 2px #000;
+    font-weight: bolder;
+    font-size: 1.7em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.nav-item{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.nav-link{
+    margin-left:25px;
+}
+
+
+#log{
+    float:right;
+    margin-right: 5%;
+    width:30%;
+
+}
+.banner{
+    width:100%;
+    min-height:700px;
+    background: url(../imagens/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.featurette-heading{
+	margin-left:5.5%;
+}
+.qms_1{
+    width:100%;
+    height:400px;
+    padding-right:5%;
+    padding-left:5%;
+    border-radius:100%;
+}
+.qms_2{
+    width:100%;
+    height:400px;
+    float: left;
+    padding-left:5%;
+    padding-right:5%;
+    border-radius:100%;
+}
+.row {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+}
+
+.lead{
+    margin-left: 5%;
+    font-size: 23px;
+    color:lightslategrey;
+}
+
+/* Banner */ 
+.efeito{    /*efeito (cria uma div que "cobre" a imagem escurecendo ela com um tom de preto e com opacidade */
+    background-color:rgba(0,0,0,0.6);
+    width: 100%;
+    min-height: 700px;
+}
+    /* SLOGAAN */
+.slogan{
+    width: 100%;
+    float: left;
+    color:azure;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.slogan h2{
+    width:100%;
+    float:left;
+    font-weight: 900;
+    text-shadow: 0 0 4px #fff, 0 0 4px #000;
+} 
+
+.texto{
+    text-align: center;
+    float:left;
+    font-weight: 500;
+    text-shadow: 1px 2px 2px 1px #000;
+}
+
+
+/* Quem somos */
+
+
+.titulo_qmsomos{
+    float: right;
+    margin-top: 4%;
+    width:50%;
+    text-align: center;
+}
+.titulo_qmsomos h1{
+    font-size: 50px;
+    color: azure;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 0 0 4px #fff, 0 0 4px #000;
+}
+
+.qmsomos{
+    margin-top: -1%;
+    width:100%;
+    min-height:600px;
+    background-color:#0B243B;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.img_qmsomos{
+    float:left;
+}
+.img_qmsomos img{
+    border-radius:1%;
+    box-shadow: 1px 2px 4px 0px #000;
+}
+.efeito2{
+    background-color:rgba(0,0,0,0.4);
+    width: 100%;
+    height: 700px;
+}
+
+
+/* CONTATO */
+
+
+.contato{
+    margin-top: -2%;
+    float:left;
+    width:100%;
+    margin-bottom: 5%;
+    background-color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.formulario{
+    width:50%;
+    float:right;
+    margin-top: 5%;
+    
+}
+.formulario input{
+    margin-left: 8%;
+    width:70%;
+    height:50px;
+    border: 0 solid #6E6E6E;
+    border-bottom-width: 2px;
+}
+.formulario input:hover{
+    border: 0 solid #0489B1;
+    border-bottom-width: 2px;
+}
+.formulario textarea{
+    height: 130px;
+    width:70%;
+    margin-left: 8%;
+    border: 1px solid #6E6E6E;
+    border-bottom-width: 2px;
+}
+.formulario textarea:hover{
+    border: 1px solid #0489B1;
+    border-bottom-width: 2px;
+}
+.btnenviar{
+    margin-top:3%;
+    border-radius: 5px;
+    background:#0489B1;
+    color:white;
+    font-weight: bolder;
+    font-size: 19px;
+    box-shadow:1px 2px 2px 1px #A4A4A4;
+}
+.btnenviar:hover{
+    opacity: .8;
+}
+.lblform{
+    margin-left: 5%;
+    margin-top:2%;
+}
+.contato-content h2{
+    color:#0489B1;
+    font-weight: bolder;
+    text-shadow: 1px 2px 1px 2px #000;
+    font-size: 40px;
+    text-align: center;
+}
+.contato-content span{
+    font-size: 21px;
+    text-align: justify;
+    float:left;
+    margin-top: 1%;
+    margin-left: 8%;
+}
+.wpp{
+    float: left;
+    width:80%;
+    height:40px;
+    margin-left: 15%;
+    margin-top:5%;
+    border-radius: 20px;
+    border: 0;
+    background-image: linear-gradient(to right, #088A4B , #04B45F);
+    color:white;
+    box-shadow:1px 2px 2px 1px #A4A4A4;
+}
+.wpp img{
+   width:6%;
+}
+.wpp:hover{
+    opacity: .9;
+}
+
+footer{
+    clear: both;
+    width:100%;
+    height: 100px;
+    background:#0489B1;;
+}
+
+/* media screen para tudo que estiver nas telas de notebook, desktop, etc*/
+
+
+
+@media only screen and (min-width: 900px) {
+    .slogan{
+        margin-left:15%;
+        margin-top: 5%;
+        width:70%;
+    }
+    .texto{
+        width:70%;
+        margin-left:15%;
+        font-size:27px;
+        margin-top:5%;
+    }
+    .slogan h2{
+        font-size:45px;
+    }
+    .cadastro{
+        font-weight: bold;
+        margin-left: 300px;
+    }
+    .navbar-nav{
+        margin-left: 100px;
+    
+    } 
+    .nav-link:hover{
+        border: 0 solid #0489B1;
+        border-bottom-width: 2px;
+    }
+    .cadastro:hover{
+      border: 0 solid #0489B1;
+      border-bottom-width: 2px;
+    }
+    .login{
+        font-weight: bold;
+        margin-left: 20px;
+    }
+    .login:hover{
+        border: 0 solid #0489B1;
+        border-bottom-width: 2px;
+    }
+
+    /* efeito da barrinha piscando */
+    
+    .slogan h2::after{
+        content:'|';
+        margin-left:5px;
+        animation: pisca .7s infinite;
+        color: #fff;
+    }
+    @keyframes pisca{   /* a "barrinha" fica piscando durante o efeito "writer" do javascript no slogan */
+        0%{
+            opacity: 1;
+        }
+        50%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+
+    /* quem somos */
+
+    }
+    .img_qmsomos{
+        width:50%;
+        margin-top: 4%;
+    }
+    .img_qmsomos img{
+        border-radius:1%;
+        box-shadow: 1px 2px 4px 0px #000;
+    }
+    .img_qmsomos img{
+        width:100%;
+        height:500px;
+        float:left;
+        margin-left:5%;
+    }
+    .texto_qmsomos{
+        float: right;
+        margin-top: 2%;
+        margin-right: 2%;
+        text-align: justify;
+        width:42%;
+        height:300px;
+    }
+    .paragrafo{
+        float:left;
+        font-size: 20px;
+        color:#fff;
+    }
+    .efeito2{
+        background-color:rgba(0,0,0,0.4);
+        width: 100%;
+        height: 700px;
+    }
+
+    /* CONTATO */
+    .contato{
+        height:600px;
+    }
+    .contato-content{
+        width:40%;
+        float: left;
+        margin-top: 5%;
+    }
+  
+ 
+}

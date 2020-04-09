@@ -3,53 +3,90 @@
     <head>
         <title> COINS </title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet">
+
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
     </head>
     <body> 
-        <nav class="navbar navbar-expand-lg navbar-dark" >
-            <a class="navbar-brand" href="#">
-              <h3> COINS</h3>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item ">
-                    <a class="nav-link" href="#">Quem somos</a>
-                  </li>
-                  <li class="nav-item ">
-                    <a class="nav-link" href="#"> Serviços</a>
-                  </li>
-                  <li class="nav-item ">
-                    <a class="nav-link" href="#"> Questinonário</a>
-                  </li>
-                </ul>
-                
-              </div>
-            </div>
-            </nav>
+      <nav class="navbar navbar-expand-lg navbar-light" >
+        <a class="navbar-brand" href="#">
+          <h3> COINS</h3>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active ">
+                <a class="nav-link" href="#servicos">Serviços</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#qmsomos"> Sobre nós</a>
+              </li>
+              <li class="nav-item active ">
+                <a class="nav-link" href="#contato"> Contato</a>
+              </li>
+              <li class="nav-item  active">
+                <a class="nav-link cadastro" href="#"> Sign Up</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link login" href="#"> Sign In</a>
+              </li>
+            </ul>
+            
+          </div>
+      
+    </nav>
             <div class="banner">
               <div class="efeito">
-                <h1> C.O.I.N.S a Lorem ipsum </h1>
-                <div class="texto">  <h2> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget nunc lobortis mattis aliquam. Aliquet enim tortor at auctor urna nunc id cursus metus. Adipiscing commodo elit at imperdiet. Velit laoreet id donec ultrices.  </h2></div>
-                <div class="botoes">
-                    <button class="cadastrar"> <img src="imagens/Login.png" class="log_img"> Cadastre-se</button>
-                    <button class="logar"> <img src="imagens/Login.png" class="log_img"> Logar</button>
-                </div>
-            </div>
-            </div>
-            
 
-    <hr class="featurette-divider">
+              <div class="slogan" data-anime="left">  
+                 <h2> O Melhor computador, seja para Trabalho, estudo ou 
+                  games! </h2>
+                 <div class="texto">
+                    <p> GitHub is a development platform inspired by the way you work. From open source to business,
+                    you can host and review code, manage projects, and build software alongside 40 million developers. </p>
+                </div>
+                
+                        
+              </div>
+              
+              <!-- Efeito javascript das letrinhas escritas (sim, antes de me xingar, isso irá ficar em outro arquivo :) -->
+              <script>
+
+                  function typeWriter(elemento){
+                    const textoarray=elemento.innerHTML.split('');
+                    elemento.innerHTML='';
+                    textoarray.forEach((letra, i)=>{
+                      setTimeout(function(){
+                          elemento.innerHTML+=letra;
+                      }, 45*i)
+                    });
+                  } 
+                  const titulo=document.querySelector('h2');
+                  typeWriter(titulo);
+                  typeWriter(document.querySelector('p'));
+
+              </script>
+              
+              <div class="area_cadastro">
+                
+              </div>
+          </div>
+        </div>
+            
+      <!-- AQUI SERÁ A PARTE DOS SERVIÇOS, ONDE EXPLICAREMOS AS ETAPAS DO QUESTIONÁRIO, ETC-->
+
+    <hr id="servicos" class="featurette-divider">
 
     <div class="row featurette">
       <div class="col-md-7">
@@ -88,21 +125,66 @@
 
     <!-- /END THE FEATURETTES -->
 
-  </div><!-- /.container -->
+  </div>
 
-  <div class="container">
-    
-      <h2> Sobre nós</h2>
-    <div class="row">
-      <div class="col-md-10">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+    <!-- QUEM SOMOS -->
+      <div id="qmsomos" class="qmsomos"> 
+            <div class="img_qmsomos">
+              <img src="imagens/qm4.jpg">
+            </div>     
+            <div class="titulo_qmsomos">
+              <h1>Sobre o COINS</h1> 
+            </div>  
+            <div class="texto_qmsomos">
+              <span class="paragrafo">
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris ullamcorper pulvinar pretium. 
+                Suspendisse fringilla aliquet scelerisque. Maecenas at vehicula odio. Nulla tristique quam sed ipsum porta, ac pulvinar eros luctus.
+                 Pellentesque pharetra leo justo.  
+              </span>
+            </div>
+
       </div>
+    <hr>
 
+
+    <!-- FORMULARIO PARA CONTATO -->
+
+
+    <div id="contato" class="contato">
+        <div class="contato-content">
+          <h2> Entre em contato</h2>
+            <span>
+              Queremos realizar os projetos da sua empresa! Fale conosco e saiba como poderemos ajudar a sua empresa a reduzir custos na nuvem AWS.
+           </span>
+           <button class="wpp"> <img src="imagens/wpp.png"> 11 5536 3214</button>
+        </div>
+        <div class="formulario">
+          <form action="#" method="post">
+            <div>
+              <div class="lblform"><label> Nome: </label></div>
+              <input type="text" name="nome" placeholder="Seu nome">
+            </div>
+            <div>
+              <div class="lblform"><label> Email: </label></div>
+              <input type="text" name="email" placeholder="exemplo@gmail.com">
+            </div>
+            <div>
+              <div class="lblform"><label> Telefone: </label></div>
+              <input type="text" name="telefone" placeholder="00 0000 0000">
+            </div>
+            <div>
+              <div class="lblform"><label> Mensagem: </label></div>
+              <textarea></textarea>
+            </div>
+            <div>
+              <input class="btnenviar" type="submit" name="enviar" value="Enviar">
+            </div>
+           
+          </form>
+        </div>
     </div>
 
-    <hr>
+    <footer></footer>
 
             
 
