@@ -3,7 +3,7 @@ Uma página web de recomendação de produtos, baseado nas necessidades dos usu�
 
 # SOBRE:
 
-Nosos projeto tem o objetivo de auxiliar os usuários a escolher os melhores equipamentos para sua necessidade.
+Nosso projeto tem o objetivo de auxiliar os usuários a escolher os melhores equipamentos para sua necessidade.
 Para que isso acontecea o usuário deverá responder um pequeno questionário, onde será possível  identificar sua necessidade e quais itens podem atendê-lo.
 
 
