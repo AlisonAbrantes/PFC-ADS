@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/pagina_usuario.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap-4.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/questionário.css">
+    <title>Questionário</title>
+</head>
+<body>
+    <nav>
+        <h1 class="titulo"> COINS</h1>
+        <ul>
+            <a href="#"><li><img class="icon" src="imagens/perfil_icon.png"> Perfil</li></a>
+           <a href="#"> <li><img class="icon" src="imagens/questionario_icon.png"> Iniciar questionario</li></a>
+           <a href="#"> <li><img class="icon" src="imagens/lista_icon.png">Produtos salvos</li></a>
+            <a href="#"><li><img class="icon" src="imagens/logout_icon.png"> Sair</li></a>
+            <li></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="perguntas">
+                      <!-------------------------- Primeira questão ---------------------------->
+                <p class=h1> Qual categoria de computador você está procurando?</p>
+
+                <!--Radio button para opções de repostas.
+                    Estes radios precisam ser resgatados os valores de Peso
+                    Precisamos guardar somente os valores.                
+                -->
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Computador 
+                    </label>
+                </div>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Notebook
+                    </label>
+                </div>
+                    <!-------------------------- Segunda questão ---------------------------->
+                <p class=h1> Você usará para: </p>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="3" checked>
+                    <label class="form-check-label" for="exampleRadios3">
+                        Trabalho 
+                    </label>
+                 </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="4">
+                    <label class="form-check-label" for="exampleRadios4">
+                        Jogos
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="5">
+                    <label class="form-check-label" for="exampleRadios5">
+                            Estudo/Uso Pessoal
+                    </label>
+                </div>
+
+     <!-------------------------- Botão para gerar as 3 questão de acordo com o valor da questão 2 ---------------------------->
+
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+
+            </form>
+        </div>
+    </main>
+</body>
+</html>
