@@ -7,61 +7,168 @@
         <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap-4.4.1-dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet">
-
+        <link rel="stylesheet" type="text/css" href="css/animate.css">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     </head>
     <body> 
-      <nav class="navbar navbar-expand-lg navbar-light" >
-        <a class="navbar-brand" href="#">
-          <h3> COINS</h3>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><h2>COINS</h2></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active ">
-                <a class="nav-link" href="#servicos">Serviços</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="#qmsomos"> Sobre nós</a>
-              </li>
-              <li class="nav-item active ">
-                <a class="nav-link" href="#contato"> Contato</a>
-              </li>
-              <li class="nav-item  active">
-                <a class="nav-link cadastro" href="#"> Sign Up</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link login" href="#"> Sign In</a>
-              </li>
-            </ul>
-            
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#slogan">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicos">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre nós</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li>
+            <li class="nav-item log">
+              <a class="nav-link btn btn-primary btnlogin" data-toggle="modal" data-target="#login">Login</a>
+            </li>
+            <li class="nav-item log">
+              <a class="nav-link btn btn-primary btncadastrar" data-toggle="modal" data-target="#cadastro">Cadastre-se</a>
+            </li>
+          </ul>
+        </div>
+        <div class="log2">
+          <ul>
+            <a class="nav-link btn btn-primary btnlogin" data-toggle="modal" data-target="#login"> <li> Login</li></a>
+            <a class="nav-link btn btn-primary btncadastrar" data-toggle="modal" data-target="#cadastro"> <li> Cadastre-se</li></a>
+         </ul>
+        </div>
+      </nav>
+      <!-- Modal de login-->
+      <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="cadastrarform">
+                <form action="#" method="POST">
+                    <div class="form-field" id="form-field-email">
+                        <input type="text" id="email" name="email"  placeholder="Email">
+                        <span></span>  
+                    </div>
+                    <div class="form-field" id="form-field-senha">
+                      <input type="text" id="senha" name="senha"  placeholder="senha">
+                      <span></span>  
+                  </div>
+
+                </form>     
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" onclick="ValidarCampos()" class="btn btn-primary">Entrar</button>
+            </div>
           </div>
+        </div>
+      </div>
       
-    </nav>
-            <div class="banner">
+      <!-- Modal de cadastro -->
+      <div class="modal fade" id="cadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Cadastro</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="cadastrarform">
+                <form action="#" method="POST">
+                    <div class="form-field" id="form-field-nome">
+                        <input type="text" id="nome" name="nome" placeholder="Nome">
+                        <span></span>
+                    </div>
+                    <div class="form-field" id="form-field-email">
+                        <input type="text" id="email" name="email"  placeholder="Email">
+                        <span></span>  
+                    </div>
+                    <div class="form-field" id="form-field-senha">
+                      <input type="text" id="senha" name="senha"  placeholder="senha">
+                      <span></span>  
+                  </div>
+
+                </form>     
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" onclick="ValidarCampos()" class="btn btn-primary">Cadastrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testando validação-->
+
+      <script>
+        var isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          var nome = document.getElementById('nome');
+          var email = document.getElementById('email');
+          var senha = document.getElementById('senha');
+          var wrapperNome = document.getElementById('form-field-nome');
+          var wrapperEmail = document.getElementById('form-field-email');
+          var wrapperSenha = document.getElementById('form-field-senha');
+
+          function ValidarCampos() {
+            var nomeStr = nome.value;
+            var emailStr = email.value;
+            if (nomeStr.length < 4) {
+              wrapperNome.querySelector('span').classList.add('erro');
+              wrapperNome.querySelector('span').innerText = 'Inválido';
+            }
+            if (isEmail.test(emailStr))  /* expressão regular para testar o que estiver digitado dentro do campo email  */
+                {
+                }
+                else
+                {
+                    wrapperEmail.querySelector('span').classList.add('erro');
+                    wrapperEmail.querySelector('span').innerText="Email contém caracteres inválidos";
+                }
+          }
+
+      </script>
+
+      <!--Fim modal-->
+
+            <div class="banner" id="slogan">
               <div class="efeito">
 
               <div class="slogan" data-anime="left">  
-                 <h2> O Melhor computador, seja para Trabalho, estudo ou 
+                 <h2 class="animated forwards fadeInUp delay-1s"> O Melhor computador, seja para Trabalho, estudo ou 
                   games! </h2>
-                 <div class="texto">
+                 <div class="texto animated forwards fadeInUp delay-2s">
                     <p> Aqui você irá descobrir qual é o melhor computador para o seu uso de um modo rápido e fácil.
                       Basta responder um pequeno questionário e o nosso sistema irá recomendar os melhores produtos para você! </p>
+                </div>
+                <div class="questionarioBtn">
+                  <button class="botaoQuest animated forwards fadeInUp delay-3s"> Iniciar Questionário</button>
                 </div>
                 
                         
               </div>
               
               <!-- Efeito javascript das letrinhas escritas (sim, antes de me xingar, isso irá ficar em outro arquivo :) -->
-              <script>
+              <!-- <script>
 
                   function typeWriter(elemento){
                     const textoarray=elemento.innerHTML.split('');
@@ -76,7 +183,7 @@
                   typeWriter(titulo);
                   typeWriter(document.querySelector('p'));
 
-              </script>
+              </script> !-->
               
               <div class="area_cadastro">
                 
@@ -94,7 +201,7 @@
         <p class="lead">  Nosso sistema pode auxiliá-lo a escolher a melhor máquina para seu uso pessoal ou profissional. Através de um rápido questionário será possível identificar sua necessidade, recomendando as melhores opções de desempenho e custo beneficio que lhe atendam, seja para jogar, trabalhar ou estudar. </p>
       </div>
       <div class="col-md-5">
-        <img class="qms_1" src="imagens/b.jpg">
+        <img class="serv1" src="imagens/b.jpg">
       </div>
     </div>
 
@@ -109,7 +216,7 @@
         </p>
       </div>
       <div class="col-md-5 order-md-1">
-        <img class="qms_2" src="imagens/equipe.jpeg">
+        <img class="serv2" src="imagens/equipe.jpeg">
       </div>
     </div>
 
@@ -125,7 +232,7 @@
         </p>
       </div>
       <div class="col-md-5">
-        <img class="qms_1" src="imagens/pc.jpeg">      </div>
+        <img class="serv1" src="imagens/pc.jpeg">      </div>
     </div>
 
     <hr class="featurette-divider">
@@ -134,26 +241,22 @@
 
   </div>
 
-    <!-- QUEM SOMOS -->
-      <div id="qmsomos" class="qmsomos"> 
-            <div class="img_qmsomos">
-              <img src="imagens/qm4.jpg">
-            </div>     
-            <div class="titulo_qmsomos">
-              <h1>Sobre o COINS</h1> 
-            </div>  
-            <div class="texto_qmsomos">
-              <span class="paragrafo">
-                O COINS foi uma ideia que surgiu devida a dificuldade que as pessoas possuem em comprar seus computadores e respectivos acessórios.
-                Pensando nisso, resolvemos desenvolver este projeto que auxilia aqueles que possuem pouco conhecimento sobre computadores. O intuito é
-                ajudar e explicar para as pessoas o porque elas devem comprar aquele produto sem utilizar termos muito técnicos, de modo que fique 
-                claro do porque aquela é a melhor opção. Pensamos que o melhor modo de se identificar a necessidade de alguém seria através de um
-                questionário rápido que se moldasse de acordo com as respostas dadas para que a busca seja a mais precisa possível. Este é o COINS,
-                um sistema que identifica sua necessidade e a atende da melhor maneira possível.
-              </span>
-            </div>
+    <!--QUEM SOMOS --> 
+  <div class="qmsomos row featurette" id="sobre">
+    <div class="col-md-7">
+      <h2 class="featurette-heading qmsomosTitulo">Sobre o COINS:<span class="text-muted"> A ideia</span></h2>
+      <p class="lead qmsomosTXT">   O COINS foi uma ideia que surgiu devida a dificuldade que as pessoas possuem em comprar seus computadores e respectivos acessórios.
+        Pensando nisso, resolvemos desenvolver este projeto que auxilia aqueles que possuem pouco conhecimento sobre computadores. O intuito é
+        ajudar e explicar para as pessoas o porque elas devem comprar aquele produto sem utilizar termos muito técnicos, de modo que fique 
+        claro do porque aquela é a melhor opção. Pensamos que o melhor modo de se identificar a necessidade de alguém seria através de um
+        questionário rápido que se moldasse de acordo com as respostas dadas para que a busca seja a mais precisa possível. Este é o COINS,
+        um sistema que identifica sua necessidade e a atende da melhor maneira possível.
+      </p>
+    </div>
+    <div class="col-md-5">
+      <img class="qmsomosimg" src="imagens/equipe2.jpeg">      </div>
+  </div>
 
-      </div>
     <hr>
 
 
