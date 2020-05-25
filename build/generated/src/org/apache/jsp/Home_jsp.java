@@ -124,7 +124,6 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\n");
       out.write("            <div class=\"modal-footer\">\n");
       out.write("              <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Fechar</button>\n");
-      out.write("              \n");
       out.write("            </div>\n");
       out.write("          </div>\n");
       out.write("        </div>\n");

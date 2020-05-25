@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package dao;
 
 import java.sql.Connection;
@@ -9,8 +14,12 @@ import java.util.logging.Logger;
 import modelo.Usuario;
 import util.ConectaBanco;
 
-public class UsuarioDao implements IUsuarioDao{
-   private static final String LOGIN = "SELECT * FROM cliente WHERE email=? and senha=?;";
+/**
+ *
+ * @author Alison
+ */
+public class AdminDao implements IAdminDao{
+    private static final String LOGIN = "SELECT * FROM cliente WHERE email=? and senha=?;";
    private static final String INSERT = "INSERT INTO cliente (nome,email,senha) values(?,?,?);";
 
     private Object pstmt;
@@ -77,6 +86,4 @@ public class UsuarioDao implements IUsuarioDao{
             
         }
     }
-
- 
 }
