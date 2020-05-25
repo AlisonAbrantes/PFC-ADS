@@ -65,7 +65,6 @@ public class ControleUsuario extends HttpServlet{
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
     /**
      * Handles the HTTP <code>POST</code> method.
      *

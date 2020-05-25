@@ -54,6 +54,7 @@
          </ul>
         </div>
       </nav>
+        
       <!-- Modal de login-->
       <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -66,22 +67,23 @@
             </div>
             <div class="modal-body">
               <div class="cadastrarform">
-                <form action="#" method="POST">
+                <form action="<%= application.getContextPath()%>/ControleUsuario" method="POST">
+                    <input type="hidden" name="acao"  id="acao" value="Login"/>
                     <div class="form-field" id="form-field-email">
-                        <input type="text" id="email" name="email"  placeholder="Email">
+                        <input type="text" id="txtemail" name="txtemail"  placeholder="Email">
                         <span></span>  
                     </div>
                     <div class="form-field" id="form-field-senha">
-                      <input type="text" id="senha" name="senha"  placeholder="senha">
+                      <input type="password" id="txtsenha" name="txtsenha"  placeholder="senha">
                       <span></span>  
-                  </div>
-
+                    </div>
+                    <input type="submit" id="btnlogar" onclick="ValidarCampos()" class="btn btn-primary" value="Entrar"></input>
                 </form>     
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="button" onclick="ValidarCampos()" class="btn btn-primary">Entrar</button>
+              
             </div>
           </div>
         </div>
@@ -99,26 +101,27 @@
             </div>
             <div class="modal-body">
               <div class="cadastrarform">
-                <form action="#" method="POST">
+                <form action="<%= application.getContextPath()%>/ControleUsuario" method="POST">
                     <div class="form-field" id="form-field-nome">
-                        <input type="text" id="nome" name="nome" placeholder="Nome">
+                        <input type="hidden" name="acao"  id="acao" value="Cadastrar"/>
+                        <input type="text" id="txtnome" name="txtnome" placeholder="Nome">
                         <span></span>
                     </div>
                     <div class="form-field" id="form-field-email">
-                        <input type="text" id="email" name="email"  placeholder="Email">
+                        <input type="text" id="txtemail" name="txtemail"  placeholder="Email">
                         <span></span>  
                     </div>
                     <div class="form-field" id="form-field-senha">
-                      <input type="text" id="senha" name="senha"  placeholder="senha">
+                      <input type="password" id="txtsenha" name="txtsenha"  placeholder="senha">
                       <span></span>  
                   </div>
-
+                    <input type="submit" id="btncad" name="btncad" onclick="ValidarCampos()" class="btn btn-primary" value="Cadastrar"></input>
                 </form>     
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="button" onclick="ValidarCampos()" class="btn btn-primary">Cadastrar</button>
+
             </div>
           </div>
         </div>
