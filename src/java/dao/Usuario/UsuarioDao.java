@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package dao;
+package dao.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,13 +9,10 @@ import java.util.logging.Logger;
 import modelo.Usuario;
 import util.ConectaBanco;
 
-/**
- *
- * @author Alison
- */
-public class AdminDao implements IAdminDao{
-    private static final String LOGIN = "SELECT * FROM cliente WHERE email=? and senha=?;";
+public class UsuarioDao implements IUsuarioDao{
+   private static final String LOGIN = "SELECT * FROM cliente WHERE email=? and senha=?;";
    private static final String INSERT = "INSERT INTO cliente (nome,email,senha) values(?,?,?);";
+   private static final String UPDATE = "UPDATE cliente set senha=? WHERE id=?";
 
     private Object pstmt;
     private Connection conexao;
@@ -56,13 +48,11 @@ public class AdminDao implements IAdminDao{
                 Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
     }
-
+    
     public boolean Cadastrar(Usuario user) {
         try {
             conexao = ConectaBanco.getConexao();
-
             PreparedStatement pstmt = conexao.prepareStatement(INSERT);
 
             pstmt.setString(1, user.getNome());
@@ -83,7 +73,34 @@ public class AdminDao implements IAdminDao{
             } catch (SQLException ex) {
                 Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
         }
     }
+    
+    public boolean alterarSenha(Usuario user) {
+         try {
+
+            conexao = ConectaBanco.getConexao();
+            PreparedStatement pstmt = conexao.prepareStatement(UPDATE);
+
+            pstmt.setString(1, user.getSenha());
+            pstmt.setInt(2, user.getId());
+            
+            pstmt.execute();
+            return true;
+
+        } catch (Exception ex) {
+
+            return false;
+
+        } finally {
+
+             try {
+                 conexao.close();
+             } catch (SQLException ex) {
+                 Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+             }
+        }
+        
+    }
+ 
 }

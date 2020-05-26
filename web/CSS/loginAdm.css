@@ -1,0 +1,78 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-color: rgb(30,144,255);
+}
+@keyframes boxDown {
+	to {
+		width: 35%;
+		height: 400px;
+		padding: 20px;
+		box-sizing: border-box;
+		background-color: white;
+		display: block;
+		margin: 10% auto 0 auto;
+		opacity: 1;
+		position: relative;
+	}
+}
+.box-login {
+	width: 35%;
+	height: 400px;
+	padding: 20px;
+	box-sizing: border-box;
+	background-color: white;
+	display: block;
+	margin: -10% auto;
+	animation: boxDown 2s forwards;
+	opacity: 0;
+	position: relative;
+	box-shadow: 2px 2px 4px 2px rgb(36, 36, 36);
+}
+.icon-login {
+	position: absolute;
+	top: -50px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+.title-login {
+	display: block;
+	font-size: 30px;
+	color: rgb(5, 68, 110);
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+.formulario {
+	display: table;
+	width: 100%;
+	float: left;
+	margin-top: 10%;
+}
+.field {
+	width: 85%;
+	height: 50px;
+	display: block;
+	margin: 2% auto;
+	border: none;
+	font-size: 15px;
+	border-radius: 4px;
+}
+.campo {
+	text-indent: 10px;
+	color: black;
+	background-color: rgb(196, 195, 195);
+}
+.btn-logar {
+	margin-top: 5%;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+	background-image: linear-gradient(to right, rgb(14, 71, 109), rgb(22, 52, 117));
+	color: white;
+}
+.btn-logar:hover {
+	transform: scale(0.9);
+}

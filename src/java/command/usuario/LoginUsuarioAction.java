@@ -1,7 +1,7 @@
 package command.usuario;
 
 import command.ICommand;
-import dao.UsuarioDao;
+import dao.Usuario.UsuarioDao;
 import modelo.Usuario;
 import util.Md5;
 import javax.servlet.http.HttpServletRequest;

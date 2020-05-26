@@ -1,7 +1,7 @@
 package command.Admin;
 
 import command.ICommand;
-import dao.AdminDao;
+import dao.Admin.AdminDao;
 import modelo.Administrador;
 import util.Md5;
 import javax.servlet.http.HttpServletRequest;
@@ -36,10 +36,10 @@ public class LoginAdminAction implements ICommand{
                 return "/Pagina_usuario.jsp";
                 
             } else {
-                return "/Home.jsp";
+                return "/Admin.jsp";
             }
         } else {
-            return "/Home.jsp";
+            return "/Admin.jsp";
         }
     }
 }

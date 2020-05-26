@@ -1,4 +1,4 @@
-package dao;
+package dao.Usuario;
 
 import modelo.Usuario;
 
