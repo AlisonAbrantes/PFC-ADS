@@ -10,21 +10,28 @@ package modelo;
  * @author vinicius
  */
 
-public class Componente extends Peso
+public class Componente
 {
-    private int idcomponente;
+    private int id;
     private Peso peso;
+    private String descricao;
 
-    @Override
     public int getId() 
     {
-        return idcomponente;
+        return id;
     }
 
-    @Override
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public void setId(int id) 
     {
-        this.idcomponente = id;
+        this.id = id;
     }
 
     public Peso getPeso() 
@@ -42,10 +49,10 @@ public class Componente extends Peso
         //
     }
 
-    public Componente(int idcomponente, Peso peso, int id, int valor) 
+    public Componente(int id, String descricao, Peso peso) 
     {
-        super(id, valor);
-        this.idcomponente = idcomponente;
+        this.id=id;
+        this.descricao=descricao;
         this.peso = peso;
     }
     

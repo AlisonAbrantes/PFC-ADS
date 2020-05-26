@@ -1,4 +1,4 @@
-package command.Admin;
+package command.ManterAdmin;
 
 import command.ICommand;
 import dao.Admin.AdminDao;

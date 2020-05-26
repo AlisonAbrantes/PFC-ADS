@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package command.Admin;
+package command.ManterAdmin;
 
-import command.usuario.*;
 import dao.Admin.AdminDao;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +15,7 @@ import util.Md5;
  *
  * @author Alison
  */
-public class AlterarAdministradorAction {
+public class AlterarAdminAction {
     public String executar(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         Administrador adm = new Administrador();

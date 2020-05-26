@@ -12,7 +12,8 @@ import util.ConectaBanco;
 public class UsuarioDao implements IUsuarioDao{
    private static final String LOGIN = "SELECT * FROM cliente WHERE email=? and senha=?;";
    private static final String INSERT = "INSERT INTO cliente (nome,email,senha) values(?,?,?);";
-   private static final String UPDATE = "UPDATE cliente set senha=? WHERE id=?";
+   private static final String UPDATE = "UPDATE cliente set nome=? , email=? , senha=? WHERE id=?";
+   private static final String SELECT_ALL = "SELECT * FROM cliente where id=?;";
 
     private Object pstmt;
     private Connection conexao;
@@ -82,16 +83,18 @@ public class UsuarioDao implements IUsuarioDao{
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(UPDATE);
 
-            pstmt.setString(1, user.getSenha());
-            pstmt.setInt(2, user.getId());
+            pstmt.setString(1, user.getNome());
+            pstmt.setString(2, user.getEmail());
+            pstmt.setString(3, user.getSenha());
+            pstmt.setInt(4, user.getId());
             
             pstmt.execute();
             return true;
-
+            
         } catch (Exception ex) {
 
             return false;
-
+            
         } finally {
 
              try {

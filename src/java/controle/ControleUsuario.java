@@ -29,7 +29,7 @@ public class ControleUsuario extends HttpServlet{
             String acao = request.getParameter("acao");
             
             //perceba que somente precisamos alterar o nome do pacote
-            String nomedaclasse = "command.usuario." + acao + "UsuarioAction";
+            String nomedaclasse = "command.ManterUsuario." + acao + "UsuarioAction";
 
             //perceba que estamos usando um FACTORY
             Class classeAction = Class.forName(nomedaclasse);

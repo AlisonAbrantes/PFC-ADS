@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package command.usuario;
+package command.ManterUsuario;
 
 import dao.Usuario.UsuarioDao;
 import javax.servlet.http.HttpServletRequest;

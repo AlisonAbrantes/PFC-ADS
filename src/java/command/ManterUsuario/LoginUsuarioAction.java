@@ -1,4 +1,4 @@
-package command.usuario;
+package command.ManterUsuario;
 
 import command.ICommand;
 import dao.Usuario.UsuarioDao;
