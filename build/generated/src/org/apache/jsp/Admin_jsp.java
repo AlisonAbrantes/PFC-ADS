@@ -57,12 +57,15 @@ public final class Admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("       <div class=\"formulario\">\n");
       out.write("           <img src=\"imagens/icon-login.png\" alt=\"Login\" class=\"icon-login\">\n");
       out.write("           <h1 class=\"title-login\"> Login</h1>\n");
-      out.write("           <form action=\"#\" method=\"POST\">\n");
+      out.write("           <form action=\"");
+      out.print( application.getContextPath());
+      out.write("/ControleAdmin\" method=\"POST\">\n");
+      out.write("               <input type=\"hidden\" name=\"acao\"  id=\"acao\" value=\"Login\"/>\n");
       out.write("               <div class=\"field-email\">\n");
-      out.write("                    <input type=\"email\" name=\"email\" id=\"email\" class=\"field campo\" placeholder=\"Insira seu email\">\n");
+      out.write("                    <input type=\"email\" name=\"txtemail\" id=\"txtemail\" class=\"field campo\" placeholder=\"Insira seu email\">\n");
       out.write("               </div>\n");
       out.write("               <div class=\"field-senha\">\n");
-      out.write("                    <input type=\"password\" name=\"senha\" id=\"senha\" class=\"field campo\" placeholder=\"Insira sua senha\">\n");
+      out.write("                    <input type=\"password\" name=\"txtsenha\" id=\"txtsenha\" class=\"field campo\" placeholder=\"Insira sua senha\">\n");
       out.write("               </div>\n");
       out.write("               <div class=\"field-btn\">\n");
       out.write("                <input type=\"submit\" name=\"enviar\" id=\"enviar\" class=\"field btn-logar\" value=\"Enviar\">\n");
