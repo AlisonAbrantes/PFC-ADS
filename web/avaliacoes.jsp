@@ -35,7 +35,10 @@
             <a href="consultar_log.html" class="btn-log"> <li>Consultar Log</li></a>
             <a href="#" class="btn-logout"><li> Sair</li></a>
 >>>>>>> 446009ba2db7ec6445a43111c3ab590669df9455:web/avaliacoes.jsp
+<<<<<<< HEAD:web/avaliacoes.jsp
 >>>>>>> Stashed changes:web/Admin/avaliacoes.jsp
+=======
+>>>>>>> 6e0f6f1322dabeaeac3c1703342db6f7e21b849f:web/Admin/avaliacoes.jsp
         </ul>
     </nav>
     <div class="conteudo">

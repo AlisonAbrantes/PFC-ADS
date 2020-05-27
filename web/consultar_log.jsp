@@ -17,7 +17,11 @@
     <nav>
         <a href="pag_adm.html"> <h1 class="titulo"> COINS</h1> </a>
         <ul>
+<<<<<<< HEAD:web/consultar_log.jsp
 <<<<<<< HEAD:build/web/Admin/consultar_log.jsp
+=======
+<<<<<<< HEAD:web/Admin/consultar_log.jsp
+>>>>>>> 6e0f6f1322dabeaeac3c1703342db6f7e21b849f:web/Admin/consultar_log.jsp
             <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
             <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
@@ -34,8 +38,12 @@
             <a href="consultar_mensagens.html" class="btn-msg"> <li>Consultar mensagens</li></a>
             <a href="consultar_log.html" class="btn-log"> <li>Consultar Log</li></a>
             <a href="#" class="btn-logout"><li> Sair</li></a>
+<<<<<<< HEAD:web/consultar_log.jsp
 >>>>>>> 446009ba2db7ec6445a43111c3ab590669df9455:web/consultar_log.jsp
 >>>>>>> Stashed changes:build/web/Admin/consultar_log.jsp
+=======
+>>>>>>> 446009ba2db7ec6445a43111c3ab590669df9455:build/web/consultar_log.jsp
+>>>>>>> 6e0f6f1322dabeaeac3c1703342db6f7e21b849f:web/Admin/consultar_log.jsp
         </ul>
     </nav>
     <div class="conteudo">
