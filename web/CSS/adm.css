@@ -1,10 +1,12 @@
 * {
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 @keyframes boxAnim {
 	to {
-		width: 90%;
+		width: 94%;
 		height: 90vh;
 		padding: 20px;
 		box-sizing: border-box;
@@ -12,14 +14,25 @@
 		position: relative;
 		display: block;
 		margin: 3% auto;
+		border-radius: 0;
+		opacity: 1;
 	}
+}
+@keyframes modal-top-in {
+	to {
+		top: 5%;
+		opacity: 1;
+	}
+}
+a {
+	text-decoration: none;
 }
 nav {
 	position: absolute;
 	width: 20%;
 	height: 100%;
 	display: block;
-	background-image: linear-gradient(to bottom, rgb(7, 51, 107), rgb(8, 54, 153));
+	background-image: linear-gradient(to bottom, rgb(29, 29, 31), rgb(41, 51, 73));
 	color: white;
 }
 .titulo {
@@ -27,6 +40,7 @@ nav {
 	margin-top: 15%;
 	font-size: 2.4em;
 	text-align: center;
+	color: white;
 }
 nav ul {
 	list-style: none;
@@ -41,7 +55,6 @@ nav ul li {
 	width: 100%;
 	height: 60px;
 	text-align: center;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	background-image: url('../imagens/perfil_icon.png');
 	background-repeat: no-repeat;
 	background-position: 5% center;
@@ -54,37 +67,194 @@ nav ul li {
 }
 nav ul a li:hover {
 	border: 1px solid white;
-	background-color: rgb(18, 86, 143);
+	background-color: rgb(60, 70, 94);
 	transition: all 0.9s ease-out;
 	transform-origin: left;
 }
-@media screen and (min-width: 700px) {
-	.conteudo {
-		width: 80%;
-		height: 100vh;
-		display: block;
-		float: right;
-		background-color: rgb(45, 107, 179);
-	}
-	.geral {
-		width: 90%;
-		height: 90vh;
-		padding: 20px;
-		box-sizing: border-box;
-		background-color: rgb(33, 34, 33);
-		position: relative;
-		display: block;
-		margin: -50% auto;
-		animation: boxAnim 1.5s 0.1s forwards;
-	}
+.conteudo {
+	width: 80%;
+	height: 100vh;
+	display: block;
+	float: right;
+	background-color: rgb(6, 76, 141);
+}
+.geral {
+	width: 50%;
+	height: 90vh;
+	padding: 20px;
+	box-sizing: border-box;
+	background-color: rgb(33, 34, 33);
+	position: relative;
+	display: block;
+	margin: -50% auto;
+	border-radius: 30%;
+	opacity: 0.3;
+	animation: boxAnim 1.5s 0.1s forwards;
+}
 
-	h1 {
-		color: wheat;
-	}
+.pag-title {
+	color: white;
+	font-size: 70px;
+	text-align: center;
+	margin-bottom: 3%;
+}
+/* PERFIL */
+.formulario {
+	width: 100%;
+	display: table;
+	position: relative;
+	margin-top: 3%;
+}
+.formulario label {
+	margin-bottom: 1%;
+	font-size: 19px;
+	display: inline-block;
+	font-weight: 600;
+}
+.field {
+	width: 50%;
+	height: 45px;
+	border: none;
+	display: block;
+	background-color: rgb(65, 65, 65);
+	border-radius: 4px;
+	text-indent: 10px;
+}
+.btn-salvar {
+	width: 50%;
+	height: 45px;
+	border: none;
+	border-radius: 4px;
+	margin-top: 2%;
+	cursor: pointer;
+}
+
+/* MANTER PRODUTOS */
+.overlay {
+	width: 100%;
+	height: 100vh;
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	background-color: rgba(59, 59, 59, 0.9);
+}
+.btn:hover {
+	transform: scale(0.9);
+	background-color: rgb(65, 144, 218);
+}
+.novo-prod {
+	background-image: url('../imagens/add.png');
+	background-repeat: no-repeat;
+	background-position: 10% center;
+}
+.list {
+	background-image: url('../imagens/list.png');
+	background-repeat: no-repeat;
+	background-position: 10% center;
+}
+.modal {
+	width: 40%;
+	height: 500px;
+	overflow-y: scroll;
+	display: none;
+	padding: 30px;
+	border-radius: 10px;
+	background-color: white;
+	position: fixed;
+	top: -100%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1200;
+	opacity: 0;
+}
+.modal-header,
+.modal-body,
+.formulario-cadastro {
+	width: 100%;
+	display: table;
+	position: relative;
+}
+.close-modal {
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	color: #146899;
+	text-align: center;
+	line-height: center;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 2%;
+	border: none;
+	font-weight: 800;
+	background-color: #1c1c1c;
+}
+.formulario-cadastro {
+	margin-top: 10%;
+}
+.field-cadastro {
+	display: block;
+	width: 80%;
+	height: 45px;
+	margin: 2% auto;
+}
+.cadastrar {
+	background-color: rgb(6, 76, 141);
+	color: white;
+	font-weight: 700;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+}
+.btn {
+	width: 50%;
+	height: 90px;
+	display: block;
+	border: none;
+	margin: 3% auto 1% auto;
+	background-color: rgb(172, 172, 172);
+	cursor: pointer;
+	font-size: 17px;
+	font-weight: 700;
+	transition: all 0.4s ease-out;
+}
+/* listar */
+#lista-produtos {
+	width: 75%;
+	overflow-x: scroll;
+}
+.tabela-produtos {
+	background-color: rgb(206, 206, 193);
+	margin: 5% auto;
+}
+/* CLASSES UTILITÁRIAS */
+.icon-adm {
+	display: block;
+	width: 60%;
+	height: 600px;
+	margin: 0 auto;
 }
 .display-block {
 	display: block;
 }
 .display-none {
 	display: none;
+}
+.text-light {
+	color: darkgrey;
+}
+.text-black {
+	color: rgb(2, 2, 2);
+}
+.mar-bot-2 {
+	margin-bottom: 2%;
+}
+.modal-top-in {
+	animation: modal-top-in 0.7s forwards cubic-bezier(0, 1.11, .6, .89);
+}
+.title-modal {
+	text-align: center;
 }
