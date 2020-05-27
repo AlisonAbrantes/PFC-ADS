@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Gabriel/Documents/develop_web/tcc-oficial/PFC-ADS/web/pag_adm.jsp</file>
-            <file>file:/C:/Users/Gabriel/Documents/develop_web/tcc-oficial/PFC-ADS/web/perfil.jsp</file>
-            <file>file:/C:/Users/Gabriel/Documents/develop_web/tcc-oficial/PFC-ADS/web/avaliacoes.jsp</file>
-            <file>file:/C:/Users/Gabriel/Documents/develop_web/tcc-oficial/PFC-ADS/web/consultar_log.jsp</file>
-            <file>file:/C:/Users/Gabriel/Documents/develop_web/tcc-oficial/PFC-ADS/web/manterProdutos.jsp</file>
-            <file>file:/C:/Users/Gabriel/Documents/develop_web/tcc-oficial/PFC-ADS/web/consultar_mensagens.jsp</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/modelo/PlacaMae.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/modelo/MemoriaRam.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/modelo/HD.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/modelo/SSD.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/modelo/Processador.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/modelo/Componente.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/modelo/Fonte.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/modelo/PlacaVideo.java</file>
         </group>
     </open-files>
 </project-private>
