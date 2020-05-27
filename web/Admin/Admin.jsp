@@ -10,13 +10,13 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="CSS/loginAdm.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/loginAdm.css">
     <title>Login ADM</title>
     </head>
     <body>
          <div class="box-login">
        <div class="formulario">
-           <img src="imagens/icon-login.png" alt="Login" class="icon-login">
+           <img src="../imagens/icon-login.png" alt="Login" class="icon-login">
            <h1 class="title-login"> Login</h1>
            <form action="<%= application.getContextPath()%>/ControleAdmin" method="POST">
                <input type="hidden" name="acao"  id="acao" value="Login"/>

@@ -30,6 +30,6 @@ public class AlterarAdminAction {
 
         admdao.alterar(adm);
 
-        return "/ControleAdministrador?acao=Login";
+        return "/Admin/pag_adm.jsp";
     }
 }

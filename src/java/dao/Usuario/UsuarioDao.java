@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Usuario;
@@ -104,6 +105,46 @@ public class UsuarioDao implements IUsuarioDao{
              }
         }
         
+    }
+    
+    public ArrayList<Usuario> listar(Usuario user) {
+        //cria uma array de obJ Usuario
+        ArrayList<Usuario> listaUsuario = new ArrayList<Usuario>();
+
+        try {
+            
+            conexao = ConectaBanco.getConexao();
+            PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
+            
+            pstmt.setString(1, user.getNome());
+            pstmt.setString(2, user.getEmail());
+            
+            //executa
+            ResultSet rs = pstmt.executeQuery();
+            
+            while (rs.next()) {
+                //a cada loop
+                Usuario novoUsuario = new Usuario();
+                novoUsuario.setId(rs.getInt("id"));
+                novoUsuario.setNome(rs.getString("txtnome"));
+                novoUsuario.setEmail(rs.getString("txtemail"));
+
+                //add na lista
+                listaUsuario.add(novoUsuario);
+            }
+            return listaUsuario;
+        } catch (Exception ex) {
+            
+            return listaUsuario;
+
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
     }
  
 }
