@@ -15,14 +15,14 @@
 </head>
 <body>
     <nav>
-        <h1 class="titulo"> COINS</h1>
+        <a href="pag_adm.html"> <h1 class="titulo"> COINS</h1> </a>
         <ul>
-            <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
-            <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
-            <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
-            <a href="consultar_mensagens.jsp" class="btn"> <li>Consultar mensagens</li></a>
-            <a href="consultar_log.jsp" class="btn"> <li>Consultar Log</li></a>
-            <a href="#" class="btn"><li> Sair</li></a>
+            <a href="perfil.html" class="btn-perfil"><li>Perfil</li></a>
+            <a href="manterProdutos.html" class="btn-prod"> <li> Manter produtos</li></a>
+            <a href="avaliacoes.html" class="btn-avl"> <li>Avaliações</li></a>
+            <a href="consultar_mensagens.html" class="btn-msg"> <li>Consultar mensagens</li></a>
+            <a href="consultar_log.html" class="btn-log"> <li>Consultar Log</li></a>
+            <a href="#" class="btn-logout"><li> Sair</li></a>
         </ul>
     </nav>
     <div class="conteudo">
