@@ -23,8 +23,8 @@ import util.Md5;
  * @author Alison
  */
 public class AdminDao implements IAdminDao{
-   private static final String LOGIN = "SELECT * FROM administrador WHERE email=? and senha=?;";
-   private static final String SELECT_ALL = "SELECT * FROM administrador WHERE id=?;";
+    private static final String LOGIN = "SELECT * FROM administrador WHERE email=? and senha=?;";
+   private static final String INSERT = "INSERT INTO administrador (nome,email,senha) values(?,?,?);";
    private static final String UPDATE = "UPDATE administrador set ?=? WHERE id=?";
 
     private Object pstmt;
@@ -58,6 +58,34 @@ public class AdminDao implements IAdminDao{
             } catch (final SQLException ex) {
                 Logger.getLogger(AdminDao.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+    }
+
+    public boolean Cadastrar(Administrador adm) {
+        try {
+            conexao = ConectaBanco.getConexao();
+
+            PreparedStatement pstmt = conexao.prepareStatement(INSERT);
+
+            pstmt.setString(1, adm.getNome());
+            pstmt.setString(2, adm.getEmail());
+            pstmt.setString(3, adm.getSenha());
+
+            pstmt.execute();
+            
+            return true;
+        } catch (Exception ex) {
+
+            return false;
+            
+        } finally {
+            
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(AdminDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         }
     }
     

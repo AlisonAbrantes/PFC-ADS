@@ -1,6 +1,6 @@
 <%-- 
-    Document   : consultar_mensagens
-    Created on : 26/05/2020, 18:30:58
+    Document   : manterProdutos
+    Created on : 26/05/2020, 18:29:48
     Author     : Gabriel
 --%>
 
@@ -10,8 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../CSS/adm.css">
-    <title>Consultar Mensagens</title>
+    <link rel="stylesheet" type="text/css" href="css/adm.css">
+    <title>Produtos</title>
 </head>
 <body>
     <nav>
@@ -22,14 +22,14 @@
            <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
            <a href="consultar_mensagens.jsp" class="btn"> <li>Consultar mensagens</li></a>
            <a href="consultar_log.jsp" class="btn"> <li>Consultar Log</li></a>
-            <a href="Admin.jsp" class="btn"><li> Sair</li></a>
+            <a href="#" class="btn"><li> Sair</li></a>
         </ul>
     </nav>
     <div class="conteudo">
         <section class="geral">
-            <h1> Consultar Mensagens</h1>
+            <h1> Manter Produtos</h1>
         </section>
     </div>
-    <script src="../JS/adm.js"></script>
+    <script src="js/adm.js"></script>
 </body>
 </html>

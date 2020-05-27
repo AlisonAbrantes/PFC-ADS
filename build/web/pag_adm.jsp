@@ -1,17 +1,18 @@
 <%-- 
-    Document   : perfil
-    Created on : 26/05/2020, 18:27:56
+    Document   : pag_adm.jsp
+    Created on : 26/05/2020, 18:26:32
     Author     : Gabriel
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../CSS/adm.css">
-    <title>Perfil</title>
+    <link rel="stylesheet" type="text/css" href="css/adm.css">
+    <title>Pagina Admin</title>
 </head>
 <body>
     <nav>
@@ -22,14 +23,12 @@
             <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
             <a href="consultar_mensagens.jsp" class="btn"> <li>Consultar mensagens</li></a>
             <a href="consultar_log.jsp" class="btn"> <li>Consultar Log</li></a>
-            <a href="Admin.jsp" class="btn"><li> Sair</li></a>
+            <a href="#" class="btn"><li> Sair</li></a>
         </ul>
     </nav>
     <div class="conteudo">
-        <section class="geral">
-            <h1> Perfil</h1>
-        </section>
+
     </div>
-    <script src="../JS/adm.js"></script>
+    <script src="js/adm.js"></script>
 </body>
 </html>

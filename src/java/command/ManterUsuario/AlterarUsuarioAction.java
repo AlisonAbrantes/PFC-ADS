@@ -31,6 +31,6 @@ public class AlterarUsuarioAction {
 
         userdao.alterarSenha(user);
 
-        return "/Pagina_usuario.jsp";
+        return "/ControleUsuario?acao=Login";
     }
 }

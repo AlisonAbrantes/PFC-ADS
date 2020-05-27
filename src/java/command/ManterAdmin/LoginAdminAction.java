@@ -33,13 +33,13 @@ public class LoginAdminAction implements ICommand{
                 adm.setSenha("");
                 session.setAttribute("adm", adm);
 
-                return "/Admin/pag_adm.jsp";
+                return "/Pagina_usuario.jsp";
                 
             } else {
                 return "/Admin.jsp";
             }
         } else {
-            return "/Admin/Admin.jsp";
+            return "/Admin.jsp";
         }
     }
 }
