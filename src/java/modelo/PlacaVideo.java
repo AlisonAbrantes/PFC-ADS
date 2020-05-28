@@ -10,9 +10,15 @@ package modelo;
  * @author vinicius
  */
 public class PlacaVideo extends Componente{
+
+    public PlacaVideo(int id, String descricao, Peso peso) {
+        super(id, descricao, peso);
+    }
+    
+    public PlacaVideo() {
+    }
     
     /* public boolean precisa(){
-    
-    }
-    */
+       
+    }*/
 }

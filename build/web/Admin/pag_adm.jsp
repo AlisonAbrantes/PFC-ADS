@@ -11,7 +11,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/adm.css">
+    <link href="../CSS/adm.css" rel="stylesheet" type="text/css"/>
+    <link href="../Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../Bootstrap/bootstrap-4.4.1-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <title>Pagina Admin</title>
 </head>
 <body>
@@ -21,14 +23,14 @@
             <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
             <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
-            <a href="consultar_mensagens.jsp" class="btn"> <li>Consultar mensagens</li></a>
-            <a href="consultar_log.jsp" class="btn"> <li>Consultar Log</li></a>
-            <a href="#" class="btn"><li> Sair</li></a>
+            <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
+            <a href="consultar_log.jsp" class="btn-log"> <li>Consultar Log</li></a>
+            <a href="../Admin.jsp" class="btn-logout"><li> Sair</li></a>
         </ul>
     </nav>
     <div class="conteudo">
 
     </div>
-    <script src="js/adm.js"></script>
+    <script src="../JS/main.js" type="text/javascript"></script>
 </body>
 </html>

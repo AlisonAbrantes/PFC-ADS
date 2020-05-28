@@ -10,6 +10,13 @@ package modelo;
  * @author vinicius
  */
 public class SSD extends Componente{
+
+    public SSD() {
+    }
+
+    public SSD(int id, String descricao, Peso peso) {
+        super(id, descricao, peso);
+    }
     
    /* public boolean precisa(){
        

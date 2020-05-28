@@ -10,5 +10,12 @@ package modelo;
  * @author vinicius
  */
 public class HD extends Componente{
+
+    public HD() {
+    }
+
+    public HD(int id, String descricao, Peso peso) {
+        super(id, descricao, peso);
+    }
     
 }

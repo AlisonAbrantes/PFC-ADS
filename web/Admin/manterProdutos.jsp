@@ -10,35 +10,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD:web/Admin/manterProdutos.jsp
     <link rel="stylesheet" type="text/css" href="../CSS/adm.css">
-=======
-    <link rel="stylesheet" type="text/css" href="css/adm.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
-
->>>>>>> 446009ba2db7ec6445a43111c3ab590669df9455:web/manterProdutos.jsp
+    <link href="../Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
     <title>Produtos</title>
 </head>
 <body>
     <div class="overlay toggle-modal"> </div>
     <nav>
-        <a href="pag_adm.html"> <h1 class="titulo"> COINS</h1> </a>
+        <a href="pag_adm.jsp"> <h1 class="titulo"> COINS</h1> </a>
         <ul>
-<<<<<<< HEAD:web/Admin/manterProdutos.jsp
             <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
-           <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
-           <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
-           <a href="consultar_mensagens.jsp" class="btn"> <li>Consultar mensagens</li></a>
-           <a href="consultar_log.jsp" class="btn"> <li>Consultar Log</li></a>
-            <a href="Admin.jsp" class="btn"><li> Sair</li></a>
-=======
-            <a href="perfil.html" class="btn-perfil"><li>Perfil</li></a>
-           <a href="manterProdutos.html" class="btn-prod"> <li> Manter produtos</li></a>
-           <a href="avaliacoes.html" class="btn-avl"> <li>Avaliações</li></a>
-           <a href="consultar_mensagens.html" class="btn-msg"> <li>Consultar mensagens</li></a>
-           <a href="consultar_log.html" class="btn-log"> <li>Consultar Log</li></a>
-            <a href="#" class="btn-logout"><li> Sair</li></a>
->>>>>>> 446009ba2db7ec6445a43111c3ab590669df9455:web/manterProdutos.jsp
+            <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
+            <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
+            <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
+            <a href="consultar_log.jsp" class="btn-log"> <li>Consultar Log</li></a>
+            <a href="../Admin.jsp" class="btn-logout"><li> Sair</li></a>
         </ul>
     </nav>
     <div class="modal" id="cadastro-produtos">
@@ -46,34 +32,36 @@
             <h1 class="title-modal"> Cadastrar produtos</h1>
             <button class="close-modal toggle-modal-cadastrar"> X</button>
         </div>
+        
+        <!--   Modal para Cadastro    --> 
         <div class="modal-body">
             <div class="row">
                 <div class="col-sm-12">
                     <form class="formulario-cadastro" action="#" method="=post">
                       <div class="col-sm-12 col-md-12">
-                        <input type="text" name="descricao" placeholder="Nome do produto" class="field-cadastro">
-                        <select name="categoria" class="field-cadastro">
+                        <input type="text" name="txtdescricao" placeholder="Nome do produto" class="field-cadastro">
+                        <select name="cmbcategoria" class="field-cadastro">
                             <option> Selecione a categoria</option>
                             <option value="pc"> Desktop</option>
                             <option value="pc"> Notebook</option>
                         </select>
-                        <select name="placamae" class="field-cadastro">
+                        <select name="cmbplacamae" class="field-cadastro">
                             <option> Selecione a Placa Mãe</option>
                             <option value="pl2"> placa mae 2</option>
                         </select>
-                        <select name="processador" class="field-cadastro">
+                        <select name="cmbprocessador" class="field-cadastro">
                             <option> Selecione o processador</option>
                             <option value="i5"> I3</option>
                         </select>
-                        <select name="memoriaram" class="field-cadastro">
+                        <select name="cmbmemoriaram" class="field-cadastro">
                             <option> Selecione a memória RAM</option>
                             <option value="ddr3"> x</option>
                         </select>
-                        <select name="memoria" class="field-cadastro">
+                        <select name="cmbmemoria" class="field-cadastro">
                             <option> Selecione a memória</option>
                             <option value="hd"> HD</option>
                         </select>
-                        <select name="fonte" class="field-cadastro">
+                        <select name="cmbfonte" class="field-cadastro">
                             <option> Selecione a fonte</option>
                             <option value="a"> a</option>
                         </select>
@@ -85,7 +73,7 @@
             </div>
         </div>
     </div>
-
+    <!--   Modal para Listar produtos    --> 
     <div class="modal" id="lista-produtos">
         <div class="modal-header">
             <h1 class="title-modal"> Lista de produtos</h1>
@@ -126,11 +114,6 @@
             </div>
         </section>
     </div>
-<<<<<<< HEAD:web/Admin/manterProdutos.jsp
-    <script src="../JS/adm.js"></script>
-=======
-    
-    <script src="js/main.js"></script>
->>>>>>> 446009ba2db7ec6445a43111c3ab590669df9455:web/manterProdutos.jsp
+    <script src="../JS/main.js" type="text/javascript"></script>
 </body>
 </html>

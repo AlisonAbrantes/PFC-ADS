@@ -10,5 +10,12 @@ package modelo;
  * @author vinicius
  */
 public class Processador extends Componente{
+
+    public Processador() {
+    }
+
+    public Processador(int id, String descricao, Peso peso) {
+        super(id, descricao, peso);
+    }
     
 }

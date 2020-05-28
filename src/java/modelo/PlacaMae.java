@@ -10,5 +10,12 @@ package modelo;
  * @author vinicius
  */
 public class PlacaMae extends Componente{
+
+    public PlacaMae() {
+    }
+
+    public PlacaMae(int id, String descricao, Peso peso) {
+        super(id, descricao, peso);
+    }
     
 }

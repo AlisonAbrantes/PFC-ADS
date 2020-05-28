@@ -10,5 +10,12 @@ package modelo;
  * @author vinicius
  */
 public class Fonte extends Componente{
+
+    public Fonte() {
+    }
+
+    public Fonte(int id, String descricao, Peso peso) {
+        super(id, descricao, peso);
+    }
     
 }

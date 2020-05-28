@@ -10,5 +10,12 @@ package modelo;
  * @author vinicius
  */
 public class MemoriaRam extends Componente{
+
+    public MemoriaRam() {
+    }
+
+    public MemoriaRam(int id, String descricao, Peso peso) {
+        super(id, descricao, peso);
+    }
     
 }

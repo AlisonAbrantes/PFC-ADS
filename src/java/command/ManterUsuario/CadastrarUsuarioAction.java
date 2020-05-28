@@ -45,7 +45,7 @@ public class CadastrarUsuarioAction implements ICommand{
                UsuarioDao usercomDao = new UsuarioDao();
                usercomDao.Cadastrar(user);
                
-               return "/login.jsp";
+               return "/Home.jsp";
            }
        }catch (Exception ex){
           

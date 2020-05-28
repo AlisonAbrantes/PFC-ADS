@@ -13,33 +13,33 @@ public class LoginUsuarioAction implements ICommand{
     @Override
     public String executar(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        // Usamos este if para validar se o usuario digitou algo nos campos
+        // Usamos este if para validar se o user digitou algo nos campos
         if (request.getParameter("txtemail") != null && request.getParameter("txtsenha") != null) {
 
-            Usuario usuario = new Usuario();
+            Usuario user = new Usuario();
         // Após validar a entrada de dados, resgatamos os valores e setamos nos atributos da classe    
-            usuario.setEmail(request.getParameter("txtemail"));
-            usuario.setSenha(Md5.senhamd5(request.getParameter("txtsenha")));
+            user.setEmail(request.getParameter("txtemail"));
+            user.setSenha(Md5.senhamd5(request.getParameter("txtsenha")));
 
-            UsuarioDao usuariodao = new UsuarioDao();
+            UsuarioDao userDao = new UsuarioDao();
         // Finalmente, poderemos comparar os campos com os valores do banco
-            usuariodao.login(usuario);
+            userDao.login(user);
             
             HttpSession session = request.getSession();
         // Usamos este if para validar se os campos digitados correspondem aos valores retornados do banco.
-        if (usuario.getEmail().equals(request.getParameter("txtemail")) && usuario.getSenha().equals(Md5.senhamd5(request.getParameter("txtsenha")))) 
+        if (user.getEmail().equals(request.getParameter("txtemail")) && user.getSenha().equals(Md5.senhamd5(request.getParameter("txtsenha")))) 
         {
             //Caso os valores seham corretos, apagamos a senha da sessao para evitar o roubo da senha
-                usuario.setSenha("");
-                session.setAttribute("usuario", usuario);
+                user.setSenha("");
+                session.setAttribute("user", user);
 
-                return "/Pagina_usuario.jsp";
+                return "Usuario/Pagina_usuario.jsp";
                 
             } else {
-                return "/Home.jsp";
+                return "Home.jsp";
             }
         } else {
-            return "/Home.jsp";
+            return "Home.jsp";
         }
     }
 }
