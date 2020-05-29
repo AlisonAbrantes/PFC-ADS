@@ -6,66 +6,64 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../CSS/adm.css">
-    <link href="../Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="../css/adm.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.min.css">
+
     <title>Produtos</title>
 </head>
 <body>
     <div class="overlay toggle-modal"> </div>
-    <nav>
-        <a href="pag_adm.jsp"> <h1 class="titulo"> COINS</h1> </a>
+   <nav>
+        <a href="pag_adm.html"> <h1 class="titulo"> COINS</h1> </a>
         <ul>
-            <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
-            <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
-            <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
-            <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
-            <a href="consultar_log.jsp" class="btn-log"> <li>Consultar Log</li></a>
-            <a href="../Admin.jsp" class="btn-logout"><li> Sair</li></a>
+            <a href="perfil.html"><li class="btn-perfil">Perfil</li></a>
+            <a href="manterProdutos.html"> <li class="btn-manter"> Manter produtos</li></a>
+            <a href="avaliacoes.html"> <li class="btn-avl">Avaliações</li></a>
+            <a href="consultar_mensagens.html"> <li class="btn-msg">Consultar mensagens</li></a>
+            <a href="#"><li class="btn-logout"> Sair</li></a>
         </ul>
     </nav>
     <div class="modal" id="cadastro-produtos">
         <div class="modal-header">
             <h1 class="title-modal"> Cadastrar produtos</h1>
-            <button class="close-modal toggle-modal-cadastrar"> X</button>
         </div>
-        
-        <!--   Modal para Cadastro    --> 
         <div class="modal-body">
             <div class="row">
                 <div class="col-sm-12">
                     <form class="formulario-cadastro" action="#" method="=post">
                       <div class="col-sm-12 col-md-12">
-                        <input type="text" name="txtdescricao" placeholder="Nome do produto" class="field-cadastro">
-                        <select name="cmbcategoria" class="field-cadastro">
+                        <input type="text" name="descricao" placeholder="Nome do produto" class="field-form">
+                        <select name="categoria" class="field-form">
                             <option> Selecione a categoria</option>
                             <option value="pc"> Desktop</option>
                             <option value="pc"> Notebook</option>
                         </select>
-                        <select name="cmbplacamae" class="field-cadastro">
+                        <select name="placamae" class="field-form">
                             <option> Selecione a Placa Mãe</option>
                             <option value="pl2"> placa mae 2</option>
                         </select>
-                        <select name="cmbprocessador" class="field-cadastro">
+                        <select name="processador" class="field-form">
                             <option> Selecione o processador</option>
                             <option value="i5"> I3</option>
                         </select>
-                        <select name="cmbmemoriaram" class="field-cadastro">
+                        <select name="memoriaram" class="field-form">
                             <option> Selecione a memória RAM</option>
                             <option value="ddr3"> x</option>
                         </select>
-                        <select name="cmbmemoria" class="field-cadastro">
+                        <select name="memoria" class="field-form">
                             <option> Selecione a memória</option>
                             <option value="hd"> HD</option>
                         </select>
-                        <select name="cmbfonte" class="field-cadastro">
+                        <select name="fonte" class="field-form">
                             <option> Selecione a fonte</option>
                             <option value="a"> a</option>
                         </select>
-                        <input type="submit" name="salvar" value="Cadastrar" class="field-cadastro cadastrar">
+                        <input type="submit" name="salvar" value="Cadastrar" class="field-form cadastrar">
+                        <button class="toggle-modal-cadastrar field-form btn-cancelar"> Cancelar</button>
                       </div>
 
                     </form>
@@ -73,7 +71,7 @@
             </div>
         </div>
     </div>
-    <!--   Modal para Listar produtos    --> 
+
     <div class="modal" id="lista-produtos">
         <div class="modal-header">
             <h1 class="title-modal"> Lista de produtos</h1>
@@ -114,6 +112,7 @@
             </div>
         </section>
     </div>
-    <script src="../JS/main.js" type="text/javascript"></script>
+    
+    <script src="../js/main.js"></script>
 </body>
 </html>

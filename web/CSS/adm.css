@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 @keyframes boxAnim {
 	to {
@@ -55,9 +55,6 @@ nav ul li {
 	width: 100%;
 	height: 60px;
 	text-align: center;
-	background-image: url('../imagens/perfil_icon.png');
-	background-repeat: no-repeat;
-	background-position: 5% center;
 	text-indent: 50px;
 	font-size: 17px;
 	font-weight: 600;
@@ -71,12 +68,37 @@ nav ul a li:hover {
 	transition: all 0.9s ease-out;
 	transform-origin: left;
 }
+.btn-perfil {
+	background-image: url('../imagens/icon-perfil.png');
+	background-repeat: no-repeat;
+	background-position: 5% center;
+}
+.btn-manter {
+	background-image: url('../imagens/icon-manter.png');
+	background-repeat: no-repeat;
+	background-position: 5% center;
+}
+.btn-avl {
+	background-image: url('../imagens/icon-avl.png');
+	background-repeat: no-repeat;
+	background-position: 5% center;
+}
+.btn-msg {
+	background-image: url('../imagens/icon-msg.png');
+	background-repeat: no-repeat;
+	background-position: 5% center;
+}
+.btn-logout {
+	background-image: url('../imagens/icon-logout.png');
+	background-repeat: no-repeat;
+	background-position: 5% center;
+}
 .conteudo {
 	width: 80%;
 	height: 100vh;
 	display: block;
 	float: right;
-	background-color: rgb(6, 76, 141);
+	background-color: rgb(77, 80, 85);
 }
 .geral {
 	width: 50%;
@@ -94,11 +116,18 @@ nav ul a li:hover {
 
 .pag-title {
 	color: white;
-	font-size: 70px;
+	font-size: 50px;
 	text-align: center;
 	margin-bottom: 3%;
 }
 /* PERFIL */
+#alterar-perfil {
+	overflow: hidden;
+}
+#alterar-perfil-senha {
+	height: 400px;
+	overflow: hidden;
+}
 .formulario {
 	width: 100%;
 	display: table;
@@ -115,12 +144,14 @@ nav ul a li:hover {
 	width: 50%;
 	height: 45px;
 	border: none;
+	color: rgb(166, 175, 175);
 	display: block;
 	background-color: rgb(65, 65, 65);
 	border-radius: 4px;
 	text-indent: 10px;
+	font-size: 17px;
 }
-.btn-salvar {
+.btn-alterar {
 	width: 50%;
 	height: 45px;
 	border: none;
@@ -160,6 +191,7 @@ nav ul a li:hover {
 	overflow-y: scroll;
 	display: none;
 	padding: 30px;
+	box-sizing: border-box;
 	border-radius: 10px;
 	background-color: white;
 	position: fixed;
@@ -178,28 +210,30 @@ nav ul a li:hover {
 	position: relative;
 }
 .close-modal {
-	width: 38px;
-	height: 38px;
+	width: 30px;
+	height: 30px;
 	border-radius: 50%;
-	color: #146899;
+	color: #b2c0c9;
 	text-align: center;
 	line-height: center;
 	cursor: pointer;
 	position: absolute;
-	top: 0;
-	right: 2%;
+	font-size: 18px;
+	top: -1%;
+	right: 1%;
 	border: none;
 	font-weight: 800;
-	background-color: #1c1c1c;
+	background-color: #175997;
 }
 .formulario-cadastro {
 	margin-top: 10%;
 }
-.field-cadastro {
+.field-form {
 	display: block;
 	width: 80%;
 	height: 45px;
-	margin: 2% auto;
+	margin: 5% auto;
+	text-indent: 10px;
 }
 .cadastrar {
 	background-color: rgb(6, 76, 141);
@@ -230,6 +264,56 @@ nav ul a li:hover {
 	background-color: rgb(206, 206, 193);
 	margin: 5% auto;
 }
+
+/* avaliacoes */
+.msg-avaliacao-tela {
+	overflow-y: scroll;
+}
+.box-msg-avaliacao {
+	width: 80%;
+	min-height: 200px;
+	background-color: white;
+	display: block;
+	margin: 1% auto;
+	padding: 10px;
+	box-sizing: border-box;
+	position: relative;
+}
+.box-msg-avaliacao-header {
+	float: left;
+	position: fixed;
+}
+.top-3 {
+	margin-top: 3%;
+}
+.box-msg-avaliacao-body {
+	margin-top: 2%;
+	font-size: 19px;
+	font-weight: normal;
+	position: absolute;
+}
+.box-msg-avaliacao-body h3 {
+	text-align: center;
+	margin-bottom: 2%;
+}
+.box-msg-avaliacao-body span {
+	color: rgb(121, 116, 116);
+}
+.box-msg-avaliacao-bot {
+	margin-top: 5%;
+	margin-right: 5%;
+	display: table;
+}
+.excluir-avl {
+	width: 10%;
+	height: 40px;
+	background-color: rgb(6, 76, 141);
+	border: none;
+	cursor: pointer;
+	color: white;
+	border: 4px;
+	float: right;
+}
 /* CLASSES UTILITÁRIAS */
 .icon-adm {
 	display: block;
@@ -246,8 +330,14 @@ nav ul a li:hover {
 .text-light {
 	color: darkgrey;
 }
+.text-19 {
+	font-size: 19px;
+}
 .text-black {
 	color: rgb(2, 2, 2);
+}
+.mar-top-5 {
+	margin-top: 5%;
 }
 .mar-bot-2 {
 	margin-bottom: 2%;
@@ -257,4 +347,16 @@ nav ul a li:hover {
 }
 .title-modal {
 	text-align: center;
+}
+.btn-cancelar {
+	width: 80%;
+	height: 45px;
+	border: none;
+	border-radius: 4px;
+	margin-top: 2%;
+	cursor: pointer;
+	background-color: brown;
+	color: white;
+	font-weight: 700;
+	font-size: 17px;
 }
