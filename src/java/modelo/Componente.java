@@ -15,6 +15,7 @@ public class Componente
     private int id;
     private Peso peso;
     private String descricao;
+    private TipoComponente tipocomponente;
 
     public int getId() 
     {

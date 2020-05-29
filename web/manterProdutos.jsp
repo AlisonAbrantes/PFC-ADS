@@ -10,8 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/adm.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/adm.css">
+    <link href="Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
 
     <title>Produtos</title>
 </head>
@@ -20,12 +20,12 @@
     <nav>
         <a href="pag_adm.html"> <h1 class="titulo"> COINS</h1> </a>
         <ul>
-            <a href="perfil.html" class="btn-perfil"><li>Perfil</li></a>
-           <a href="manterProdutos.html" class="btn-prod"> <li> Manter produtos</li></a>
-           <a href="avaliacoes.html" class="btn-avl"> <li>Avaliações</li></a>
-           <a href="consultar_mensagens.html" class="btn-msg"> <li>Consultar mensagens</li></a>
-           <a href="consultar_log.html" class="btn-log"> <li>Consultar Log</li></a>
-            <a href="#" class="btn-logout"><li> Sair</li></a>
+            <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
+           <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
+           <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
+           <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
+           <a href="consultar_log.jsp" class="btn-log"> <li>Consultar Log</li></a>
+            <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
         </ul>
     </nav>
     <div class="modal" id="cadastro-produtos">
@@ -38,7 +38,7 @@
                     <form class="formulario-cadastro" action="#" method="=post">
                       <div class="col-sm-12 col-md-12">
                         <input type="text" name="descricao" placeholder="Nome do produto" class="field-form">
-                        <select name="categoria" class="field-form">
+                        <select name="cmbcategoria" class="field-form">
                             <option> Selecione a categoria</option>
                             <option value="pc"> Desktop</option>
                             <option value="pc"> Notebook</option>
@@ -54,6 +54,10 @@
                         <select name="memoriaram" class="field-form">
                             <option> Selecione a memória RAM</option>
                             <option value="ddr3"> x</option>
+                        </select>
+                        <select name="placaVideo" class="field-form">
+                            <option value="0"> Selecione a Placa de Video</option>
+                            <option value="pl2"> placa GTX</option>
                         </select>
                         <select name="memoria" class="field-form">
                             <option> Selecione a memória</option>

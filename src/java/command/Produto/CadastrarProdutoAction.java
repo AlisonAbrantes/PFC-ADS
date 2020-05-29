@@ -29,10 +29,8 @@ public class CadastrarProdutoAction implements ICommand {
             try{
              Categoria objcat = new Categoria();
              CategoriaDao categoriaDao =new CategoriaDao();
-
              ArrayList<Categoria> arrcategoria = new ArrayList<>();
              objcat.setDescricao("");
-            
              arrcategoria = categoriaDao.listar(objcat);
             
              HttpSession session = request.getSession();

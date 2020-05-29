@@ -3,11 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.Produto;
-
-
-import dao.Categoria.CategoriaDao;
-import dao.Componente.ComponenteDao;
 import util.ConectaBanco;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,22 +11,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import modelo.Categoria;
-import modelo.Componente;
-import modelo.Fonte;
-import modelo.HD;
-import modelo.MemoriaRam;
-import modelo.PlacaMae;
-import modelo.PlacaVideo;
-import modelo.Processador;
-import modelo.Produto;
 
 /**
  *
- * @author profe
+ * @author Alison
  */
-public class ProdutoDao implements IProdutodao {
-
+public class PlacaMaeDao {
+    
     private static final String SELECT_ALL = "SELECT * FROM produto where descricao ilike ?;";
     private static final String INSERT = "INSERT INTO produto(componetes) values(?);";
     private static final String BUSCAR = "SELECT * FROM produto WHERE id=?;";
@@ -140,65 +126,6 @@ public class ProdutoDao implements IProdutodao {
             }
         }
     }
-    
-    @Override
-    public boolean alterar(Produto produto) {
-       
-         try {
-
-            conexao = ConectaBanco.getConexao();
-
-            PreparedStatement pstmt = conexao.prepareStatement(UPDATE);
-
-            pstmt.setString(1, produto.getDescricao());
-            pstmt.setInt(2, produto.getId());
-            
-            pstmt.execute();
-            return true;
-
-        } catch (Exception ex) {
-
-            return false;
-
-        } finally {
-
-             try {
-                 conexao.close();
-             } catch (SQLException ex) {
-                 Logger.getLogger(ProdutoDao.class.getName()).log(Level.SEVERE, null, ex);
-             }
-        }
-        
-    }
-    @Override
-    public boolean cadastrar(Produto produto) {
-
-        try {
-
-            conexao = ConectaBanco.getConexao();
-
-            PreparedStatement pstmt = conexao.prepareStatement(INSERT);
-
-            pstmt.setString(1, produto.getDescricao());
-
-            pstmt.execute();
-            
-            return true;
-
-        } catch (Exception ex) {
-
-            return false;
-            
-        } finally {
-            
-            try {
-                conexao.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(ProdutoDao.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        }
-
-    }
-
 }
+
+

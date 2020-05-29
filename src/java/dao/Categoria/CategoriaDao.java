@@ -37,16 +37,12 @@ public class CategoriaDao implements ICategoriaDao {
 
             //Conexao
             conexao=ConectaBanco.getConexao();
-            //cria comando SQL
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            
             pstmt.setString(1, "%" + categoria.getDescricao() + "%");
             
-            //executa
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                //a cada loop
                 Categoria novoCategoria = new Categoria();
                 novoCategoria.setId(rs.getInt("id"));
                 novoCategoria.setDescricao(rs.getString("descricao"));
@@ -75,25 +71,17 @@ public class CategoriaDao implements ICategoriaDao {
     public void buscar(Categoria categoria) {
 
         try {
-            //Conexao
             conexao = ConectaBanco.getConexao();
-            //cria comando SQL
             PreparedStatement pstmt = conexao.prepareStatement(BUSCAR);
-
             pstmt.setInt(1, categoria.getId());
-            //executa
+           
             ResultSet rs = pstmt.executeQuery();
 
-            // como a query ira retornar somente um registro, faremos o NEXT
             rs.next();
-
             categoria.setDescricao(rs.getString("descricao"));
-         
 
         } catch (Exception e) {
 
-            //
-            
         } finally {
             
             try {

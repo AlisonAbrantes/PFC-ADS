@@ -59,7 +59,7 @@ public final class Admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("           <h1 class=\"title-login\"> Login</h1>\r\n");
       out.write("           <form action=\"");
       out.print( application.getContextPath());
-      out.write("/ControleAdmin?\" method=\"POST\">\r\n");
+      out.write("/ControleAdmin\" method=\"POST\">\r\n");
       out.write("               <input type=\"hidden\" name=\"acao\"  id=\"acao\" value=\"Login\"/>\r\n");
       out.write("               <div class=\"field-email\">\r\n");
       out.write("                    <input type=\"email\" name=\"txtemail\" id=\"txtemail\" class=\"field campo\" placeholder=\"Insira seu email\">\r\n");
