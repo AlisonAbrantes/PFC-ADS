@@ -13,7 +13,7 @@ public class Avaliacao {
     
     private int id;
     private String sugestao;
-    private String opiniao;
+    private int nivel_satisfacao;
     private Usuario usuario;
 
     public int getId() {
@@ -32,12 +32,12 @@ public class Avaliacao {
         this.sugestao = sugestao;
     }
 
-    public String getOpiniao() {
-        return opiniao;
+    public int getNivel_satisfacao() {
+        return nivel_satisfacao;
     }
 
-    public void setOpiniao(String opiniao) {
-        this.opiniao = opiniao;
+    public void setNivel_satisfacao(int nivel_satisfacao) {
+        this.nivel_satisfacao = nivel_satisfacao;
     }
 
     public Usuario getUsuario() {
@@ -51,14 +51,10 @@ public class Avaliacao {
     public Avaliacao() {
     }
 
-    public Avaliacao(int id, String sugestao, String opiniao, Usuario usuario) {
+    public Avaliacao(int id, String sugestao, int nivel_satisfacao, Usuario usuario) {
         this.id = id;
         this.sugestao = sugestao;
-        this.opiniao = opiniao;
+        this.nivel_satisfacao = nivel_satisfacao;
         this.usuario = usuario;
     }
-    
-    
-    
-    
 }

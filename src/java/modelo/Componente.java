@@ -17,6 +17,14 @@ public class Componente
     private String descricao;
     private TipoComponente tipocomponente;
 
+    public TipoComponente getTipocomponente() {
+        return tipocomponente;
+    }
+
+    public void setTipocomponente(TipoComponente tipocomponente) {
+        this.tipocomponente = tipocomponente;
+    }
+    
     public int getId() 
     {
         return id;

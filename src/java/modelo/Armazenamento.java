@@ -7,18 +7,15 @@ package modelo;
 
 /**
  *
- * @author vinicius
+ * @author Alison
  */
-public class SSD extends Componente{
+public class Armazenamento extends Componente{
 
-    public SSD() {
+    public Armazenamento() {
     }
 
-    public SSD(int id, String descricao, Peso peso) {
+    public Armazenamento(int id, String descricao, Peso peso) {
         super(id, descricao, peso);
     }
     
-   /* public boolean precisa(){
-       
-    }*/
 }

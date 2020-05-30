@@ -30,6 +30,7 @@ public class BuscarProdutoAction implements ICommand {
             CategoriaDao categoriadao = new CategoriaDao();
             ArrayList<Categoria> arrcategoria = new ArrayList<>();
             categoria.setDescricao(""); //desta forma virão todos os registros
+            
             arrcategoria = categoriadao.listar(categoria);
             HttpSession session = request.getSession();
             session.setAttribute("arrcategoria", arrcategoria);

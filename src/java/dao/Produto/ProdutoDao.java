@@ -6,20 +6,22 @@
 package dao.Produto;
 
 
+import dao.PlacaMae.PlacaMaeDao;
 import dao.Categoria.CategoriaDao;
-import dao.Componente.ComponenteDao;
+import dao.componente.ComponenteDao;
 import util.ConectaBanco;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Categoria;
 import modelo.Componente;
 import modelo.Fonte;
-import modelo.HD;
+import modelo.Armazenamento;
 import modelo.MemoriaRam;
 import modelo.PlacaMae;
 import modelo.PlacaVideo;
@@ -33,7 +35,7 @@ import modelo.Produto;
 public class ProdutoDao implements IProdutodao {
 
     private static final String SELECT_ALL = "SELECT * FROM produto where descricao ilike ?;";
-    private static final String INSERT = "INSERT INTO produto(componetes) values(?);";
+    private static final String INSERT = "INSERT INTO produto(descricao,categoria,componente) values(?,?,?);";
     private static final String BUSCAR = "SELECT * FROM produto WHERE id=?;";
     private static final String UPDATE = "UPDATE produto set descricao=? WHERE id=?";
 
@@ -41,14 +43,14 @@ public class ProdutoDao implements IProdutodao {
     private Connection conexao;
 
     @Override
-    public ArrayList<Produto> listar(Produto objcat) {
+    public ArrayList<Produto> listar(Produto produto) {
         //cria uma array de obJ Produto
         ArrayList<Produto> listaProduto = new ArrayList<Produto>();
 
         try {
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            pstmt.setString(1, "%" + objcat.getDescricao() + "%");
+            pstmt.setString(1, produto.getDescricao());
             
             ResultSet rs = pstmt.executeQuery();
 
@@ -59,17 +61,52 @@ public class ProdutoDao implements IProdutodao {
                 
                 //Precisamos buscar as categorias 
                 Categoria objcate = new Categoria();
-                objcate.setId(rs.getInt("objcate"));
+                objcate.setId(rs.getInt("id"));
                 CategoriaDao catedao = new CategoriaDao();
                 catedao.buscar(objcate);
                 //Agregação
                 novoProduto.setCategoria(objcate);
                 
+                Componente objPlaca = new PlacaMae();
+                objPlaca.setId(rs.getInt("id"));
+                PlacaMaeDao daoPlaca = new PlacaMaeDao();
+                daoPlaca.buscar(objPlaca);
                 
+                Componente objProcessador = new Processador();
+                objProcessador.setId(rs.getInt("id"));
+                ProcessadorDao daoProcesador = new ProcessadorDao();
+                daoProcesador.buscar(objProcessador);
                 
+                Componente objRam = new MemoriaRam();
+                objRam.setId(rs.getInt("id"));
+                RamDao daoRam = new RamDao();
+                daoRam.buscar(objRam);
                 
+                Componente objArmazenamento = new Armazenamento();
+                objArmazenamento.setId(rs.getInt("id"));
+                ArmazenaDao daoArmazena = new ArmazenaDao();
+                daoArmazena.buscar(objArmazenamento);
                 
+                Componente objVideo = new PlacaVideo();
+                objVideo.setId(rs.getInt("id"));
+                VideoDao daoVideo= new VideoDao();
+                daoVideo.buscar(objVideo);
                 
+                Componente objFonte = new Fonte();
+                objFonte.setId(rs.getInt("id"));
+                FonteDao daoFonte= new FonteDao();
+                daoFonte.buscar(objFonte);
+                
+                ArrayList<Componente> arrcomp = new ArrayList();
+                
+                arrcomp.add(1, objPlaca);
+                arrcomp.add(2, objProcessador);
+                arrcomp.add(3, objRam);
+                arrcomp.add(4, objArmazenamento);
+                arrcomp.add(5, objVideo);
+                arrcomp.add(6, objFonte);
+                
+                novoProduto.setComponente(arrcomp);
                 //Agora produto esta completo de categoriapodemos adiciona-lo na Lista
                 listaProduto.add(novoProduto);
             }
@@ -110,24 +147,6 @@ public class ProdutoDao implements IProdutodao {
             catDao.buscar(objcat);
             produto.setCategoria(objcat);
             
-            Componente objPlaca = new PlacaMae();
-            Componente objProcesador = new Processador();
-            Componente objRam = new MemoriaRam();
-            Componente objMemoria = new HD();
-            Componente objVideo = new PlacaVideo();
-            Componente objFonte = new Fonte();
-            
-            objPlaca.setId(rs.getInt("placamae"));
-            objProcesador.setId(rs.getInt("processador"));
-            objRam.setId(rs.getInt("memoriaram"));
-            objMemoria.setId(rs.getInt("memoria"));
-            objVideo.setId(rs.getInt("placaVideo"));
-            objFonte.setId(rs.getInt("fonte"));
-            
-            PlacaMaeDao maeDao = new PlacaMaeDao();
-           
-            maeDao.buscar(objPlaca);
-            produto.setComponente(objComp);
             
         } catch (Exception e) {
 
@@ -174,21 +193,23 @@ public class ProdutoDao implements IProdutodao {
     public boolean cadastrar(Produto produto) {
 
         try {
-
             conexao = ConectaBanco.getConexao();
-
-            PreparedStatement pstmt = conexao.prepareStatement(INSERT);
+            PreparedStatement pstmt = conexao.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
 
             pstmt.setString(1, produto.getDescricao());
-
-            pstmt.execute();
+            pstmt.setInt(2, produto.getCategoria().getId());
             
+            int ultimoid = pstmt.executeUpdate(); //assim vc pega o ultimo id
+            //pegar o ultimo id gerado na tabela produto
+            //depois chamar o metodo cadastrar componentes dentro de componente dao e passar o array de componentes
+            ComponenteDao compdao = new ComponenteDao();
+            compdao.cadastrar(produto.getComponente(),ultimoid);
+            
+            //aqui já vai estar cadastrado o produto e os componentes.
             return true;
 
         } catch (Exception ex) {
-
             return false;
-            
         } finally {
             
             try {
@@ -198,7 +219,12 @@ public class ProdutoDao implements IProdutodao {
             }
             
         }
-
     }
+
+    @Override
+    public boolean excluir(Produto produto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 
 }

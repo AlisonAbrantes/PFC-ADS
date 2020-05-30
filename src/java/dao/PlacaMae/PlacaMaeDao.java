@@ -1,3 +1,4 @@
+package dao.PlacaMae;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,120 +12,78 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import modelo.Componente;
+import modelo.PlacaMae;
 
 /**
  *
  * @author Alison
  */
-public class PlacaMaeDao {
+public class PlacaMaeDao implements IPlacaMae{
     
-    private static final String SELECT_ALL = "SELECT * FROM produto where descricao ilike ?;";
-    private static final String INSERT = "INSERT INTO produto(componetes) values(?);";
-    private static final String BUSCAR = "SELECT * FROM produto WHERE id=?;";
-    private static final String UPDATE = "UPDATE produto set descricao=? WHERE id=?";
+    private static final String SELECT_ALL = "SELECT * FROM componente where tipocomponente = ?;";
+    private static final String BUSCAR = "SELECT descrição FROM componente WHERE id = ?;";
 
     private Object pstmt;
     private Connection conexao;
 
-    @Override
-    public ArrayList<Produto> listar(Produto objcat) {
-        //cria uma array de obJ Produto
-        ArrayList<Produto> listaProduto = new ArrayList<Produto>();
+    public ArrayList<PlacaMae> listar(PlacaMae objplaca) {
+        ArrayList<PlacaMae> listaPlacaMae = new ArrayList<PlacaMae>();
 
         try {
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            pstmt.setString(1, "%" + objcat.getDescricao() + "%");
+            pstmt.setString(1, objplaca.getDescricao());
             
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                Produto novoProduto = new Produto();
-                novoProduto.setId(rs.getInt("id"));
-                novoProduto.setDescricao(rs.getString("descricao"));
+                PlacaMae objPlaca = new PlacaMae();
+                objPlaca.setId(rs.getInt("id"));
+                objPlaca.setDescricao(rs.getString("descricao"));
                 
-                //Precisamos buscar as categorias 
-                Categoria objcate = new Categoria();
-                objcate.setId(rs.getInt("objcate"));
-                CategoriaDao catedao = new CategoriaDao();
-                catedao.buscar(objcate);
-                //Agregação
-                novoProduto.setCategoria(objcate);
-                
-                
-                
-                
-                
-                
-                //Agora produto esta completo de categoriapodemos adiciona-lo na Lista
-                listaProduto.add(novoProduto);
+                //Retorna uma lista de Placas Mae
+                listaPlacaMae.add(objPlaca);
             }
-            return listaProduto;
+            return listaPlacaMae;
 
         } catch (Exception ex) {
-            return listaProduto;
+            return listaPlacaMae;
             
         } finally {
             try {
                 conexao.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ProdutoDao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PlacaMaeDao.class.getName()).log(Level.SEVERE, null, ex);
             }
             
         }
     }
 
-       @Override
-    public void buscar(Produto produto) {
-
-        try {
+    public void buscar(Componente objPlaca) {
+         try {
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(BUSCAR);
-            pstmt.setInt(1, produto.getId());
+            
+            pstmt.setInt(1, objPlaca.getId());
             
             ResultSet rs = pstmt.executeQuery();
-            // como a query ira retornar somente um registro, faremos o NEXT
+
             rs.next();
-            
-            produto.setDescricao(rs.getString("descricao"));
-            
-            Categoria objcat= new Categoria();
-            objcat.setId(rs.getInt("objcat"));
-            //precisamos de uma dao que fara a busca dos dados junto ao banco de dados
-            CategoriaDao catDao = new CategoriaDao();
-            //desta forma teremos uma categoria para poder colocar no atributo caategoria do produto
-            catDao.buscar(objcat);
-            produto.setCategoria(objcat);
-            
-            Componente objPlaca = new PlacaMae();
-            Componente objProcesador = new Processador();
-            Componente objRam = new MemoriaRam();
-            Componente objMemoria = new HD();
-            Componente objVideo = new PlacaVideo();
-            Componente objFonte = new Fonte();
-            
-            objPlaca.setId(rs.getInt("placamae"));
-            objProcesador.setId(rs.getInt("processador"));
-            objRam.setId(rs.getInt("memoriaram"));
-            objMemoria.setId(rs.getInt("memoria"));
-            objVideo.setId(rs.getInt("placaVideo"));
-            objFonte.setId(rs.getInt("fonte"));
-            
-            PlacaMaeDao maeDao = new PlacaMaeDao();
+            objPlaca.setDescricao(rs.getString("descricao"));
            
-            maeDao.buscar(objPlaca);
-            produto.setComponente(objComp);
-            
         } catch (Exception e) {
 
+            //
         } finally {
 
             try {
                 conexao.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ProdutoDao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PlacaMaeDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
     }
 }
 

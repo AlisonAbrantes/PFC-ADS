@@ -21,9 +21,10 @@ public class CadastrarAvaliacaoAction implements ICommand{
 
         try {
             Avaliacao avaliacao = new Avaliacao();
-            avaliacao.setOpiniao(request.getParameter("txtopiniao"));
+            avaliacao.setSugestao(request.getParameter("txtsugrestao"));
+            avaliacao.setNivel_satisfacao(Integer.parseInt(request.getParameter("btnSatisfacao")));
 
-            if (avaliacao.getOpiniao().length() == 0) {
+            if (avaliacao.getSugestao().length() == 0) {
                 return "págian cadastro";
             } else {
 

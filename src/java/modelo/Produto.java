@@ -15,7 +15,7 @@ public class Produto
 {
     private int id; 
     private String descricao;
-    private Componente componente;
+    private ArrayList<Componente> componente;
     private Categoria categoria;
 
     public int getId() 
@@ -38,13 +38,11 @@ public class Produto
         this.descricao = descricao;
     }
 
-    public Componente getComponente() 
-    {
+    public ArrayList<Componente> getComponente() {
         return componente;
     }
 
-    public void setComponente(Componente componente) 
-    {
+    public void setComponente(ArrayList<Componente> componente) {
         this.componente = componente;
     }
 
@@ -61,15 +59,10 @@ public class Produto
         //
     }
 
-    public Produto(int id, String descricao, Componente componente, Categoria categoria) 
-    {
+    public Produto(int id, String descricao, ArrayList<Componente> componente, Categoria categoria) {
         this.id = id;
         this.descricao = descricao;
         this.componente = componente;
         this.categoria = categoria;
     }
-    
-    
-    
-    
 }

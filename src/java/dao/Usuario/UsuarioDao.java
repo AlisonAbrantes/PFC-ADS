@@ -14,6 +14,8 @@ public class UsuarioDao implements IUsuarioDao{
    private static final String INSERT = "INSERT INTO cliente (nome,email,senha) values(?,?,?);";
    private static final String UPDATE = "UPDATE cliente set nome=? , email=? , senha=? WHERE id=?";
    private static final String SELECT_ALL = "SELECT * FROM cliente where id=?;";
+   private static final String BUSCAR = "SELECT * FROM cliente where id=?;";
+
 
     private Object pstmt;
     private Connection conexao;
@@ -79,7 +81,6 @@ public class UsuarioDao implements IUsuarioDao{
     
     public boolean alterarSenha(Usuario user) {
          try {
-
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(UPDATE);
 
@@ -104,6 +105,36 @@ public class UsuarioDao implements IUsuarioDao{
              }
         }
         
+    }
+
+    public void buscar(Usuario objuser) {
+         try {
+            //Conexao
+            conexao = ConectaBanco.getConexao();
+            //cria comando SQL
+            PreparedStatement pstmt = conexao.prepareStatement(BUSCAR);
+
+            pstmt.setInt(1, objuser.getId());
+            ResultSet rs = pstmt.executeQuery();
+
+            rs.next();
+
+            objuser.setId(rs.getInt("id"));
+            objuser.setNome(rs.getString("nome"));
+            objuser.setEmail(rs.getString("email"));
+            
+        } catch (Exception e) {
+
+            //
+            
+        } finally {
+            
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
  
 }

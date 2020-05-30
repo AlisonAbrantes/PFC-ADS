@@ -32,7 +32,7 @@
             <a href="manterProdutos.html"> <li class="btn-manter"> Manter produtos</li></a>
             <a href="avaliacoes.html"> <li class="btn-avl">Avaliações</li></a>
             <a href="consultar_mensagens.html"> <li class="btn-msg">Consultar mensagens</li></a>
-            <a href="#"><li class="btn-logout"> Sair</li></a>
+            <a href="#"><li class="btn-logout"> Sair</li></a> 
 >>>>>>> master:build/web/Admin/manterProdutos.jsp
         </ul>
     </nav>
@@ -51,27 +51,27 @@
                             <option value="pc"> Desktop</option>
                             <option value="pc"> Notebook</option>
                         </select>
-                        <select name="placamae" class="field-form">
+                        <select name="cmbplacamae" class="field-form">
                             <option> Selecione a Placa Mãe</option>
                             <option value="pl2"> placa mae 2</option>
                         </select>
-                        <select name="processador" class="field-form">
+                        <select name="cmbprocessador" class="field-form">
                             <option> Selecione o processador</option>
                             <option value="i5"> I3</option>
                         </select>
-                        <select name="memoriaram" class="field-form">
+                        <select name="cmbmemoriaram" class="field-form">
                             <option> Selecione a memória RAM</option>
                             <option value="ddr3"> x</option>
                         </select>
-                        <select name="placaVideo" class="field-form">
+                        <select name="cmbplacaVideo" class="field-form">
                             <option value="0"> Selecione a Placa de Video</option>
                             <option value="pl2"> placa GTX</option>
                         </select>
-                        <select name="memoria" class="field-form">
+                        <select name="cmbmemoria" class="field-form">
                             <option> Selecione a memória</option>
                             <option value="hd"> HD</option>
                         </select>
-                        <select name="fonte" class="field-form">
+                        <select name="cmbfonte" class="field-form">
                             <option> Selecione a fonte</option>
                             <option value="a"> a</option>
                         </select>

@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package dao.PlacaMae;
+
+import java.util.ArrayList;
+import modelo.PlacaMae;
 
 /**
  *
- * @author vinicius
+ * @author Alison
  */
-public class HD extends Componente{
-
-    public HD() {
-    }
-
-    public HD(int id, String descricao, Peso peso) {
-        super(id, descricao, peso);
-    }
+public interface IPlacaMae {
     
+     public ArrayList<PlacaMae> listar(PlacaMae objcat);
 }

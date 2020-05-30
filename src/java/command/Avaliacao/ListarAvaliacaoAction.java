@@ -26,8 +26,8 @@ public class ListarAvaliacaoAction implements ICommand{
 
         Avaliacao avaliacao = new Avaliacao();
 
-        avaliacao.setOpiniao("");
         avaliacao.setSugestao("");
+        avaliacao.setNivel_satisfacao("");
        // avaliacao.setUsuario("");
         
         AvaliacaoDao avaliacaoDao = new AvaliacaoDao();

@@ -5,6 +5,7 @@
  */
 package dao.Avaliacao;
 
+import dao.Usuario.UsuarioDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Avaliacao;
+import modelo.Usuario;
 import util.ConectaBanco;
 
 /**
@@ -21,8 +23,8 @@ import util.ConectaBanco;
  */
 public class AvaliacaoDao implements IAvaliacaoDao{
     
-    private static final String SELECT_ALL = "SELECT * FROM avaliacao where descricao ilike ?;"; // Listar
-    private static final String INSERT = "INSERT INTO avaliacao(descricao) values(?);"; // Cadastrar
+    private static final String SELECT_ALL = "SELECT * FROM avaliacao a,cliente c where c.id = a.cliente "; // Listar
+    private static final String INSERT = "INSERT INTO avaliacao(sugestao, nivel_satisfacao,cliente) values(?,?,?);"; // Cadastrar
     private static final String BUSCAR = "SELECT * FROM avaliacao WHERE id=?;"; // Buscar
     
     private Object pstmt;
@@ -34,30 +36,27 @@ public class AvaliacaoDao implements IAvaliacaoDao{
         ArrayList<Avaliacao> listaAvaliacoes = new ArrayList<Avaliacao>();
 
         try {
-
-            //Conexao
             conexao = ConectaBanco.getConexao();
-            //cria comando SQL
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
             
+            pstmt.setString(1,avaliacao.getSugestao());
+            pstmt.setInt(2, avaliacao.getNivel_satisfacao());
+            pstmt.setInt(3, avaliacao.getUsuario().getId());
             
-            pstmt.setString(1, "%" + avaliacao.getOpiniao() + "%");
-            pstmt.setString(2, "%" + avaliacao.getSugestao() + "%");
-            pstmt.setString(3, "%" + avaliacao.getUsuario() + "%");
-            
-            //executa
             ResultSet rs = pstmt.executeQuery();
-            
-            
 
             while (rs.next()) {
                 //a cada loop
                 Avaliacao novaAvaliacao = new Avaliacao();
                 novaAvaliacao.setId(rs.getInt("id"));
-                novaAvaliacao.setOpiniao(rs.getString("opiniao"));
                 novaAvaliacao.setSugestao(rs.getString("sugestao"));
-                novaAvaliacao.setUsuario(rs.getUsuario("usuario"));
-
+                
+                Usuario objuser = new Usuario();
+                objuser.setId(rs.getInt("usuario"));
+                UsuarioDao objdao = new UsuarioDao();
+                objdao.buscar(objuser);
+                
+                novaAvaliacao.setUsuario(objuser);
                 //add na lista
                 listaAvaliacoes.add(novaAvaliacao);
             }
@@ -74,7 +73,6 @@ public class AvaliacaoDao implements IAvaliacaoDao{
             } catch (SQLException ex) {
                 Logger.getLogger(AvaliacaoDao.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
         }
     }
 
@@ -93,9 +91,9 @@ public class AvaliacaoDao implements IAvaliacaoDao{
             // como a query ira retornar somente um registro, faremos o NEXT
             rs.next();
 
-            avaliacao.setOpiniao(rs.getString("opiniao"));
             avaliacao.setSugestao(rs.getString("sugestao"));
-            avaliacao.setUsuario(rs.getUsuario("usuario"));
+            avaliacao.setNivel_satisfacao(rs.getInt("nivel_satisfacao"));
+            
             
         } catch (Exception e) {
 
@@ -120,7 +118,9 @@ public class AvaliacaoDao implements IAvaliacaoDao{
 
             PreparedStatement pstmt = conexao.prepareStatement(INSERT);
 
-            pstmt.setString(1, avaliacao.getOpiniao());
+            pstmt.setString(1, avaliacao.getSugestao());
+            pstmt.setInt(2, avaliacao.getNivel_satisfacao());
+            pstmt.setInt(3, avaliacao.getUsuario().getId());
 
             pstmt.execute();
             
