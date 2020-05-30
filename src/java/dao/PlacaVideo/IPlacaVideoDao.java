@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.PlacaMae;
+package dao.PlacaVideo;
 
 import java.util.ArrayList;
 import modelo.Componente;
-import modelo.PlacaMae;
+import modelo.PlacaVideo;
 
 /**
  *
- * @author Alison
+ * @author vinicius
  */
-public interface IPlacaMae {
+public interface IPlacaVideoDao {
     
-     public ArrayList<PlacaMae> listar(PlacaMae objcat);
-     public void buscar(Componente objPlaca);
+    public ArrayList<PlacaVideo> listar(PlacaVideo objcat);
+    public void buscar(Componente objVideo);
 }

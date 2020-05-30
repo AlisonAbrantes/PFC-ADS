@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.PlacaMae;
+package dao.MemoriaRam;
 
 import java.util.ArrayList;
 import modelo.Componente;
-import modelo.PlacaMae;
+import modelo.MemoriaRam;
 
 /**
  *
- * @author Alison
+ * @author vinicius
  */
-public interface IPlacaMae {
+public interface IMemoriaRamDao {
     
-     public ArrayList<PlacaMae> listar(PlacaMae objcat);
-     public void buscar(Componente objPlaca);
+    public ArrayList<MemoriaRam> listar(MemoriaRam objcat);
+    public void buscar(Componente objMemoria);
 }
