@@ -1,16 +1,34 @@
 * {
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
 }
-body {
-	background-color: white;
+@keyframes boxAnim {
+	to {
+		width: 94%;
+		height: 90vh;
+		padding: 20px;
+		box-sizing: border-box;
+		background-color: rgb(250, 253, 255);
+		position: relative;
+		display: block;
+		margin: 3% auto;
+		border-radius: 10px;
+		opacity: 1;
+	}
+}
+@keyframes modal-top-in {
+	to {
+		top: 5%;
+		opacity: 1;
+	}
 }
 nav {
 	position: absolute;
 	width: 20%;
 	height: 100%;
 	display: block;
-	background-image: linear-gradient(to bottom, rgb(7, 51, 107), rgb(8, 54, 153));
+	background-color: rgb(38, 64, 110);
 	color: white;
 }
 .titulo {
@@ -39,6 +57,9 @@ nav ul li {
 	margin: 5% auto;
 	cursor: pointer;
 }
+.active {
+	background-color: rgb(99, 121, 143);
+}
 nav ul a li:hover {
 	border: 1px solid white;
 }
@@ -49,4 +70,157 @@ nav ul a li .icon {
 	line-height: 60px;
 	margin-top: 3%;
 	margin-left: 4%;
+}
+
+.conteudo {
+	width: 80%;
+	height: 100vh;
+	display: block;
+	float: right;
+	background-color: rgb(55, 84, 134);
+}
+.geral {
+	width: 50%;
+	height: 90vh;
+	padding: 20px;
+	box-sizing: border-box;
+	background-color: white;
+	position: relative;
+	display: block;
+	margin: -50% auto;
+	border-radius: 30%;
+	opacity: 0.3;
+	animation: boxAnim 1.5s 0.1s forwards;
+}
+
+.pag-title {
+	color: rgb(55, 84, 134);
+	font-size: 50px;
+	text-align: center;
+	margin-bottom: 3%;
+}
+.modal {
+	width: 40%;
+	height: 500px;
+	overflow-y: scroll;
+	display: none;
+	padding: 30px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	background-color: white;
+	position: fixed;
+	top: -100%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1200;
+	opacity: 0;
+}
+.modal-header,
+.modal-body,
+.formulario-cadastro {
+	width: 100%;
+	display: table;
+	position: relative;
+}
+.formulario-cadastro {
+	margin-top: 10%;
+}
+.field-form {
+	display: block;
+	width: 80%;
+	height: 45px;
+	margin: 5% auto;
+	text-indent: 10px;
+}
+.cadastrar {
+	background-color: rgb(6, 76, 141);
+	color: white;
+	font-weight: 700;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+}
+/* PERFIL */
+#alterar-perfil {
+	overflow: hidden;
+}
+#alterar-perfil-senha {
+	height: 400px;
+	overflow: hidden;
+}
+.formulario {
+	width: 100%;
+	display: table;
+	position: relative;
+	margin-top: 3%;
+}
+.formulario label {
+	margin-bottom: 1%;
+	font-size: 19px;
+	display: inline-block;
+	font-weight: 600;
+}
+.field {
+	width: 50%;
+	height: 45px;
+	border: 1px solid darkgray;
+	color: rgb(5, 8, 8);
+	display: block;
+	background-color: rgb(255, 255, 255);
+	border-radius: 4px;
+	text-indent: 10px;
+	font-size: 17px;
+}
+.btn-alterar {
+	width: 50%;
+	height: 45px;
+	border: none;
+	border-radius: 4px;
+	margin-top: 2%;
+	cursor: pointer;
+	background-color: rgb(55, 84, 134);
+	color: white;
+}
+
+.overlay {
+	width: 100%;
+	height: 100vh;
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	background-color: rgba(59, 59, 59, 0.9);
+}
+
+.text-light {
+	color: rgb(129, 128, 128);
+}
+.mar-bot-2 {
+	margin-bottom: 2%;
+}
+.display-block {
+	display: block;
+}
+.display-none {
+	display: none;
+}
+.modal-top-in {
+	animation: modal-top-in 0.7s forwards cubic-bezier(0, 1.11, .6, .89);
+}
+.title-modal {
+	text-align: center;
+}
+.btn-cancelar {
+	width: 80%;
+	height: 45px;
+	border: none;
+	border-radius: 4px;
+	margin-top: 2%;
+	cursor: pointer;
+	background-color: brown;
+	color: white;
+	font-weight: 700;
+	font-size: 17px;
 }
