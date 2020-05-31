@@ -52,6 +52,6 @@
             </div>
         </section>
     </div>
-    <script src="../js/adm.js"></script>
+    <script src="JS/main.js" type="text/javascript"></script>
 </body>
 </html>

@@ -150,6 +150,6 @@
     </div>
     
     <script src="JS/main.js"></script>
-    <script src="JS/Alertas.js" type="text/javascript"></script>
+    
 </body>
 </html>
