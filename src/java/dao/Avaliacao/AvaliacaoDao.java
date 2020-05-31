@@ -23,7 +23,7 @@ import util.ConectaBanco;
  */
 public class AvaliacaoDao implements IAvaliacaoDao{
     
-    private static final String SELECT_ALL = "SELECT * FROM avaliacao a,cliente c where c.id = a.cliente "; // Listar
+    private static final String SELECT_ALL = "SELECT * FROM avaliacao where sugestao ilike ? "; // Listar
     private static final String INSERT = "INSERT INTO avaliacao(sugestao, nivel_satisfacao,cliente) values(?,?,?);"; // Cadastrar
     private static final String BUSCAR = "SELECT * FROM avaliacao WHERE id=?;"; // Buscar
     
@@ -39,9 +39,7 @@ public class AvaliacaoDao implements IAvaliacaoDao{
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
             
-            pstmt.setString(1,avaliacao.getSugestao());
-            pstmt.setInt(2, avaliacao.getNivel_satisfacao());
-            pstmt.setInt(3, avaliacao.getUsuario().getId());
+            pstmt.setString(1,"%" + avaliacao.getSugestao() + "%");
             
             ResultSet rs = pstmt.executeQuery();
 
@@ -50,9 +48,10 @@ public class AvaliacaoDao implements IAvaliacaoDao{
                 Avaliacao novaAvaliacao = new Avaliacao();
                 novaAvaliacao.setId(rs.getInt("id"));
                 novaAvaliacao.setSugestao(rs.getString("sugestao"));
+                novaAvaliacao.setNivel_satisfacao(rs.getInt("nivel_satisfacao"));
                 
                 Usuario objuser = new Usuario();
-                objuser.setId(rs.getInt("usuario"));
+                objuser.setId(rs.getInt("cliente"));
                 UsuarioDao objdao = new UsuarioDao();
                 objdao.buscar(objuser);
                 

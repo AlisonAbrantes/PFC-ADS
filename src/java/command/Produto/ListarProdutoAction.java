@@ -36,7 +36,7 @@ public class ListarProdutoAction implements ICommand {
 
         session.setAttribute("arrproduto", arr);
 
-        return "/Admin/ManterProduto.jsp";
+        return "manterProdutos.jsp";
 
     }
 

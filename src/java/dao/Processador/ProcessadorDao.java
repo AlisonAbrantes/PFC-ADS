@@ -21,8 +21,8 @@ import util.ConectaBanco;
  * @author vinicius
  */
 public class ProcessadorDao implements IProcessadorDao{
-    private static final String SELECT_ALL = "SELECT * FROM componente where tipocomponente = ?;";
-    private static final String BUSCAR = "SELECT descrição FROM componente WHERE id = ?;";
+    private static final String SELECT_ALL = "SELECT * FROM componente where descricao ilike ? and tipo = 2;";
+    private static final String BUSCAR = "SELECT descricao FROM componente WHERE id = ?;";
 
     private Object pstmt;
     private Connection conexao;
@@ -33,7 +33,7 @@ public class ProcessadorDao implements IProcessadorDao{
         try {
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            pstmt.setString(1, objprocessador.getDescricao());
+            pstmt.setString(1, "%" + objprocessador.getDescricao() + "%");
             
             ResultSet rs = pstmt.executeQuery();
 

@@ -6,6 +6,7 @@
 package dao.Produto;
 
 
+import dao.Comp.CompDao;
 import java.util.ArrayList;
 import modelo.Produto;
 
@@ -23,6 +24,6 @@ public interface IProdutodao {
 
     public boolean excluir(Produto produto);
     
-    public boolean cadastrar(Produto produto);
+    public boolean cadastrar(Produto produto, CompDao compDao);
 
 }

@@ -7,11 +7,13 @@ package command.Avaliacao;
 
 import command.ICommand;
 import dao.Avaliacao.AvaliacaoDao;
+import dao.Usuario.UsuarioDao;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import modelo.Avaliacao;
+import modelo.Usuario;
 
 /**
  *
@@ -25,20 +27,17 @@ public class ListarAvaliacaoAction implements ICommand{
         ArrayList<Avaliacao> arr = new ArrayList<Avaliacao>();
 
         Avaliacao avaliacao = new Avaliacao();
-
         avaliacao.setSugestao("");
-        avaliacao.setNivel_satisfacao("");
-       // avaliacao.setUsuario("");
         
         AvaliacaoDao avaliacaoDao = new AvaliacaoDao();
-
+        
         arr = avaliacaoDao.listar(avaliacao);
-
+        
         HttpSession session = request.getSession();
 
         session.setAttribute("arravaliacao", arr);
 
-        return "/cadastros/tipo/lista_tipo.jsp";
+        return "avaliacoes.jsp";
 
     }
     

@@ -22,8 +22,8 @@ import util.ConectaBanco;
  */
 public class ArmazenamentoDao {
     
-    private static final String SELECT_ALL = "SELECT * FROM componente where tipocomponente = ?;";
-    private static final String BUSCAR = "SELECT descrição FROM componente WHERE id = ?;";
+    private static final String SELECT_ALL = "SELECT * FROM componente where descricao ilike ? and tipo = 4;";
+    private static final String BUSCAR = "SELECT descricao FROM componente WHERE id = ?;";
 
     private Object pstmt;
     private Connection conexao;
@@ -34,7 +34,7 @@ public class ArmazenamentoDao {
         try {
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            pstmt.setString(1, objarmazenamento.getDescricao());
+            pstmt.setString(1, "%" + objarmazenamento.getDescricao() + "%");
             
             ResultSet rs = pstmt.executeQuery();
 
