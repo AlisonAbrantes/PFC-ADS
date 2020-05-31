@@ -29,7 +29,6 @@
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
             <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
             <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
-            <a href="consultar_log.jsp" class="btn-log"> <li>Consultar Log</li></a>
             <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
         </ul>
     </nav>

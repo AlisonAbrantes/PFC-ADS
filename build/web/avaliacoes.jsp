@@ -28,7 +28,6 @@
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
             <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
             <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
-            <a href="consultar_log.jsp" class="btn-log"> <li>Consultar Log</li></a>
             <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
         </ul>
     </nav>
@@ -36,8 +35,8 @@
     <input type="hidden" name="acao" id="acao" value="Listar">
     <div class="conteudo">
         <section class="geral msg-avaliacao-tela">
+            <input type="submit" value="Listar" id="btnbuscar" name="btnbuscar"> 
             <h1  class="pag-title"> Avaliações</h1>
-               <input type="submit" value="Listar" id="btnbuscar" name="btnbuscar"> 
                 <c:forEach var="avaliacao" items="${arravaliacao}">
             <div class="row">
                 <div class="box-msg-avaliacao">
@@ -47,18 +46,18 @@
                         <p class="text-19 top-3"> Avaliação: ${avaliacao.nivel_satisfacao}</p>
                     </div>      
                     <div class="col-sm-12 col-md-7 offset-md-5 box-msg-avaliacao-body">
-                        <h3> Avaliação</h3>
+                        <h3> FeedBack</h3>
                         <span> ${avaliacao.sugestao}</span>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-12  box-msg-avaliacao-bot">
-                            <button class="excluir-avl"> Excluir</button>
+                            
                         </div>
 
                     </div>
                 </div>
-                    </c:forEach>
             </div>
+                    </c:forEach>
         </section>
     </div>
     </form> 

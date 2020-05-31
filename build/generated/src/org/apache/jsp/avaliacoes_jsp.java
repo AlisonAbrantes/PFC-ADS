@@ -89,8 +89,8 @@ public final class avaliacoes_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <input type=\"hidden\" name=\"acao\" id=\"acao\" value=\"Listar\">\r\n");
       out.write("    <div class=\"conteudo\">\r\n");
       out.write("        <section class=\"geral msg-avaliacao-tela\">\r\n");
+      out.write("            <input type=\"submit\" value=\"Listar\" id=\"btnbuscar\" name=\"btnbuscar\"> \r\n");
       out.write("            <h1  class=\"pag-title\"> Avaliações</h1>\r\n");
-      out.write("               <input type=\"submit\" value=\"Listar\" id=\"btnbuscar\" name=\"btnbuscar\"> \r\n");
       out.write("                ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
@@ -133,7 +133,6 @@ public final class avaliacoes_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\r\n");
           out.write("            <div class=\"row\">\r\n");
           out.write("                <div class=\"box-msg-avaliacao\">\r\n");
-          out.write("                   \r\n");
           out.write("                    <div class=\"col-sm-12 col-md-4 box-msg-avaliacao-header\">\r\n");
           out.write("                        <p class=\"text-19\"> User:");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${avaliacao.usuario.nome}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -146,7 +145,7 @@ public final class avaliacoes_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("</p>\r\n");
           out.write("                    </div>      \r\n");
           out.write("                    <div class=\"col-sm-12 col-md-7 offset-md-5 box-msg-avaliacao-body\">\r\n");
-          out.write("                        <h3> Avaliação</h3>\r\n");
+          out.write("                        <h3> FeedBack</h3>\r\n");
           out.write("                        <span> ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${avaliacao.sugestao}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</span>\r\n");
