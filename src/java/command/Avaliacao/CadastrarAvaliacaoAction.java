@@ -38,6 +38,5 @@ public class CadastrarAvaliacaoAction implements ICommand{
             return "página cadastro";
 
         }
-
     }
 }

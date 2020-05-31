@@ -19,31 +19,11 @@
     <nav>
         <a href="pag_adm.html"> <h1 class="titulo"> COINS</h1> </a>
         <ul>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:web/perfil.jsp
-=======
->>>>>>> adf7b72d294ca91316b33b16d4d41ca5ad3f603a
-=======
->>>>>>> adf7b72d294ca91316b33b16d4d41ca5ad3f603a
             <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
             <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
             <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
             <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-            <a href="perfil.html"><li class="btn-perfil">Perfil</li></a>
-            <a href="manterProdutos.html"> <li class="btn-manter"> Manter produtos</li></a>
-            <a href="avaliacoes.html"> <li class="btn-avl">Avaliações</li></a>
-            <a href="consultar_mensagens.html"> <li class="btn-msg">Consultar mensagens</li></a>
-            <a href="#"><li class="btn-logout"> Sair</li></a>
->>>>>>> master:web/Admin/perfil.jsp
-=======
->>>>>>> adf7b72d294ca91316b33b16d4d41ca5ad3f603a
-=======
->>>>>>> adf7b72d294ca91316b33b16d4d41ca5ad3f603a
         </ul>
     </nav>
     <div class="modal" id="alterar-perfil">
