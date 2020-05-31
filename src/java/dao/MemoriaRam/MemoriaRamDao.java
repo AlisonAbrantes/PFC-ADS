@@ -22,8 +22,8 @@ import util.ConectaBanco;
  */
 public class MemoriaRamDao {
         
-    private static final String SELECT_ALL = "SELECT * FROM componente where tipocomponente = ?;";
-    private static final String BUSCAR = "SELECT descrição FROM componente WHERE id = ?;";
+    private static final String SELECT_ALL = "SELECT * FROM componente where descricao ilike ? and tipo = 3;";
+    private static final String BUSCAR = "SELECT descricao FROM componente WHERE id = ?;";
 
     private Object pstmt;
     private Connection conexao;
@@ -34,7 +34,7 @@ public class MemoriaRamDao {
         try {
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            pstmt.setString(1, objmemoria.getDescricao());
+            pstmt.setString(1, "%" + objmemoria.getDescricao() + "%");
             
             ResultSet rs = pstmt.executeQuery();
 

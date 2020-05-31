@@ -14,36 +14,37 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Componente;
 import modelo.PlacaMae;
-
+import modelo.TipoComponente;
 /**
  *
  * @author Alison
  */
 public class PlacaMaeDao implements IPlacaMae{
     
-    private static final String SELECT_ALL = "SELECT * FROM componente where tipocomponente = ?;";
-    private static final String BUSCAR = "SELECT descrição FROM componente WHERE id = ?;";
+    private static final String SELECT_ALL = "SELECT * FROM componente where descricao ilike ? and tipo = 1;";
+    private static final String BUSCAR = "SELECT descricao FROM componente WHERE id = ?;";
 
     private Object pstmt;
     private Connection conexao;
 
-    public ArrayList<PlacaMae> listar(PlacaMae objplaca) {
+    public ArrayList<PlacaMae> listar(PlacaMae objPlaca) {
         ArrayList<PlacaMae> listaPlacaMae = new ArrayList<PlacaMae>();
 
         try {
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            pstmt.setString(1, objplaca.getDescricao());
+            
+            pstmt.setString(1, "%" + objPlaca.getDescricao() + "%");
             
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                PlacaMae objPlaca = new PlacaMae();
-                objPlaca.setId(rs.getInt("id"));
-                objPlaca.setDescricao(rs.getString("descricao"));
+                PlacaMae objplaca = new PlacaMae();
+                objplaca.setId(rs.getInt("id"));
+                objplaca.setDescricao(rs.getString("descricao"));
                 
                 //Retorna uma lista de Placas Mae
-                listaPlacaMae.add(objPlaca);
+                listaPlacaMae.add(objplaca);
             }
             return listaPlacaMae;
 

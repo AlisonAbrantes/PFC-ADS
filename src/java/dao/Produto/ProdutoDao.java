@@ -6,9 +6,14 @@
 package dao.Produto;
 
 
+import dao.Armazenamento.ArmazenamentoDao;
 import dao.PlacaMae.PlacaMaeDao;
 import dao.Categoria.CategoriaDao;
-import dao.componente.ComponenteDao;
+import dao.Comp.CompDao;
+import dao.Fonte.FonteDao;
+import dao.MemoriaRam.MemoriaRamDao;
+import dao.PlacaVideo.PlacaVideoDao;
+import dao.Processador.ProcessadorDao;
 import util.ConectaBanco;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -34,8 +39,8 @@ import modelo.Produto;
  */
 public class ProdutoDao implements IProdutodao {
 
-    private static final String SELECT_ALL = "SELECT * FROM produto where descricao ilike ?;";
-    private static final String INSERT = "INSERT INTO produto(descricao,categoria,componente) values(?,?,?);";
+    private static final String SELECT_ALL = "SELECT * FROM produto where descricao ilike ? ;";
+    private static final String INSERT = "INSERT INTO produto(descricao,categoria) values(?,?);";
     private static final String BUSCAR = "SELECT * FROM produto WHERE id=?;";
     private static final String UPDATE = "UPDATE produto set descricao=? WHERE id=?";
 
@@ -50,7 +55,7 @@ public class ProdutoDao implements IProdutodao {
         try {
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            pstmt.setString(1, produto.getDescricao());
+            pstmt.setString(1, "%" + produto.getDescricao() + "%");
             
             ResultSet rs = pstmt.executeQuery();
 
@@ -67,47 +72,41 @@ public class ProdutoDao implements IProdutodao {
                 //Agregação
                 novoProduto.setCategoria(objcate);
                 
-                Componente objPlaca = new PlacaMae();
+                PlacaMae objPlaca = new PlacaMae();
                 objPlaca.setId(rs.getInt("id"));
-                PlacaMaeDao daoPlaca = new PlacaMaeDao();
-                daoPlaca.buscar(objPlaca);
+                CompDao Daocomp = new CompDao();
+                Daocomp.buscar(objPlaca);
                 
-                Componente objProcessador = new Processador();
+                Processador objProcessador = new Processador();
                 objProcessador.setId(rs.getInt("id"));
-                ProcessadorDao daoProcesador = new ProcessadorDao();
-                daoProcesador.buscar(objProcessador);
+                Daocomp.buscar(objProcessador);
                 
-                Componente objRam = new MemoriaRam();
+                MemoriaRam objRam = new MemoriaRam();
                 objRam.setId(rs.getInt("id"));
-                RamDao daoRam = new RamDao();
-                daoRam.buscar(objRam);
+                Daocomp.buscar(objRam);
                 
-                Componente objArmazenamento = new Armazenamento();
+                Armazenamento objArmazenamento = new Armazenamento();
                 objArmazenamento.setId(rs.getInt("id"));
-                ArmazenaDao daoArmazena = new ArmazenaDao();
-                daoArmazena.buscar(objArmazenamento);
+                Daocomp.buscar(objArmazenamento);
                 
-                Componente objVideo = new PlacaVideo();
+                PlacaVideo objVideo = new PlacaVideo();
                 objVideo.setId(rs.getInt("id"));
-                VideoDao daoVideo= new VideoDao();
-                daoVideo.buscar(objVideo);
+                Daocomp.buscar(objVideo);
                 
-                Componente objFonte = new Fonte();
+                Fonte objFonte = new Fonte();
                 objFonte.setId(rs.getInt("id"));
-                FonteDao daoFonte= new FonteDao();
-                daoFonte.buscar(objFonte);
+                Daocomp.buscar(objFonte);           
                 
                 ArrayList<Componente> arrcomp = new ArrayList();
-                
-                arrcomp.add(1, objPlaca);
-                arrcomp.add(2, objProcessador);
-                arrcomp.add(3, objRam);
-                arrcomp.add(4, objArmazenamento);
-                arrcomp.add(5, objVideo);
-                arrcomp.add(6, objFonte);
+                arrcomp.add(0, objPlaca);
+                arrcomp.add(1,objProcessador);
+                arrcomp.add(2,objRam);
+                arrcomp.add(3,objArmazenamento);
+                arrcomp.add(4,objVideo);
+                arrcomp.add(5,objFonte);
                 
                 novoProduto.setComponente(arrcomp);
-                //Agora produto esta completo de categoriapodemos adiciona-lo na Lista
+//                
                 listaProduto.add(novoProduto);
             }
             return listaProduto;
@@ -164,7 +163,7 @@ public class ProdutoDao implements IProdutodao {
     public boolean alterar(Produto produto) {
        
          try {
-
+ 
             conexao = ConectaBanco.getConexao();
 
             PreparedStatement pstmt = conexao.prepareStatement(UPDATE);
@@ -189,21 +188,18 @@ public class ProdutoDao implements IProdutodao {
         }
         
     }
-    @Override
-    public boolean cadastrar(Produto produto) {
+    public boolean cadastrar(Produto produto, CompDao compDao) {
 
         try {
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
-
             pstmt.setString(1, produto.getDescricao());
             pstmt.setInt(2, produto.getCategoria().getId());
             
             int ultimoid = pstmt.executeUpdate(); //assim vc pega o ultimo id
             //pegar o ultimo id gerado na tabela produto
             //depois chamar o metodo cadastrar componentes dentro de componente dao e passar o array de componentes
-            ComponenteDao compdao = new ComponenteDao();
-            compdao.cadastrar(produto.getComponente(),ultimoid);
+            compDao.cadastrar(produto.getComponente(),ultimoid);
             
             //aqui já vai estar cadastrado o produto e os componentes.
             return true;
@@ -225,6 +221,6 @@ public class ProdutoDao implements IProdutodao {
     public boolean excluir(Produto produto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 
 }

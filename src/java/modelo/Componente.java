@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author vinicius
@@ -63,6 +65,10 @@ public class Componente
         this.id=id;
         this.descricao=descricao;
         this.peso = peso;
+    }
+
+    public void cadastrar(ArrayList<Componente> componente, int ultimoid) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 

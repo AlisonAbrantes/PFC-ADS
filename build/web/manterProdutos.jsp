@@ -4,6 +4,11 @@
     Author     : Gabriel
 --%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modelo.Categoria" %>
+<%@page import="modelo.PlacaMae" %>
+<%@page import="modelo.Produto" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,22 +23,14 @@
 <body>
     <div class="overlay toggle-modal"> </div>
    <nav>
-        <a href="pag_adm.html"> <h1 class="titulo"> COINS</h1> </a>
+        <a href="Admin/pag_adm.jsp"> <h1 class="titulo"> COINS</h1> </a>
         <ul>
-<<<<<<< HEAD:web/manterProdutos.jsp
             <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
-           <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
-           <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
-           <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
-           <a href="consultar_log.jsp" class="btn-log"> <li>Consultar Log</li></a>
+            <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
+            <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
+            <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
+            <a href="consultar_log.jsp" class="btn-log"> <li>Consultar Log</li></a>
             <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
-=======
-            <a href="perfil.html"><li class="btn-perfil">Perfil</li></a>
-            <a href="manterProdutos.html"> <li class="btn-manter"> Manter produtos</li></a>
-            <a href="avaliacoes.html"> <li class="btn-avl">Avaliações</li></a>
-            <a href="consultar_mensagens.html"> <li class="btn-msg">Consultar mensagens</li></a>
-            <a href="#"><li class="btn-logout"> Sair</li></a> 
->>>>>>> master:build/web/Admin/manterProdutos.jsp
         </ul>
     </nav>
     <div class="modal" id="cadastro-produtos">
@@ -43,42 +40,55 @@
         <div class="modal-body">
             <div class="row">
                 <div class="col-sm-12">
-                    <form class="formulario-cadastro" action="#" method="=post">
+                    <form class="formulario-cadastro" action="<%= application.getContextPath()%>/ControleProduto" method="=POST">
+                      <input type="hidden" name="acao"  id="acao" value="Cadastrar"/>
                       <div class="col-sm-12 col-md-12">
-                        <input type="text" name="descricao" placeholder="Nome do produto" class="field-form">
+                        <input type="text" name="txtdescricao" placeholder="Nome do produto" class="field-form">
                         <select name="cmbcategoria" class="field-form">
-                            <option> Selecione a categoria</option>
-                            <option value="pc"> Desktop</option>
-                            <option value="pc"> Notebook</option>
+                        <option value="0"> Selecione a categoria</option>
+                        <c:forEach var="cat" items="${arrcategoria}">
+                           <option value="${cat.id}">${cat.descricao}</option>                      
+                       </c:forEach>
                         </select>
                         <select name="cmbplacamae" class="field-form">
-                            <option> Selecione a Placa Mãe</option>
-                            <option value="pl2"> placa mae 2</option>
+                            <option values="0"> Selecione uma Placa Mae</option>
+                         <c:forEach var="placa" items="${arrPlacas}">
+                           <option value="${placa.id}">${placa.descricao}</option>                      
+                       </c:forEach>
                         </select>
                         <select name="cmbprocessador" class="field-form">
-                            <option> Selecione o processador</option>
-                            <option value="i5"> I3</option>
+                           <option> Selecione o Processador</option>
+                        <c:forEach var="processador" items="${arrproc}">
+                           <option value="${processador.id}">${processador.descricao}</option>                      
+                        </c:forEach>
+                        </select>
+                        <select name="cmbplacavideo" class="field-form">
+                            <option value="0"> Selecione a Placa de Video</option>
+                        <c:forEach var="video" items="${arrVideo}">
+                           <option value="${video.id}">${video.descricao}</option>                      
+                        </c:forEach>>
                         </select>
                         <select name="cmbmemoriaram" class="field-form">
                             <option> Selecione a memória RAM</option>
-                            <option value="ddr3"> x</option>
-                        </select>
-                        <select name="cmbplacaVideo" class="field-form">
-                            <option value="0"> Selecione a Placa de Video</option>
-                            <option value="pl2"> placa GTX</option>
+                         <c:forEach var="ram" items="${arrRam}">
+                           <option value="${ram.id}">${ram.descricao}</option>                      
+                        </c:forEach>
                         </select>
                         <select name="cmbmemoria" class="field-form">
-                            <option> Selecione a memória</option>
-                            <option value="hd"> HD</option>
+                            <option value="0"> Selecione a memória</option>
+                        <c:forEach var="disco" items="${arrDisco}">
+                           <option value="${disco.id}">${disco.descricao}</option>                      
+                        </c:forEach>
                         </select>
                         <select name="cmbfonte" class="field-form">
-                            <option> Selecione a fonte</option>
-                            <option value="a"> a</option>
+                        <c:forEach var="fonte" items="${arrFonte}">
+                           <option values="0"> Selecione Um tipo de Fonte</option>
+                           <option value="${fonte.id}">${fonte.descricao}</option>                      
+                        </c:forEach>
                         </select>
-                        <input type="submit" name="salvar" value="Cadastrar" class="field-form cadastrar">
+                        <input type="submit" name="salvar" value="Cadastrar" id="btncadastrar" class="field-form cadastrar">
                         <button class="toggle-modal-cadastrar field-form btn-cancelar"> Cancelar</button>
                       </div>
-
                     </form>
                 </div>
             </div>
@@ -107,6 +117,19 @@
                             <th>Alterar</th>
                             <th>Excluir</th>
                         </tr>
+                        <c:forEach var="Produto" items="${arrproduto}">
+                        <tr>
+                            <td>${Produto.Id}</td>
+                            <td>${Produto.Descricao}</td>
+                            <td>${Produto.getCategoria().descricao}</td>
+                            <td>${Produto.Componente}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </c:forEach>
                     </table>
                 </div>
             </div>
@@ -126,6 +149,7 @@
         </section>
     </div>
     
-    <script src="../js/main.js"></script>
+    <script src="JS/main.js"></script>
+    <script src="JS/Alertas.js" type="text/javascript"></script>
 </body>
 </html>

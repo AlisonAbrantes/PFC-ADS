@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.componente;
+package dao.Comp;
 
 import java.util.ArrayList;
 import modelo.Componente;
@@ -12,6 +12,6 @@ import modelo.Componente;
  *
  * @author Alison
  */
-public interface IComponenteDao {
+public interface ICompDao {
     public boolean cadastrar(ArrayList<Componente> arrcomp,int idproduto);
 }

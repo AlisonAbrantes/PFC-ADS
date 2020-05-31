@@ -10,19 +10,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD:build/web/avaliacoes.jsp
+<<<<<<< HEAD:web/avaliacoes.jsp
     <link rel="stylesheet" type="text/css" href="CSS/adm.css">
 =======
     <link rel="stylesheet" type="text/css" href="../css/adm.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.min.css">
->>>>>>> master:build/web/Admin/avaliacoes.jsp
+>>>>>>> master:web/Admin/avaliacoes.jsp
     <title>Avaliações</title>
 </head>
 <body>
     <nav>
         <a href="pag_adm.html"> <h1 class="titulo"> COINS</h1> </a>
         <ul>
-<<<<<<< HEAD:build/web/avaliacoes.jsp
+<<<<<<< HEAD:web/avaliacoes.jsp
 
             <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
@@ -37,7 +37,7 @@
             <a href="avaliacoes.html"> <li class="btn-avl">Avaliações</li></a>
             <a href="consultar_mensagens.html"> <li class="btn-msg">Consultar mensagens</li></a>
             <a href="#"><li class="btn-logout"> Sair</li></a>
->>>>>>> master:build/web/Admin/avaliacoes.jsp
+>>>>>>> master:web/Admin/avaliacoes.jsp
         </ul>
     </nav>
     <div class="conteudo">

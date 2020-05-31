@@ -22,7 +22,7 @@ import util.ConectaBanco;
  */
 public class FonteDao implements IFonteDao{
     
-    private static final String SELECT_ALL = "SELECT * FROM componente where tipocomponente = ?;";
+    private static final String SELECT_ALL = "SELECT * FROM componente where descricao ilike ? and tipo = 5;";
     private static final String BUSCAR = "SELECT descrição FROM componente WHERE id = ?;";
 
     private Object pstmt;
@@ -34,7 +34,7 @@ public class FonteDao implements IFonteDao{
         try {
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            pstmt.setString(1, objfonte.getDescricao());
+            pstmt.setString(1, "%" + objfonte.getDescricao() + "%");
             
             ResultSet rs = pstmt.executeQuery();
 

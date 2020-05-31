@@ -20,7 +20,7 @@ import util.ConectaBanco;
  */
 public class CategoriaDao implements ICategoriaDao {
 
-    private static final String SELECT_ALL = "SELECT * FROM categoria;";
+    private static final String SELECT_ALL = "SELECT * FROM categoria  where descricao ilike ?;";
     private static final String BUSCAR = "SELECT * FROM categoria WHERE id=?;";
 
     private Object pstmt;
@@ -32,14 +32,12 @@ public class CategoriaDao implements ICategoriaDao {
 
         //cria uma array de obJ Categoria
         ArrayList<Categoria> listaCategoria = new ArrayList<>();
-
         try {
-
-            //Conexao
             conexao=ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            pstmt.setString(1,categoria.getDescricao());
             
+            pstmt.setString(1, "%" + categoria.getDescricao() + "%");
+
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
