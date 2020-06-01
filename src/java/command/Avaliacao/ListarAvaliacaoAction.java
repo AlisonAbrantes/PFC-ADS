@@ -7,13 +7,11 @@ package command.Avaliacao;
 
 import command.ICommand;
 import dao.Avaliacao.AvaliacaoDao;
-import dao.Usuario.UsuarioDao;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import modelo.Avaliacao;
-import modelo.Usuario;
 
 /**
  *

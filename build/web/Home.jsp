@@ -107,14 +107,14 @@
                         <span></span>
                     </div>
                     <div class="form-field" id="form-field-email">
-                        <input type="text" id="txtemail" name="txtemail"  placeholder="Email">
+                        <input type="text"  id="txtemail" name="txtemail"  placeholder="Email">
                         <span></span>  
                     </div>
                     <div class="form-field" id="form-field-senha">
                       <input type="password" id="txtsenha" name="txtsenha"  placeholder="senha">
                       <span></span>  
                   </div>
-                    <input type="submit" id="btncad" name="btncad" onclick="ValidarCampos()" class="btn btn-primary" value="Cadastrar"></input>
+                    <input type="submit" id="btncad" name="btncad" class="btn btn-primary" value="Cadastrar"></input>
                 </form>     
               </div>
             </div>
@@ -129,30 +129,27 @@
       <!-- Testando validação-->
 
       <script>
-        var isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          var nome = document.getElementById('nome');
-          var email = document.getElementById('email');
-          var senha = document.getElementById('senha');
-          var wrapperNome = document.getElementById('form-field-nome');
-          var wrapperEmail = document.getElementById('form-field-email');
-          var wrapperSenha = document.getElementById('form-field-senha');
+           var isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          var txtnome=document.getElementById('txtnome');
+          var txtemail=document.getElementById('txtemail');
+          var txtsenha=document.getElementById('txtsenha');
 
-          function ValidarCampos() {
-            var nomeStr = nome.value;
-            var emailStr = email.value;
-            if (nomeStr.length < 4) {
-              wrapperNome.querySelector('span').classList.add('erro');
-              wrapperNome.querySelector('span').innerText = 'Inválido';
-            }
-            if (isEmail.test(emailStr))  /* expressão regular para testar o que estiver digitado dentro do campo email  */
-                {
-                }
-                else
-                {
-                    wrapperEmail.querySelector('span').classList.add('erro');
-                    wrapperEmail.querySelector('span').innerText="Email contém caracteres inválidos";
-                }
-          }
+          var btnCad=document.querySelector('#btncad');
+          btnCad.addEventListener('click', function() {
+              var strNome=txtnome.value;
+              var strEmail=txtemail.value;
+              var strSenha=txtsenha.value;
+              if (strNome.length<3)
+              {
+                  window.alert (' Nome com tamanho inválido');
+              }
+              if (strSenha.length<7)
+              {
+                   window.alert (' Senha necessita ter quantidade superior à 6 caracteres');
+              }
+
+          
+          });
 
       </script>
 
@@ -175,23 +172,6 @@
                         
               </div>
               
-              <!-- Efeito javascript das letrinhas escritas (sim, antes de me xingar, isso irá ficar em outro arquivo :) -->
-              <!-- <script>
-
-                  function typeWriter(elemento){
-                    const textoarray=elemento.innerHTML.split('');
-                    elemento.innerHTML='';
-                    textoarray.forEach((letra, i)=>{
-                      setTimeout(function(){
-                          elemento.innerHTML+=letra;
-                      }, 45*i)
-                    });
-                  } 
-                  const titulo=document.querySelector('h2');
-                  typeWriter(titulo);
-                  typeWriter(document.querySelector('p'));
-
-              </script> !-->
               
               <div class="area_cadastro">
                 
@@ -280,27 +260,27 @@
            <button class="wpp"> <img src="imagens/wpp.png"> (11) 4002-8922</button>
         </div>
         <div class="formulario">
-          <form action="#" method="post">
-            <div>
-              <div class="lblform"><label> Nome: </label></div>
-              <input type="text" name="nome" placeholder="Seu nome">
-            </div>
-            <div>
-              <div class="lblform"><label> Email: </label></div>
-              <input type="text" name="email" placeholder="exemplo@gmail.com">
-            </div>
-            <div>
-              <div class="lblform"><label> Telefone: </label></div>
-              <input type="text" name="telefone" placeholder="00 0000 0000">
-            </div>
-            <div>
-              <div class="lblform"><label> Mensagem: </label></div>
-              <textarea></textarea>
-            </div>
-            <div>
-              <input class="btnenviar" type="submit" name="enviar" value="Enviar">
-            </div>
-           
+          <form action="<%= application.getContextPath()%>/ControleContato" method="POST"> 
+                <input type="hidden" name="acao" value="Cadastrar" id="acao">
+                <div>
+                  <div class="lblform"><label> Nome: </label></div>
+                  <input type="text" name="txtnome" id="txtnome" placeholder="Seu nome">
+                </div>
+                <div>
+                  <div class="lblform"><label> Email: </label></div>
+                  <input type="text" name="txtemail" id="txtemail" placeholder="exemplo@gmail.com">
+                </div>
+                <div>
+                  <div class="lblform"><label> Telefone: </label></div>
+                  <input type="text" name="txttelefone" id="txttelefone" placeholder="00 0000 0000">
+                </div>
+                <div>
+                  <div class="lblform"><label> Mensagem: </label></div>
+                  <textarea name="txtmensagem" id="txtmensagem"></textarea>
+                </div>
+                <div>
+                  <input class="btnenviar" type="submit" name="enviar" value="Enviar">
+                </div>
           </form>
         </div>
     </div>

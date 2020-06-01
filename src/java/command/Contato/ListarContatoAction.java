@@ -3,37 +3,39 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package command.Avaliacao;
+package command.Contato;
 
 import command.ICommand;
-import dao.Avaliacao.AvaliacaoDao;
+import dao.Contato.ContatoDao;
+import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import modelo.Avaliacao;
+import modelo.Contato;
 
 /**
  *
  * @author vinicius
  */
-public class BuscarAvaliacaoAction implements ICommand{
+    public class ListarContatoAction implements ICommand{
     
     @Override
     public String executar(HttpServletRequest request, HttpServletResponse response) throws Exception {
- 
-        Avaliacao avaliacao = new Avaliacao();
-       
-        AvaliacaoDao avaliacaodao = new AvaliacaoDao();
 
-        avaliacao.setId(Integer.parseInt(request.getParameter("id")));
+        ArrayList<Contato> arr = new ArrayList<Contato>();
+
+        Contato contato = new Contato();
+        contato.setEmail("");
         
-        avaliacaodao.buscar(avaliacao);
-
+        ContatoDao contatoDao = new ContatoDao();
+        
+        arr = contatoDao.listar(contato);
+        
         HttpSession session = request.getSession();
 
-        session.setAttribute("avaliacao", avaliacao);
-        
-        return "/cadastros/tipo/alterar_tipo.jsp";
-           
-    }
+        session.setAttribute("arrcontato", arr);
+
+        return "consultar_mensagens.jsp";
+
+        }
 }

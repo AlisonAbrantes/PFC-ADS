@@ -9,6 +9,7 @@
 <%@page import="modelo.Categoria" %>
 <%@page import="modelo.PlacaMae" %>
 <%@page import="modelo.Produto" %>
+<%@page import="modelo.Componente" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -29,7 +30,6 @@
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
             <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
             <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
-            <a href="consultar_log.jsp" class="btn-log"> <li>Consultar Log</li></a>
             <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
         </ul>
     </nav>
@@ -119,10 +119,10 @@
                         </tr>
                         <c:forEach var="Produto" items="${arrproduto}">
                         <tr>
-                            <td>${Produto.Id}</td>
-                            <td>${Produto.Descricao}</td>
-                            <td>${Produto.getCategoria().descricao}</td>
-                            <td>${Produto.Componente}</td>
+                            <td>${Produto.id}</td>
+                            <td>${Produto.descricao}</td>
+                            <td>${Produto.categoria.descricao}</td>
+                            <td>${Produto}</td>
                             <td></td>
                             <td></td>
                             <td></td>

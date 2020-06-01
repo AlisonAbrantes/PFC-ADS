@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modelo.Administrador" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,32 +22,11 @@
     <nav>
         <a href="pag_adm.html"> <h1 class="titulo"> COINS</h1> </a>
         <ul>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:web/perfil.jsp
-=======
->>>>>>> adf7b72d294ca91316b33b16d4d41ca5ad3f603a
-=======
->>>>>>> adf7b72d294ca91316b33b16d4d41ca5ad3f603a
             <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
             <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
             <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
-            <a href="consultar_log.jsp" class="btn-log"> <li>Consultar Log</li></a>
             <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-            <a href="perfil.html"><li class="btn-perfil">Perfil</li></a>
-            <a href="manterProdutos.html"> <li class="btn-manter"> Manter produtos</li></a>
-            <a href="avaliacoes.html"> <li class="btn-avl">Avaliações</li></a>
-            <a href="consultar_mensagens.html"> <li class="btn-msg">Consultar mensagens</li></a>
-            <a href="#"><li class="btn-logout"> Sair</li></a>
->>>>>>> master:web/Admin/perfil.jsp
-=======
->>>>>>> adf7b72d294ca91316b33b16d4d41ca5ad3f603a
-=======
->>>>>>> adf7b72d294ca91316b33b16d4d41ca5ad3f603a
         </ul>
     </nav>
     <div class="modal" id="alterar-perfil">
@@ -92,13 +74,14 @@
                 <div class="row">
                     <div class="col-sm-12">
                      <form class="formulario">
+                          
                          <div class="row">
                              <div class="col-sm-12 offset-sm-3 col-md-12 offset-md-3 mar-bot-2">
-                                 <label for="nome" class="text-light lbl-form"> Nome</label>
+                                 <label for="nome" class="text-light lbl-form"> ${user.nome}</label>
                                  <input type="nome" name="nome" id="email" class="field" value="admin">
                              </div>
                              <div class="col-sm-12 offset-sm-3 col-md-12 offset-md-3 mar-bot-2">
-                                 <label for="email" class="text-light lbl-form"> Email</label>
+                                 <label for="email" class="text-light lbl-form"> ${user.email}</label>
                                  <input type="email" name="email" id="email" class="field" value="admin@outlook.com">
                              </div>
                          </div>
@@ -111,6 +94,7 @@
                     </div>
                     </div>
                 </div>
+                       
             </section>
      </div>
     <script src="../js/main.js"></script>

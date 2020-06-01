@@ -2,6 +2,9 @@ var btnToggleCad = document.querySelectorAll('.toggle-modal-cadastrar');
 var btnToggleList = document.querySelectorAll('.toggle-modal-listar');
 var btnAlterarInfo = document.querySelectorAll('.toggle-modal-alterarInfo');
 var btnAlterarSenha = document.querySelectorAll('.toggle-modal-alterarSenha');
+var btnExcluir= document.querySelectorAll('.excluir-toggle');
+
+
 for (var i = 0; i < btnToggleCad.length; i++) {
 	btnToggleCad[i].addEventListener('click', function() {
 		var modal_cadastro = document.querySelector('#cadastro-produtos');
@@ -38,5 +41,14 @@ for (i4 = 0; i4 < btnAlterarSenha.length; i4++) {
 		overlay.classList.toggle('display-block');
 		modal_senha.classList.toggle('display-block');
 		modal_senha.classList.toggle('modal-top-in');
+	});
+}
+for (var i5 = 0; i5 < btnExcluir.length; i5++) {
+	btnExcluir[i5].addEventListener('click', function() {
+		var modal_excluir = document.querySelector('#excluir-contato');
+		var overlay = document.querySelector('.overlay');
+		overlay.classList.toggle('display-block');
+		modal_excluir.classList.toggle('display-block');
+		modal_excluir.classList.toggle('modal-top-in');
 	});
 }
