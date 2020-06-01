@@ -10,8 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/pagina_usuario.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/pagina_usuario.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap-grid.min.css">
     <title>Document</title>
 </head>
 <body>

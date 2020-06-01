@@ -7,13 +7,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="modelo.Contato" %>
+<%@page import="modelo.Usuario" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/pagina_usuario.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.min.css">
+    <link href="../CSS/pagina_usuario.css" rel="stylesheet" type="text/css"/>
+    <link href="../Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
     <title>Document</title>
 </head>
 <body>
@@ -27,6 +28,11 @@
             <a href="#"><li><img class="icon" src="../imagens/logout_icon.png"> Sair</li></a>
         </ul>
     </nav>
+     <%  
+        Usuario objUser = new Usuario();
+        objUser= (Usuario)request.getSession().getAttribute("user");
+    
+    %>
     <div class="modal" id="alterar-perfil">
         <div class="modal-header">
             <h1 class="title-modal"> Alterar informações</h1>
@@ -75,11 +81,11 @@
                          <div class="row">
                              <div class="col-sm-12 offset-sm-3 col-md-12 offset-md-3 mar-bot-2">
                                  <label for="nome" class="text-light lbl-form"> Nome</label>
-                                 <input type="nome" name="nome" id="email" class="field" value="admin">
+                                 <input type="nome" name="nome" readonly="true" id="email" class="field" value="<%= objUser.getNome()%>"/>
                              </div>
                              <div class="col-sm-12 offset-sm-3 col-md-12 offset-md-3 mar-bot-2">
                                  <label for="email" class="text-light lbl-form"> Email</label>
-                                 <input type="email" name="email" id="email" class="field" value="admin@outlook.com">
+                                 <input type="email" name="email" readonly="true"  id="email" class="field" value="<%= objUser.getEmail()%>"/>
                              </div>
                          </div>
                      </form>
@@ -93,5 +99,6 @@
                 </div>
             </section>
      </div>
+        <script src="../JS/main.js" type="text/javascript"></script>
 </body>
 </html>

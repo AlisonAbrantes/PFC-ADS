@@ -312,15 +312,15 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <input type=\"hidden\" name=\"acao\" value=\"Cadastrar\" id=\"acao\">\r\n");
       out.write("                <div>\r\n");
       out.write("                  <div class=\"lblform\"><label> Nome: </label></div>\r\n");
-      out.write("                  <input type=\"text\" name=\"txtnome\" placeholder=\"Seu nome\">\r\n");
+      out.write("                  <input type=\"text\" name=\"txtnome\" id=\"txtnome\" placeholder=\"Seu nome\">\r\n");
       out.write("                </div>\r\n");
       out.write("                <div>\r\n");
       out.write("                  <div class=\"lblform\"><label> Email: </label></div>\r\n");
-      out.write("                  <input type=\"text\" name=\"txtemail\" placeholder=\"exemplo@gmail.com\">\r\n");
+      out.write("                  <input type=\"text\" name=\"txtemail\" id=\"txtemail\" placeholder=\"exemplo@gmail.com\">\r\n");
       out.write("                </div>\r\n");
       out.write("                <div>\r\n");
       out.write("                  <div class=\"lblform\"><label> Telefone: </label></div>\r\n");
-      out.write("                  <input type=\"text\" name=\"txttelefone\" placeholder=\"00 0000 0000\">\r\n");
+      out.write("                  <input type=\"text\" name=\"txttelefone\" id=\"txttelefone\" placeholder=\"00 0000 0000\">\r\n");
       out.write("                </div>\r\n");
       out.write("                <div>\r\n");
       out.write("                  <div class=\"lblform\"><label> Mensagem: </label></div>\r\n");
