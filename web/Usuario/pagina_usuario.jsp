@@ -10,18 +10,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/pagina_usuario.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/pagina_usuario.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap-grid.min.css">
+    <title>Pagina Usuario</title>
 </head>
 <body>
     <div class="overlay toggle-modal"> </div>
     <nav>
         <h1 class="titulo"> COINS</h1>
         <ul>
-            <a href="pagina_usuario.html"><li class="active"><img class="icon" src="../imagens/perfil_icon.png"> Perfil</li></a>
+            <a href="pagina_usuario.jsp"><li class="active"><img class="icon" src="../imagens/perfil_icon.png"> Perfil</li></a>
            <a href="#"> <li><img class="icon" src="../imagens/questionario_icon.png"> Iniciar questionario</li></a>
-           <a href="usuario_produtos.html"> <li><img class="icon" src="../imagens/lista_icon.png">Produtos salvos</li></a>
+           <a href="usuario_produtos.jsp"> <li><img class="icon" src="../imagens/lista_icon.png">Produtos salvos</li></a>
             <a href="#"><li><img class="icon" src="../imagens/logout_icon.png"> Sair</li></a>
         </ul>
     </nav>
