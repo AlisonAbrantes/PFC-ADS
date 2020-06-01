@@ -14,7 +14,7 @@
 		position: relative;
 		display: block;
 		margin: 3% auto;
-		border-radius: 0;
+		border-radius: 4px;
 		opacity: 1;
 	}
 }
@@ -109,7 +109,6 @@ nav ul a li:hover {
 	position: relative;
 	display: block;
 	margin: -50% auto;
-	border-radius: 30%;
 	opacity: 0.3;
 	animation: boxAnim 1.5s 0.1s forwards;
 }
@@ -359,4 +358,9 @@ nav ul a li:hover {
 	color: white;
 	font-weight: 700;
 	font-size: 17px;
+}
+/* MODAL DE EXCLUIR PRODUTO */
+#excluir-contato{
+    	width: 30%;
+        height:90px;
 }

@@ -175,23 +175,6 @@
                         
               </div>
               
-              <!-- Efeito javascript das letrinhas escritas (sim, antes de me xingar, isso irá ficar em outro arquivo :) -->
-              <!-- <script>
-
-                  function typeWriter(elemento){
-                    const textoarray=elemento.innerHTML.split('');
-                    elemento.innerHTML='';
-                    textoarray.forEach((letra, i)=>{
-                      setTimeout(function(){
-                          elemento.innerHTML+=letra;
-                      }, 45*i)
-                    });
-                  } 
-                  const titulo=document.querySelector('h2');
-                  typeWriter(titulo);
-                  typeWriter(document.querySelector('p'));
-
-              </script> !-->
               
               <div class="area_cadastro">
                 
@@ -280,27 +263,27 @@
            <button class="wpp"> <img src="imagens/wpp.png"> (11) 4002-8922</button>
         </div>
         <div class="formulario">
-          <form action="#" method="post">
-            <div>
-              <div class="lblform"><label> Nome: </label></div>
-              <input type="text" name="nome" placeholder="Seu nome">
-            </div>
-            <div>
-              <div class="lblform"><label> Email: </label></div>
-              <input type="text" name="email" placeholder="exemplo@gmail.com">
-            </div>
-            <div>
-              <div class="lblform"><label> Telefone: </label></div>
-              <input type="text" name="telefone" placeholder="00 0000 0000">
-            </div>
-            <div>
-              <div class="lblform"><label> Mensagem: </label></div>
-              <textarea></textarea>
-            </div>
-            <div>
-              <input class="btnenviar" type="submit" name="enviar" value="Enviar">
-            </div>
-           
+          <form action="<%= application.getContextPath()%>/ControleContato" method="POST"> 
+                <input type="hidden" name="acao" value="Cadastrar" id="acao">
+                <div>
+                  <div class="lblform"><label> Nome: </label></div>
+                  <input type="text" name="txtnome" id="txtnome" placeholder="Seu nome">
+                </div>
+                <div>
+                  <div class="lblform"><label> Email: </label></div>
+                  <input type="text" name="txtemail" id="txtemail" placeholder="exemplo@gmail.com">
+                </div>
+                <div>
+                  <div class="lblform"><label> Telefone: </label></div>
+                  <input type="text" name="txttelefone" id="txttelefone" placeholder="00 0000 0000">
+                </div>
+                <div>
+                  <div class="lblform"><label> Mensagem: </label></div>
+                  <textarea name="txtmensagem" id="txtmensagem"></textarea>
+                </div>
+                <div>
+                  <input class="btnenviar" type="submit" name="enviar" value="Enviar">
+                </div>
           </form>
         </div>
     </div>

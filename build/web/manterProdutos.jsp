@@ -9,6 +9,7 @@
 <%@page import="modelo.Categoria" %>
 <%@page import="modelo.PlacaMae" %>
 <%@page import="modelo.Produto" %>
+<%@page import="modelo.Componente" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -118,10 +119,10 @@
                         </tr>
                         <c:forEach var="Produto" items="${arrproduto}">
                         <tr>
-                            <td>${Produto.Id}</td>
-                            <td>${Produto.Descricao}</td>
-                            <td>${Produto.getCategoria().descricao}</td>
-                            <td>${Produto.Componente}</td>
+                            <td>${Produto.id}</td>
+                            <td>${Produto.descricao}</td>
+                            <td>${Produto.categoria.descricao}</td>
+                            <td>${Produto}</td>
                             <td></td>
                             <td></td>
                             <td></td>

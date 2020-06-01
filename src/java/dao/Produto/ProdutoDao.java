@@ -39,7 +39,8 @@ import modelo.Produto;
  */
 public class ProdutoDao implements IProdutodao {
 
-    private static final String SELECT_ALL = "SELECT * FROM produto where descricao ilike ? ;";
+    private static final String SELECT = "SELECT * FROM produto where descricao ilike?"; 
+    private static final String SELECT_ALL = "SELECT * from produto inner join produto_componente on (produto.id = produto_componente.produto) where produto.id = ?";
     private static final String INSERT = "INSERT INTO produto(descricao,categoria) values(?,?);";
     private static final String BUSCAR = "SELECT * FROM produto WHERE id=?;";
     private static final String UPDATE = "UPDATE produto set descricao=? WHERE id=?";
@@ -55,7 +56,7 @@ public class ProdutoDao implements IProdutodao {
         try {
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            pstmt.setString(1, "%" + produto.getDescricao() + "%");
+            pstmt.setInt(1, produto.getId());
             
             ResultSet rs = pstmt.executeQuery();
 
@@ -74,28 +75,24 @@ public class ProdutoDao implements IProdutodao {
                 
                 PlacaMae objPlaca = new PlacaMae();
                 objPlaca.setId(rs.getInt("id"));
-                CompDao Daocomp = new CompDao();
-                Daocomp.buscar(objPlaca);
+                
+                PlacaMaeDao placaDao = new PlacaMaeDao();
+                placaDao.buscar(objPlaca);
                 
                 Processador objProcessador = new Processador();
                 objProcessador.setId(rs.getInt("id"));
-                Daocomp.buscar(objProcessador);
                 
                 MemoriaRam objRam = new MemoriaRam();
                 objRam.setId(rs.getInt("id"));
-                Daocomp.buscar(objRam);
                 
                 Armazenamento objArmazenamento = new Armazenamento();
                 objArmazenamento.setId(rs.getInt("id"));
-                Daocomp.buscar(objArmazenamento);
                 
                 PlacaVideo objVideo = new PlacaVideo();
                 objVideo.setId(rs.getInt("id"));
-                Daocomp.buscar(objVideo);
                 
                 Fonte objFonte = new Fonte();
                 objFonte.setId(rs.getInt("id"));
-                Daocomp.buscar(objFonte);           
                 
                 ArrayList<Componente> arrcomp = new ArrayList();
                 arrcomp.add(0, objPlaca);
@@ -192,14 +189,21 @@ public class ProdutoDao implements IProdutodao {
 
         try {
             conexao = ConectaBanco.getConexao();
+            
+            long key = -1;
+
             PreparedStatement pstmt = conexao.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, produto.getDescricao());
             pstmt.setInt(2, produto.getCategoria().getId());
             
-            int ultimoid = pstmt.executeUpdate(); //assim vc pega o ultimo id
+            pstmt.executeUpdate(); //assim vc pega o ultimo id
+            ResultSet rs = pstmt.getGeneratedKeys();
             //pegar o ultimo id gerado na tabela produto
             //depois chamar o metodo cadastrar componentes dentro de componente dao e passar o array de componentes
-            compDao.cadastrar(produto.getComponente(),ultimoid);
+            if (rs.next()) {
+                key = rs.getLong(1);
+            }
+            compDao.cadastrar(produto.getComponente(),key);
             
             //aqui já vai estar cadastrado o produto e os componentes.
             return true;

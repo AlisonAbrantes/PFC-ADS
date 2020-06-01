@@ -22,9 +22,10 @@ import util.ConectaBanco;
  */
 public class ContatoDao implements IContatoDao{
         
-    private static final String SELECT_ALL = "SELECT * FROM contato where mensagem ilike ? "; // Listar
-    private static final String INSERT = "INSERT INTO contato(nome, email, telefone, mensagem) values(?,?,?);"; // Cadastrar
+    private static final String SELECT_ALL = "SELECT * FROM contato where email ilike ? "; // Listar
+    private static final String INSERT = "INSERT INTO contato(nome, email, telefone, mensagem) values(?,?,?, ?);"; // Cadastrar
     private static final String BUSCAR = "SELECT * FROM contato WHERE id=?;"; // Buscar
+    private static final String DELETE = "DELETE FROM contato where id=?";//Deletar
     
     private Object pstmt;
     private Connection conexao;
@@ -38,7 +39,7 @@ public class ContatoDao implements IContatoDao{
             conexao = ConectaBanco.getConexao();
             PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
             
-            pstmt.setString(1,"%" + contato.getMensagem() + "%");
+            pstmt.setString(1,"%" + contato.getEmail()+ "%");
             
             ResultSet rs = pstmt.executeQuery();
 
@@ -71,24 +72,24 @@ public class ContatoDao implements IContatoDao{
     }
     
     @Override
-    public void buscar(Contato contato) {
+    public void buscar(Contato objContato) {
             try {
             //Conexao
             conexao = ConectaBanco.getConexao();
             //cria comando SQL
             PreparedStatement pstmt = conexao.prepareStatement(BUSCAR);
 
-            pstmt.setInt(1, contato.getId());
+            pstmt.setInt(1, objContato.getId());
             //executa
             ResultSet rs = pstmt.executeQuery();
 
             // como a query ira retornar somente um registro, faremos o NEXT
             rs.next();
 
-            contato.setNome(rs.getString("nome"));
-            contato.setEmail(rs.getString("email"));
-            contato.setTelefone(rs.getString("telefone"));
-            contato.setMensagem(rs.getString("mensagem"));
+            objContato.setNome(rs.getString("nome"));
+            objContato.setEmail(rs.getString("email"));
+            objContato.setTelefone(rs.getString("telefone"));
+            objContato.setMensagem(rs.getString("mensagem"));
             
         } catch (Exception e) {
 
@@ -135,5 +136,35 @@ public class ContatoDao implements IContatoDao{
             }
             
         }
+    }
+    
+    public boolean excluir(Contato objContato) {
+       
+         try {
+
+            conexao = ConectaBanco.getConexao();
+
+            PreparedStatement pstmt = conexao.prepareStatement(DELETE);
+
+            pstmt.setInt(1, objContato.getId());
+
+            pstmt.execute();
+
+            return true;
+
+        } catch (Exception ex) {
+
+            return false;
+
+        } finally {
+
+             try {
+                 conexao.close();
+             } catch (SQLException ex) {
+                 Logger.getLogger(ContatoDao.class.getName()).log(Level.SEVERE, null, ex);
+             }
+        }
+        
+        
     }
 }

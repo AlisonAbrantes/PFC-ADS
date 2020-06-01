@@ -26,7 +26,7 @@ public class ListarProdutoAction implements ICommand {
 
         Produto produto = new Produto();
 
-        produto.setDescricao("");
+        produto.setId(1);
         
         ProdutoDao produtoDao = new ProdutoDao();
 

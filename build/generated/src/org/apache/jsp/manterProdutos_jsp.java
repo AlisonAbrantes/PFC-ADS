@@ -6,6 +6,7 @@ import javax.servlet.jsp.*;
 import java.util.ArrayList;
 import modelo.Categoria;
 import modelo.PlacaMae;
+import modelo.Produto;
 
 public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -61,6 +62,7 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"pt-br\">\r\n");
       out.write("<head>\r\n");
@@ -80,7 +82,6 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("            <a href=\"manterProdutos.jsp\" class=\"btn-prod\"> <li> Manter produtos</li></a>\r\n");
       out.write("            <a href=\"avaliacoes.jsp\" class=\"btn-avl\"> <li>Avaliações</li></a>\r\n");
       out.write("            <a href=\"consultar_mensagens.jsp\" class=\"btn-msg\"> <li>Consultar mensagens</li></a>\r\n");
-      out.write("            <a href=\"consultar_log.jsp\" class=\"btn-log\"> <li>Consultar Log</li></a>\r\n");
       out.write("            <a href=\"Admin.jsp\" class=\"btn-logout\"><li> Sair</li></a>\r\n");
       out.write("        </ul>\r\n");
       out.write("    </nav>\r\n");
@@ -96,7 +97,7 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("/ControleProduto\" method=\"=POST\">\r\n");
       out.write("                      <input type=\"hidden\" name=\"acao\"  id=\"acao\" value=\"Cadastrar\"/>\r\n");
       out.write("                      <div class=\"col-sm-12 col-md-12\">\r\n");
-      out.write("                        <input type=\"text\" name=\"descricao\" placeholder=\"Nome do produto\" class=\"field-form\">\r\n");
+      out.write("                        <input type=\"text\" name=\"txtdescricao\" placeholder=\"Nome do produto\" class=\"field-form\">\r\n");
       out.write("                        <select name=\"cmbcategoria\" class=\"field-form\">\r\n");
       out.write("                        <option value=\"0\"> Selecione a categoria</option>\r\n");
       out.write("                        ");
@@ -112,25 +113,25 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("                        </select>\r\n");
       out.write("                        <select name=\"cmbprocessador\" class=\"field-form\">\r\n");
-      out.write("                           <option> Selecione o processador</option>\r\n");
+      out.write("                           <option> Selecione o Processador</option>\r\n");
       out.write("                        ");
       if (_jspx_meth_c_forEach_2(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("                        </select>\r\n");
+      out.write("                        <select name=\"cmbplacavideo\" class=\"field-form\">\r\n");
+      out.write("                            <option value=\"0\"> Selecione a Placa de Video</option>\r\n");
+      out.write("                        ");
+      if (_jspx_meth_c_forEach_3(_jspx_page_context))
+        return;
+      out.write(">\r\n");
+      out.write("                        </select>\r\n");
       out.write("                        <select name=\"cmbmemoriaram\" class=\"field-form\">\r\n");
       out.write("                            <option> Selecione a memória RAM</option>\r\n");
       out.write("                         ");
-      if (_jspx_meth_c_forEach_3(_jspx_page_context))
-        return;
-      out.write("\r\n");
-      out.write("                        </select>\r\n");
-      out.write("                        <select name=\"cmbplacaVideo\" class=\"field-form\">\r\n");
-      out.write("                            <option value=\"0\"> Selecione a Placa de Video</option>\r\n");
-      out.write("                        ");
       if (_jspx_meth_c_forEach_4(_jspx_page_context))
         return;
-      out.write(">\r\n");
+      out.write("\r\n");
       out.write("                        </select>\r\n");
       out.write("                        <select name=\"cmbmemoria\" class=\"field-form\">\r\n");
       out.write("                            <option value=\"0\"> Selecione a memória</option>\r\n");
@@ -145,7 +146,7 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
         return;
       out.write("\r\n");
       out.write("                        </select>\r\n");
-      out.write("                        <input type=\"submit\" name=\"salvar\" value=\"Cadastrar\" class=\"field-form cadastrar\">\r\n");
+      out.write("                        <input type=\"submit\" name=\"salvar\" value=\"Cadastrar\" id=\"btncadastrar\" class=\"field-form cadastrar\">\r\n");
       out.write("                        <button class=\"toggle-modal-cadastrar field-form btn-cancelar\"> Cancelar</button>\r\n");
       out.write("                      </div>\r\n");
       out.write("                    </form>\r\n");
@@ -176,6 +177,10 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                            <th>Alterar</th>\r\n");
       out.write("                            <th>Excluir</th>\r\n");
       out.write("                        </tr>\r\n");
+      out.write("                        ");
+      if (_jspx_meth_c_forEach_7(_jspx_page_context))
+        return;
+      out.write("\r\n");
       out.write("                    </table>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
@@ -304,8 +309,8 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_2 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_2.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_2.setParent(null);
-    _jspx_th_c_forEach_2.setVar("prsador");
-    _jspx_th_c_forEach_2.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${arrpcd}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_2.setVar("processador");
+    _jspx_th_c_forEach_2.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${arrproc}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int[] _jspx_push_body_count_c_forEach_2 = new int[] { 0 };
     try {
       int _jspx_eval_c_forEach_2 = _jspx_th_c_forEach_2.doStartTag();
@@ -313,10 +318,10 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
         do {
           out.write("\r\n");
           out.write("                           <option value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${prsador.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${processador.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write('"');
           out.write('>');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${prsador.descricao}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${processador.descricao}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</option>                      \r\n");
           out.write("                        ");
           int evalDoAfterBody = _jspx_th_c_forEach_2.doAfterBody();
@@ -346,8 +351,8 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_3 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_3.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_3.setParent(null);
-    _jspx_th_c_forEach_3.setVar("ram");
-    _jspx_th_c_forEach_3.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${arrRam}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_3.setVar("video");
+    _jspx_th_c_forEach_3.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${arrVideo}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int[] _jspx_push_body_count_c_forEach_3 = new int[] { 0 };
     try {
       int _jspx_eval_c_forEach_3 = _jspx_th_c_forEach_3.doStartTag();
@@ -355,10 +360,10 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
         do {
           out.write("\r\n");
           out.write("                           <option value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${ram.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${video.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write('"');
           out.write('>');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${ram.descricao}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${video.descricao}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</option>                      \r\n");
           out.write("                        ");
           int evalDoAfterBody = _jspx_th_c_forEach_3.doAfterBody();
@@ -388,20 +393,19 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_4 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_4.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_4.setParent(null);
-    _jspx_th_c_forEach_4.setVar("video");
-    _jspx_th_c_forEach_4.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${arrVideo}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_4.setVar("ram");
+    _jspx_th_c_forEach_4.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${arrRam}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int[] _jspx_push_body_count_c_forEach_4 = new int[] { 0 };
     try {
       int _jspx_eval_c_forEach_4 = _jspx_th_c_forEach_4.doStartTag();
       if (_jspx_eval_c_forEach_4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("                           <option values=\"0\"> Selecione a Placa de Video</option>\r\n");
           out.write("                           <option value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${video.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${ram.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write('"');
           out.write('>');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${video.descricao}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${ram.descricao}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</option>                      \r\n");
           out.write("                        ");
           int evalDoAfterBody = _jspx_th_c_forEach_4.doAfterBody();
@@ -504,6 +508,61 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
     } finally {
       _jspx_th_c_forEach_6.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_6);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_forEach_7(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_7 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_7.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_7.setParent(null);
+    _jspx_th_c_forEach_7.setVar("Produto");
+    _jspx_th_c_forEach_7.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${arrproduto}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int[] _jspx_push_body_count_c_forEach_7 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_forEach_7 = _jspx_th_c_forEach_7.doStartTag();
+      if (_jspx_eval_c_forEach_7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("                        <tr>\r\n");
+          out.write("                            <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Produto.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\r\n");
+          out.write("                            <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Produto.descricao}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\r\n");
+          out.write("                            <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Produto.categoria.descricao}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\r\n");
+          out.write("                            <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Produto.componente}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\r\n");
+          out.write("                            <td></td>\r\n");
+          out.write("                            <td></td>\r\n");
+          out.write("                            <td></td>\r\n");
+          out.write("                            <td></td>\r\n");
+          out.write("                            <td></td>\r\n");
+          out.write("                        </tr>\r\n");
+          out.write("                        ");
+          int evalDoAfterBody = _jspx_th_c_forEach_7.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_forEach_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_forEach_7[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_forEach_7.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_forEach_7.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_7);
     }
     return false;
   }

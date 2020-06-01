@@ -13,5 +13,5 @@ import modelo.Componente;
  * @author Alison
  */
 public interface ICompDao {
-    public boolean cadastrar(ArrayList<Componente> arrcomp,int idproduto);
+    public boolean cadastrar(ArrayList<Componente> arrcomp,long idproduto);
 }
