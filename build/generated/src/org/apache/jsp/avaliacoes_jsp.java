@@ -73,13 +73,12 @@ public final class avaliacoes_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<body >\r\n");
       out.write("    \r\n");
       out.write("    <nav>\r\n");
-      out.write("        <a href=\"pag_adm.jsp\"> <h1 class=\"titulo\"> COINS</h1> </a>\r\n");
+      out.write("         <h1 class=\"titulo\"> COINS</h1>\r\n");
       out.write("        <ul>\r\n");
       out.write("            <a href=\"perfil.jsp\" class=\"btn-perfil\"><li>Perfil</li></a>\r\n");
       out.write("            <a href=\"manterProdutos.jsp\" class=\"btn-prod\"> <li> Manter produtos</li></a>\r\n");
       out.write("            <a href=\"avaliacoes.jsp\" class=\"btn-avl\"> <li>Avaliações</li></a>\r\n");
       out.write("            <a href=\"consultar_mensagens.jsp\" class=\"btn-msg\"> <li>Consultar mensagens</li></a>\r\n");
-      out.write("            <a href=\"consultar_log.jsp\" class=\"btn-log\"> <li>Consultar Log</li></a>\r\n");
       out.write("            <a href=\"Admin.jsp\" class=\"btn-logout\"><li> Sair</li></a>\r\n");
       out.write("        </ul>\r\n");
       out.write("    </nav>\r\n");
@@ -95,7 +94,6 @@ public final class avaliacoes_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("            </div>\r\n");
       out.write("        </section>\r\n");
       out.write("    </div>\r\n");
       out.write("    </form> \r\n");
@@ -152,11 +150,12 @@ public final class avaliacoes_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                    </div>\r\n");
           out.write("                    <div class=\"row\">\r\n");
           out.write("                        <div class=\"col-sm-12 col-md-12  box-msg-avaliacao-bot\">\r\n");
-          out.write("                            <button class=\"excluir-avl\"> Excluir</button>\r\n");
+          out.write("                            \r\n");
           out.write("                        </div>\r\n");
           out.write("\r\n");
           out.write("                    </div>\r\n");
           out.write("                </div>\r\n");
+          out.write("            </div>\r\n");
           out.write("                    ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

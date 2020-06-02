@@ -11,6 +11,16 @@ package modelo;
  */
 public class Fonte extends Componente{
 
+    private String pontencia;
+
+    public String getPontencia() {
+        return pontencia;
+    }
+
+    public void setPontencia(String pontencia) {
+        this.pontencia = pontencia;
+    }
+    
     public Fonte() {
     }
 

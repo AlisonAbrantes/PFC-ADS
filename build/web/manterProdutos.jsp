@@ -36,6 +36,7 @@
     <div class="modal" id="cadastro-produtos">
         <div class="modal-header">
             <h1 class="title-modal"> Cadastrar produtos</h1>
+            <button class="close-modal toggle-modal-cadastrar"> X</button>
         </div>
         <div class="modal-body">
             <div class="row">
@@ -87,64 +88,37 @@
                         </c:forEach>
                         </select>
                         <input type="submit" name="salvar" value="Cadastrar" id="btncadastrar" class="field-form cadastrar">
-                        <button class="toggle-modal-cadastrar field-form btn-cancelar"> Cancelar</button>
                       </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="modal" id="lista-produtos">
-        <div class="modal-header">
-            <h1 class="title-modal"> Lista de produtos</h1>
-            <button class="close-modal toggle-modal-listar"> X</button>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-sm-12 col-md-12">
-                    <table border="1px" class="tabela-produtos">
-                        <tr>
-                            <th>#</th>
-                            <th>Descrição</th>
-                            <th>Categoria</th>
-                            <th>Placa mãe</th>
-                            <th>Processador</th>
-                            <th>Memória Ram</th>
-                            <th>Memória</th>
-                            <th>Fonte</th>
-                            <th>Placa de vídeo</th>
-                            <th>Alterar</th>
-                            <th>Excluir</th>
-                        </tr>
-                        <c:forEach var="Produto" items="${arrproduto}">
-                        <tr>
-                            <td>${Produto.id}</td>
-                            <td>${Produto.descricao}</td>
-                            <td>${Produto.categoria.descricao}</td>
-                            <td>${Produto}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        </c:forEach>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+     
     <div class="conteudo">
         <section class="geral">
             <h1 class="pag-title">Produtos</h1>
             <div class="row">
                 <div class="col-sm-12 col-md-12">
                     <button class="btn novo-prod toggle-modal-cadastrar"> Novo produto</button>
-                    <button class="btn list toggle-modal-listar"> Listar produtos</button>
                 </div>
+                <table border="1px" class="tabela-produtos">
+                        <tr>
+                            <th>#</th>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                        </tr>
+                        <c:forEach var="Produto" items="${arrproduto}">
+                        <tr>
+                            <td>${Produto.id}</td>
+                            <td>${Produto.descricao}</td>
+                            <td>${Produto.categoria.descricao}</td>
+                            <td>
+                                <a href="/ControleProduto?acao=Buscar&Id=${Produto.id}">Buscar</a>
+                            </td>
+                        </tr>
+                        </c:forEach>
+                    </table>
             </div>
         </section>
     </div>

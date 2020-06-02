@@ -13,6 +13,18 @@ public class TipoComponente {
     private int id;
     private String descricao;
 
+    public TipoComponente(int id) {
+         this.id = id;
+    }
+
+    public TipoComponente(int id, String descricao) {
+        this.id = id;
+        this.descricao = descricao;
+    }
+
+    public TipoComponente() {
+    }
+
     public int getId() {
         return id;
     }

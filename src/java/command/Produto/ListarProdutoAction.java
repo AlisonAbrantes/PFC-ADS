@@ -26,11 +26,11 @@ public class ListarProdutoAction implements ICommand {
 
         Produto produto = new Produto();
 
-        produto.setId(1);
+        produto.setDescricao("");
         
         ProdutoDao produtoDao = new ProdutoDao();
 
-        arr = produtoDao.listar(produto);
+        arr = produtoDao.Listar(produto);
 
         HttpSession session = request.getSession();
 

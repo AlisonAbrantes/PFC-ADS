@@ -50,8 +50,6 @@ public final class Admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <meta charset=\"UTF-8\">\r\n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
       out.write("    <link href=\"CSS/loginAdm.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
-      out.write("    <link href=\"Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
-      out.write("    <link href=\"Bootstrap/bootstrap-4.4.1-dist/css/bootstrap.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
       out.write("    <title>Login ADM</title>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");

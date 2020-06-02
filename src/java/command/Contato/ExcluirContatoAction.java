@@ -26,24 +26,13 @@ public class ExcluirContatoAction implements ICommand {
         ContatoDao daoContato = new ContatoDao();
         
         objContato.setId(Integer.parseInt(request.getParameter("id")));
+       
+        daoContato.excluir(objContato);
 
-        if (request.getParameter("confirmaexclusao") != null) {
-            if (Integer.parseInt(request.getParameter("confirmaexclusao")) == 2) {
-                daoContato.excluir(objContato);
-                return "/ControleContato?acao=Listar";
-            }
-            return "consultar_mensagem.jsp";
-            
-        } else {
+        HttpSession session = request.getSession();
 
-            daoContato.buscar(objContato);
+        session.setAttribute("objContato", objContato);
 
-            HttpSession session = request.getSession();
-
-            session.setAttribute("objContato", objContato);
-
-            return "Admin/pag_adm.jsp";
+        return "/ControleContato?acao=Listar";
         }
-    }
-
 }

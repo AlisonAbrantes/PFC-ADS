@@ -6,14 +6,8 @@
 package dao.Produto;
 
 
-import dao.Armazenamento.ArmazenamentoDao;
-import dao.PlacaMae.PlacaMaeDao;
 import dao.Categoria.CategoriaDao;
 import dao.Comp.CompDao;
-import dao.Fonte.FonteDao;
-import dao.MemoriaRam.MemoriaRamDao;
-import dao.PlacaVideo.PlacaVideoDao;
-import dao.Processador.ProcessadorDao;
 import util.ConectaBanco;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,12 +19,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Categoria;
 import modelo.Componente;
-import modelo.Fonte;
-import modelo.Armazenamento;
-import modelo.MemoriaRam;
-import modelo.PlacaMae;
-import modelo.PlacaVideo;
-import modelo.Processador;
 import modelo.Produto;
 
 /**
@@ -39,8 +27,8 @@ import modelo.Produto;
  */
 public class ProdutoDao implements IProdutodao {
 
-    private static final String SELECT = "SELECT * FROM produto where descricao ilike?"; 
-    private static final String SELECT_ALL = "SELECT * from produto inner join produto_componente on (produto.id = produto_componente.produto) where produto.id = ?";
+    private static final String SELECT = "SELECT * FROM produto where descricao ilike ?"; 
+    private static final String SELECT_ALL = "SELECT * from produto;";
     private static final String INSERT = "INSERT INTO produto(descricao,categoria) values(?,?);";
     private static final String BUSCAR = "SELECT * FROM produto WHERE id=?;";
     private static final String UPDATE = "UPDATE produto set descricao=? WHERE id=?";
@@ -48,18 +36,19 @@ public class ProdutoDao implements IProdutodao {
     private Object pstmt;
     private Connection conexao;
 
-    @Override
-    public ArrayList<Produto> listar(Produto produto) {
-        //cria uma array de obJ Produto
-        ArrayList<Produto> listaProduto = new ArrayList<Produto>();
-
-        try {
+    public ArrayList<Produto> Listar(Produto produto){ //trazer todos os produtos que tenham determinado nome
+        
+         ArrayList<Produto> listaProduto = new ArrayList<Produto>();
+         
+         try {
             conexao = ConectaBanco.getConexao();
-            PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
-            pstmt.setInt(1, produto.getId());
+            PreparedStatement pstmt = conexao.prepareStatement(SELECT);
+            pstmt.setString(1, "%" + produto.getDescricao() + "%");
+            
+            buscar(produto); //todos os atributos de produto foram preechidos
             
             ResultSet rs = pstmt.executeQuery();
-
+            
             while (rs.next()) {
                 Produto novoProduto = new Produto();
                 novoProduto.setId(rs.getInt("id"));
@@ -67,49 +56,47 @@ public class ProdutoDao implements IProdutodao {
                 
                 //Precisamos buscar as categorias 
                 Categoria objcate = new Categoria();
-                objcate.setId(rs.getInt("id"));
+                objcate.setId(rs.getInt("categoria"));
                 CategoriaDao catedao = new CategoriaDao();
                 catedao.buscar(objcate);
                 //Agregação
                 novoProduto.setCategoria(objcate);
-                
-                PlacaMae objPlaca = new PlacaMae();
-                objPlaca.setId(rs.getInt("id"));
-                
-                PlacaMaeDao placaDao = new PlacaMaeDao();
-                placaDao.buscar(objPlaca);
-                
-                Processador objProcessador = new Processador();
-                objProcessador.setId(rs.getInt("id"));
-                
-                MemoriaRam objRam = new MemoriaRam();
-                objRam.setId(rs.getInt("id"));
-                
-                Armazenamento objArmazenamento = new Armazenamento();
-                objArmazenamento.setId(rs.getInt("id"));
-                
-                PlacaVideo objVideo = new PlacaVideo();
-                objVideo.setId(rs.getInt("id"));
-                
-                Fonte objFonte = new Fonte();
-                objFonte.setId(rs.getInt("id"));
-                
-                ArrayList<Componente> arrcomp = new ArrayList();
-                arrcomp.add(0, objPlaca);
-                arrcomp.add(1,objProcessador);
-                arrcomp.add(2,objRam);
-                arrcomp.add(3,objArmazenamento);
-                arrcomp.add(4,objVideo);
-                arrcomp.add(5,objFonte);
-                
-                novoProduto.setComponente(arrcomp);
-//                
+                  
                 listaProduto.add(novoProduto);
             }
-            return listaProduto;
 
         } catch (Exception ex) {
-            return listaProduto;
+           
+            
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProdutoDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+         return listaProduto;
+    }
+    
+    public void BuscarCompleto(Produto produto) {
+
+        try {
+            conexao = ConectaBanco.getConexao();
+            //PreparedStatement pstmt = conexao.prepareStatement(SELECT_ALL);
+            //pstmt.setInt(1, produto.getId());
+            buscar(produto); //todos os atributos de produto foram preechidos
+            
+            //ResultSet rs = pstmt.executeQuery();
+
+            CompDao objcompdao = new CompDao();
+            ArrayList<Componente> arrcomponente = new ArrayList<Componente>();
+            
+            arrcomponente = objcompdao.ListarComponentes(produto);
+            produto.setComponente(arrcomponente);
+            
+        } catch (Exception ex) {
+           
             
         } finally {
             try {
@@ -220,11 +207,5 @@ public class ProdutoDao implements IProdutodao {
             
         }
     }
-
-    @Override
-    public boolean excluir(Produto produto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 
 }

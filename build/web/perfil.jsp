@@ -17,12 +17,12 @@
     <link href="Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
     <title>Perfil</title>
 </head> 
+<%  
+            Administrador objAdm = new Administrador();
+            objAdm = (Administrador)request.getSession().getAttribute("adm");
+         %> 
 <body>
-    <%  
-        Administrador objAdm = new Administrador();
-        objAdm = (Administrador)request.getSession().getAttribute("adm");
-    
-    %>
+
     <div class="overlay toggle-modal"> </div>
     <nav>
         <h1 class="titulo"> COINS</h1>
@@ -74,6 +74,7 @@
             </div>
         </div>
     </div>
+        
     <div class="conteudo">
             <section class="geral">
                 <h1 class="pag-title"> Perfil</h1>

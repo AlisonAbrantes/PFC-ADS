@@ -12,17 +12,17 @@ import modelo.Produto;
 
 /**
  *
- * @author profe
+ * @author Alison
  */
 public interface IProdutodao {
 
-    public ArrayList<Produto> listar(Produto produto);
-
-    public void buscar(Produto produto);
-
+    public ArrayList<Produto> Listar(Produto produto);
+    
+    public void BuscarCompleto(Produto produto);
+    
+     public void buscar(Produto produto);
+    
     public boolean alterar(Produto produto);
-
-    public boolean excluir(Produto produto);
     
     public boolean cadastrar(Produto produto, CompDao compDao);
 
