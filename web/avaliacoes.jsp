@@ -13,8 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="CSS/adm.css">
-    <link rel="stylesheet" type="text/css" href="../css/adm.css">
+    <link href="CSS/estilo_adm.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.min.css">
     <link href="Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
     <title>Avaliações</title>
@@ -22,7 +21,7 @@
 <body >
     
     <nav>
-        <a href="pag_adm.jsp"> <h1 class="titulo"> COINS</h1> </a>
+         <h1 class="titulo"> COINS</h1>
         <ul>
             <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>

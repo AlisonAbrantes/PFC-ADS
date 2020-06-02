@@ -14,7 +14,7 @@
 		position: relative;
 		display: block;
 		margin: 3% auto;
-		border-radius: 0;
+		border-radius: 4px;
 		opacity: 1;
 	}
 }
@@ -108,8 +108,7 @@ nav ul a li:hover {
 	background-color: rgb(33, 34, 33);
 	position: relative;
 	display: block;
-	margin: -50% auto;
-	border-radius: 30%;
+	margin: -100% auto;
 	opacity: 0.3;
 	animation: boxAnim 1.5s 0.1s forwards;
 }
@@ -257,14 +256,24 @@ nav ul a li:hover {
 }
 /* listar */
 #lista-produtos {
-	width: 75%;
+	width: 60%;
 	overflow-x: scroll;
 }
-.tabela-produtos {
-	background-color: rgb(206, 206, 193);
-	margin: 5% auto;
+.tabela-produtos{
+    margin-top: 5%;
+    font-size: 20px;
+    border-collapse: collapse;
+    border:2px solid black;
 }
-
+.tabela-produtos-componentes{
+    background-color: #D8D8D8;
+    color:black;
+    border-collapse: collapse;
+    border:2px solid #6E6E6E;
+}
+.coluna{
+    width:5%;
+}
 /* avaliacoes */
 .msg-avaliacao-tela {
 	overflow-y: scroll;
@@ -359,4 +368,9 @@ nav ul a li:hover {
 	color: white;
 	font-weight: 700;
 	font-size: 17px;
+}
+/* MODAL DE EXCLUIR PRODUTO */
+#excluir-contato{
+    	width: 30%;
+        height:90px;
 }

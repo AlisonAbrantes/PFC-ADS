@@ -15,7 +15,7 @@ import modelo.Contato;
  *
  * @author vinicius
  */
-public class CadastrarMensagemAction implements ICommand{
+public class CadastrarContatoAction implements ICommand{
     
     @Override
     public String executar(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -27,15 +27,15 @@ public class CadastrarMensagemAction implements ICommand{
             contato.setTelefone(request.getParameter("txttelefone"));
             contato.setMensagem(request.getParameter("txtmensagem"));
 
-            if (contato.getMensagem().length() == 0) {
-                return "página cadastro";
+            if (contato.getEmail().length() == 0 && contato.getMensagem().length() == 0) {
+                return "Home.jsp";
             } else {
 
                 ContatoDao contatodao = new ContatoDao();
 
                 contatodao.cadastrar(contato);
 
-                return "página sucesso";
+                return "Home.jsp";
             }
         } catch (Exception ex) {
             return "página cadastro";

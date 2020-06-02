@@ -36,7 +36,7 @@ public class CadastrarUsuarioAction implements ICommand{
             }
            
             // Esta condição é para validar se o usuario digitou email e senha
-           if(user.getNome().length()==0 && user.getEmail().length()==0)
+           if(user.getNome().length()<3 && user.getEmail().length()<5)
            {
                return "/Home.jsp";
            }

@@ -25,7 +25,8 @@ import util.Md5;
 public class AdminDao implements IAdminDao{
    private static final String LOGIN = "SELECT * FROM administrador WHERE email=? and senha=?;";
    private static final String INSERT = "INSERT INTO administrador (nome,email,senha) values(?,?,?);";
-   private static final String UPDATE = "UPDATE administrador set ?=? WHERE id=?";
+   private static final String UPDATE = "UPDATE administrador set nome=? , email=? , senha=? WHERE id=?";
+   private static final String UPDATESENHA = "UPDATE administrador set senha=? WHERE id=?";
 
     private Object pstmt;
     private Connection conexao;
@@ -42,6 +43,7 @@ public class AdminDao implements IAdminDao{
             rs.next();
 
             adm.setId(rs.getInt("id"));
+            adm.setNome(rs.getString("nome"));
             adm.setEmail(rs.getString("email"));
             adm.setSenha(rs.getString("senha"));
 
@@ -97,8 +99,34 @@ public class AdminDao implements IAdminDao{
 
             pstmt.setString(1, adm.getNome());
             pstmt.setString(2, adm.getEmail());
-            pstmt.setString(3, adm.getSenha());
-            pstmt.setInt(4, adm.getId());
+            pstmt.setInt(3, adm.getId());
+            
+            pstmt.execute();
+            return true;
+
+        } catch (Exception ex) {
+
+            return false;
+
+        } finally {
+
+             try {
+                 conexao.close();
+             } catch (SQLException ex) {
+                 Logger.getLogger(AdminDao.class.getName()).log(Level.SEVERE, null, ex);
+             }
+        }
+        
+    }
+     
+      public boolean alterarSenha(Administrador adm) {
+       
+         try {
+            conexao = ConectaBanco.getConexao();
+            PreparedStatement pstmt = conexao.prepareStatement(UPDATESENHA);
+
+            pstmt.setString(1, adm.getSenha());
+            pstmt.setInt(2, adm.getId());
             
             pstmt.execute();
             return true;

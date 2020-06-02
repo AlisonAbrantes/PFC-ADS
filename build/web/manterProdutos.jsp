@@ -9,21 +9,21 @@
 <%@page import="modelo.Categoria" %>
 <%@page import="modelo.PlacaMae" %>
 <%@page import="modelo.Produto" %>
+<%@page import="modelo.Componente" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="CSS/adm.css">
     <link href="Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
-
+    <link href="CSS/estilo_adm.css" rel="stylesheet" type="text/css"/>
     <title>Produtos</title>
 </head>
 <body>
     <div class="overlay toggle-modal"> </div>
    <nav>
-        <a href="Admin/pag_adm.jsp"> <h1 class="titulo"> COINS</h1> </a>
+        <h1 class="titulo"> COINS</h1>
         <ul>
             <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
@@ -104,37 +104,26 @@
                 <div class="col-sm-12 col-md-12">
                     <table border="1px" class="tabela-produtos">
                         <tr>
-                            <th>#</th>
-                            <th>Descrição</th>
-                            <th>Categoria</th>
-                            <th>Placa mãe</th>
-                            <th>Processador</th>
-                            <th>Memória Ram</th>
-                            <th>Memória</th>
-                            <th>Fonte</th>
-                            <th>Placa de vídeo</th>
-                            <th>Alterar</th>
-                            <th>Excluir</th>
+                            <th class="coluna">#</th>
+                            <th class="coluna">Descrição</th>
+                            <th class="coluna">Categoria</th>
+                            <th class="coluna"><a href="listar_produtos.jsp">Consultar </a></th>
                         </tr>
+                        <tr>                     
                         <c:forEach var="Produto" items="${arrproduto}">
-                        <tr>
-                            <td>${Produto.Id}</td>
-                            <td>${Produto.Descricao}</td>
-                            <td>${Produto.getCategoria().descricao}</td>
-                            <td>${Produto.Componente}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                            <td class="coluna">aaaaaa</td>
+                            <td class="coluna">aaaaaaaaaa</td>
+                            <td class="coluna">eeeeeeeeee</td>
+                            <td class="coluna"><a href="listar_produtos.jsp">Consultar </a></td>
                         </c:forEach>
+                        </tr>
                     </table>
                 </div>
             </div>
         </div>
 
     </div>
+ 
 
     <div class="conteudo">
         <section class="geral">

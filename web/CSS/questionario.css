@@ -1,0 +1,101 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+.principal {
+	width: 100%;
+	background-color: #01060e;
+	border: 30px solid rgb(5, 102, 167);
+	position: relative;
+}
+.full-height {
+	height: 100vh;
+}
+.btn-voltar {
+	position: absolute;
+	top: 5%;
+	left: 3%;
+	display: block;
+	cursor: pointer;
+}
+.btn-resposta {
+	width: 50%;
+	height: 80px;
+	background-color: rgb(21, 147, 206);
+	border: none;
+	display: block;
+	position: relative;
+	left: 0;
+	right: 0;
+	margin: 3% auto 0 auto;
+	font-size: 19px;
+        cursor:pointer;
+}
+.btn-resposta:hover {
+	background-color: rgb(14, 111, 156);
+	transform: scale(0.9);
+	transition: all 0.2s ease-in;
+}
+.btn-click{
+    	background-color: rgb(14, 111, 156);
+	transform: scale(0.9);
+}
+.btn-control {
+	width: 35%;
+	height: 60px;
+	border: none;
+	display: inline;
+	margin-top: 10%;
+        cursor:pointer;
+}
+.btn-control:hover {
+	transform: scale(0.9);
+	transition: all 0.2s ease-out;
+}
+
+@media screen and (min-width: 320px) {
+}
+
+@media screen and (min-width: 900px) {
+}
+
+/* utilitarias */
+.mar-top-15 {
+	margin-top: 15%;
+}
+.mar-bot-5 {
+	margin-bottom: 5%;
+}
+.text-white {
+	color: white;
+}
+.font-w-700 {
+	font-weight: 700;
+}
+.notebook {
+	background-image: url('../imagens/not.png');
+	background-repeat: no-repeat;
+	background-position: 20% center;
+}
+.pc {
+	background-image: url('../imagens/pc.png');
+	background-repeat: no-repeat;
+	background-position: 20% center;
+}
+.radius-4 {
+	border-radius: 4px;
+}
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.avancar {
+	background-color: seagreen;
+        display:none;
+}
+.cancelar {
+	background-color: rgb(150, 0, 0);
+}

@@ -17,8 +17,7 @@ import modelo.Contato;
  *
  * @author vinicius
  */
-public class ListarMensagemAction {
-    public class ListarAvaliacaoAction implements ICommand{
+    public class ListarContatoAction implements ICommand{
     
     @Override
     public String executar(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -26,7 +25,7 @@ public class ListarMensagemAction {
         ArrayList<Contato> arr = new ArrayList<Contato>();
 
         Contato contato = new Contato();
-        contato.setMensagem("");
+        contato.setEmail("");
         
         ContatoDao contatoDao = new ContatoDao();
         
@@ -34,10 +33,9 @@ public class ListarMensagemAction {
         
         HttpSession session = request.getSession();
 
-        session.setAttribute("arravaliacao", arr);
+        session.setAttribute("arrcontato", arr);
 
-        return "avaliacoes.jsp";
+        return "consultar_mensagens.jsp";
 
         }
-    }
 }

@@ -9,7 +9,6 @@ import dao.Admin.AdminDao;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Administrador;
-import util.Md5;
 
 /**
  *
@@ -22,8 +21,7 @@ public class AlterarAdminAction {
  
         adm.setNome(request.getParameter("txtnome"));
         adm.setEmail(request.getParameter("txtemail"));
-        adm.setSenha(Md5.senhamd5(request.getParameter("txtsenha")));
-
+       
         adm.setId(Integer.parseInt(request.getParameter("id")));
 
         AdminDao admdao = new AdminDao();
