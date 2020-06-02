@@ -16,15 +16,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="CSS/adm.css">
     <link href="Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
-
+    <link href="CSS/adm.css" rel="stylesheet" type="text/css"/>
     <title>Produtos</title>
 </head>
 <body>
     <div class="overlay toggle-modal"> </div>
    <nav>
-        <a href="Admin/pag_adm.jsp"> <h1 class="titulo"> COINS</h1> </a>
+        <h1 class="titulo"> COINS</h1>
         <ul>
             <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
@@ -102,40 +101,21 @@
         </div>
         <div class="modal-body">
             <div class="row">
-                <div class="col-sm-12 col-md-12">
-                    <table border="1px" class="tabela-produtos">
-                        <tr>
-                            <th>#</th>
-                            <th>Descrição</th>
-                            <th>Categoria</th>
-                            <th>Placa mãe</th>
-                            <th>Processador</th>
-                            <th>Memória Ram</th>
-                            <th>Memória</th>
-                            <th>Fonte</th>
-                            <th>Placa de vídeo</th>
-                            <th>Alterar</th>
-                            <th>Excluir</th>
-                        </tr>
+                <div class="col-sm-12 col-md-12 offset-md-5">
+                     <div class="myprod">
+                         <h1>aaaaaaaaaaaaaaaaaaa</h1>
+                     </div>
                         <c:forEach var="Produto" items="${arrproduto}">
-                        <tr>
                             <td>${Produto.id}</td>
                             <td>${Produto.descricao}</td>
                             <td>${Produto.categoria.descricao}</td>
-                            <td>${Produto}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
                         </c:forEach>
-                    </table>
                 </div>
             </div>
         </div>
 
     </div>
+ 
 
     <div class="conteudo">
         <section class="geral">

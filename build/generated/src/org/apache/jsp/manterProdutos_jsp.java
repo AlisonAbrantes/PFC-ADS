@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import modelo.Categoria;
 import modelo.PlacaMae;
 import modelo.Produto;
+import modelo.Componente;
 
 public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -63,6 +64,7 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"pt-br\">\r\n");
       out.write("<head>\r\n");
@@ -76,7 +78,7 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("<body>\r\n");
       out.write("    <div class=\"overlay toggle-modal\"> </div>\r\n");
       out.write("   <nav>\r\n");
-      out.write("        <a href=\"Admin/pag_adm.jsp\"> <h1 class=\"titulo\"> COINS</h1> </a>\r\n");
+      out.write("        <h1 class=\"titulo\"> COINS</h1>\r\n");
       out.write("        <ul>\r\n");
       out.write("            <a href=\"perfil.jsp\" class=\"btn-perfil\"><li>Perfil</li></a>\r\n");
       out.write("            <a href=\"manterProdutos.jsp\" class=\"btn-prod\"> <li> Manter produtos</li></a>\r\n");
@@ -162,31 +164,20 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("        </div>\r\n");
       out.write("        <div class=\"modal-body\">\r\n");
       out.write("            <div class=\"row\">\r\n");
-      out.write("                <div class=\"col-sm-12 col-md-12\">\r\n");
-      out.write("                    <table border=\"1px\" class=\"tabela-produtos\">\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                            <th>#</th>\r\n");
-      out.write("                            <th>Descrição</th>\r\n");
-      out.write("                            <th>Categoria</th>\r\n");
-      out.write("                            <th>Placa mãe</th>\r\n");
-      out.write("                            <th>Processador</th>\r\n");
-      out.write("                            <th>Memória Ram</th>\r\n");
-      out.write("                            <th>Memória</th>\r\n");
-      out.write("                            <th>Fonte</th>\r\n");
-      out.write("                            <th>Placa de vídeo</th>\r\n");
-      out.write("                            <th>Alterar</th>\r\n");
-      out.write("                            <th>Excluir</th>\r\n");
-      out.write("                        </tr>\r\n");
+      out.write("                <div class=\"col-sm-12 col-md-12 offset-md-5\">\r\n");
+      out.write("                     <div class=\"myprod\">\r\n");
+      out.write("                         <h1>aaaaaaaaaaaaaaaaaaa</h1>\r\n");
+      out.write("                     </div>\r\n");
       out.write("                        ");
       if (_jspx_meth_c_forEach_7(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("                    </table>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("    </div>\r\n");
+      out.write(" \r\n");
       out.write("\r\n");
       out.write("    <div class=\"conteudo\">\r\n");
       out.write("        <section class=\"geral\">\r\n");
@@ -528,7 +519,6 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       if (_jspx_eval_c_forEach_7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("                        <tr>\r\n");
           out.write("                            <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Produto.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
@@ -538,15 +528,6 @@ public final class manterProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
           out.write("                            <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Produto.categoria.descricao}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                            <td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${Produto.componente}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</td>\r\n");
-          out.write("                            <td></td>\r\n");
-          out.write("                            <td></td>\r\n");
-          out.write("                            <td></td>\r\n");
-          out.write("                            <td></td>\r\n");
-          out.write("                            <td></td>\r\n");
-          out.write("                        </tr>\r\n");
           out.write("                        ");
           int evalDoAfterBody = _jspx_th_c_forEach_7.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

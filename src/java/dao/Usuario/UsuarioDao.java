@@ -36,6 +36,7 @@ public class UsuarioDao implements IUsuarioDao{
             rs.next();
 
             usuario.setId(rs.getInt("id"));
+            usuario.setNome(rs.getString("nome"));
             usuario.setEmail(rs.getString("email"));
             usuario.setSenha(rs.getString("senha"));
 

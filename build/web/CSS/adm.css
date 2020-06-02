@@ -259,11 +259,6 @@ nav ul a li:hover {
 	width: 75%;
 	overflow-x: scroll;
 }
-.tabela-produtos {
-	background-color: rgb(206, 206, 193);
-	margin: 5% auto;
-}
-
 /* avaliacoes */
 .msg-avaliacao-tela {
 	overflow-y: scroll;

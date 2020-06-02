@@ -73,7 +73,7 @@ public final class consultar_005fmensagens_jsp extends org.apache.jasper.runtime
       out.write("<body>\r\n");
       out.write("    <div class=\"overlay toggle-modal\"> </div>\r\n");
       out.write("    <nav>\r\n");
-      out.write("        <a href=\"pag_adm.html\"> <h1 class=\"titulo\"> COINS</h1> </a>\r\n");
+      out.write("        <h1 class=\"titulo\"> COINS</h1>\r\n");
       out.write("        <ul>\r\n");
       out.write("            <a href=\"perfil.jsp\" class=\"btn-perfil\"><li>Perfil</li></a>\r\n");
       out.write("            <a href=\"manterProdutos.jsp\" class=\"btn-prod\"> <li> Manter produtos</li></a>\r\n");
@@ -82,28 +82,6 @@ public final class consultar_005fmensagens_jsp extends org.apache.jasper.runtime
       out.write("            <a href=\"Admin.jsp\" class=\"btn-logout\"><li> Sair</li></a>\r\n");
       out.write("        </ul>\r\n");
       out.write("    </nav>\r\n");
-      out.write("            <!-- MODAL DE EXCLUSAO !-->\r\n");
-      out.write("         <div class=\"modal\" id=\"excluir-contato\">\r\n");
-      out.write("        <div class=\"modal-header\">\r\n");
-      out.write("            <h1 class=\"title-modal\"> Exclusão</h1>\r\n");
-      out.write("            <button class=\"excluir-toggle close-modal\"> X</button>\r\n");
-      out.write("        </div>\r\n");
-      out.write("        <div class=\"modal-body\">\r\n");
-      out.write("            <div class=\"row\">\r\n");
-      out.write("                <form action=\"");
-      out.print( application.getContextPath());
-      out.write("/ControleContato\" method=\"POST\"> \r\n");
-      out.write("                <div class=\"col-sm-12 col-md-12\">\r\n");
-      out.write("                    ");
-      if (_jspx_meth_c_forEach_0(_jspx_page_context))
-        return;
-      out.write("\r\n");
-      out.write("                </div>\r\n");
-      out.write("                </form>\r\n");
-      out.write("            </div>\r\n");
-      out.write("        </div>\r\n");
-      out.write("\r\n");
-      out.write("    </div>\r\n");
       out.write("    <div class=\"conteudo\">\r\n");
       out.write("        <form action=\"");
       out.print( application.getContextPath());
@@ -113,7 +91,7 @@ public final class consultar_005fmensagens_jsp extends org.apache.jasper.runtime
       out.write("            <input type=\"hidden\" name=\"acao\" id=\"acao\" value=\"Listar\">\r\n");
       out.write("            <input type=\"submit\" value=\"Listar\" id=\"Listar\" name=\"btnbuscar\"> \r\n");
       out.write("             ");
-      if (_jspx_meth_c_forEach_1(_jspx_page_context))
+      if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("        </section>\r\n");
@@ -154,50 +132,6 @@ public final class consultar_005fmensagens_jsp extends org.apache.jasper.runtime
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("                    <table border=\"1px\" class=\"tabela-produtos\">\r\n");
-          out.write("                        <input type=\"hidden\" name=\"id\" id=\"id\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${contato.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\"/>\r\n");
-          out.write("                        <p>Deseja Excluir</p>\r\n");
-          out.write("                        <input type=\"hidden\" name=\"confirmaexclusao\" id=\"confirmaexclusao\" value=\"2\"/>\r\n");
-          out.write("                        <button class=\"excluir-avl\" name=\"acao\" id=\"acao\" value=\"Excluir\" type=\"submit\"> Excluir</button>\r\n");
-          out.write("                    </table>\r\n");
-          out.write("                    ");
-          int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_0.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_c_forEach_0.doFinally();
-      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_1.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_1.setParent(null);
-    _jspx_th_c_forEach_1.setVar("contato");
-    _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${arrcontato}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int[] _jspx_push_body_count_c_forEach_1 = new int[] { 0 };
-    try {
-      int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
-      if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("\r\n");
           out.write("            <div class=\"row\">\r\n");
           out.write("                <div class=\"box-msg-avaliacao\">\r\n");
           out.write("                    <div class=\"col-sm-12 col-md-4 box-msg-avaliacao-header\">\r\n");
@@ -218,29 +152,24 @@ public final class consultar_005fmensagens_jsp extends org.apache.jasper.runtime
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${contato.mensagem}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write(" </span>\r\n");
           out.write("                    </div>\r\n");
-          out.write("                    <div class=\"row\">\r\n");
-          out.write("                        <div class=\"col-sm-12 col-md-12  box-msg-avaliacao-bot\">\r\n");
-          out.write("                            <button class=\"excluir-toggle excluir-avl\">Excluir</button>\r\n");
-          out.write("                        </div>\r\n");
-          out.write("                    </div>\r\n");
           out.write("                </div>\r\n");
           out.write("            </div>\r\n");
           out.write("             ");
-          int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
+          int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
         } while (true);
       }
-      if (_jspx_th_c_forEach_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
         return true;
       }
     } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_1[0]-- > 0)
+      while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
         out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_1.doCatch(_jspx_exception);
+      _jspx_th_c_forEach_0.doCatch(_jspx_exception);
     } finally {
-      _jspx_th_c_forEach_1.doFinally();
-      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_1);
+      _jspx_th_c_forEach_0.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
     }
     return false;
   }

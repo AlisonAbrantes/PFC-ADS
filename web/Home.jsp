@@ -103,15 +103,15 @@
                 <form action="<%= application.getContextPath()%>/ControleUsuario" method="POST">
                     <div class="form-field" id="form-field-nome">
                         <input type="hidden" name="acao"  id="acao" value="Cadastrar"/>
-                        <input type="text" id="txtnome" name="txtnome" placeholder="Nome">
+                        <input type="text" class="txt" id="txtnome" name="txtnome" placeholder="Nome">
                         <span></span>
                     </div>
                     <div class="form-field" id="form-field-email">
-                        <input type="text"  id="txtemail" name="txtemail"  placeholder="Email">
+                        <input type="text" class="txt" id="txtemail" name="txtemail"  placeholder="Email" >
                         <span></span>  
                     </div>
                     <div class="form-field" id="form-field-senha">
-                      <input type="password" id="txtsenha" name="txtsenha"  placeholder="senha">
+                      <input type="password" class="txt" id="txtsenha" name="txtsenha"  placeholder="senha">
                       <span></span>  
                   </div>
                     <input type="submit" id="btncad" name="btncad" class="btn btn-primary" value="Cadastrar"></input>
@@ -129,27 +129,24 @@
       <!-- Testando validação-->
 
       <script>
-           var isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
           var txtnome=document.getElementById('txtnome');
           var txtemail=document.getElementById('txtemail');
           var txtsenha=document.getElementById('txtsenha');
 
-          var btnCad=document.querySelector('#btncad');
-          btnCad.addEventListener('click', function() {
-              var strNome=txtnome.value;
-              var strEmail=txtemail.value;
-              var strSenha=txtsenha.value;
-              if (strNome.length<3)
-              {
-                  window.alert (' Nome com tamanho inválido');
-              }
-              if (strSenha.length<7)
-              {
-                   window.alert (' Senha necessita ter quantidade superior à 6 caracteres');
-              }
+          var fieldNome=document.getElementById('form-field-nome');
+          var fieldEmail=document.getElementById('form-field-email');
+          var fieldSenha=document.getElementById('form-field-senha');
+          
+          var txt=document.querySelectorAll('.txt');
+          
+          var btnCad=document.querySelector('#btncad').disabled=true;          
+          var strNome=txtnome.value;
+          var strEmail=txtemail.value;
+          var strSenha=txtsenha.value;
 
           
-          });
+          
+
 
       </script>
 

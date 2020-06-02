@@ -22,7 +22,7 @@
 <body >
     
     <nav>
-        <a href="pag_adm.jsp"> <h1 class="titulo"> COINS</h1> </a>
+         <h1 class="titulo"> COINS</h1>
         <ul>
             <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
             <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>

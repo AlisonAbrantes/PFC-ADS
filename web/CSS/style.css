@@ -464,3 +464,11 @@ footer {
 	height: 100px;
 	background: #0489b1;
 }
+
+
+/* VALIDAÇÃO */
+.erro{
+    color:#721c24;
+    display:block;
+    margin-bottom: 30px;
+}
