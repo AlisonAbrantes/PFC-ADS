@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Projetos/PFC-ADS/src/java/command/Contato/ListarMensagemAction.java</file>
-            <file>file:/C:/Projetos/PFC-ADS/src/java/command/Contato/CadastrarMensagemAction.java</file>
-            <file>file:/C:/Projetos/PFC-ADS/src/java/command/Avaliacao/CadastrarAvaliacaoAction.java</file>
-            <file>file:/C:/Projetos/PFC-ADS/src/java/command/Avaliacao/ListarAvaliacaoAction.java</file>
-            <file>file:/C:/Projetos/PFC-ADS/src/java/command/ICommand.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/dao/PlacaVideo/PlacaVideoDao.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/dao/Armazenamento/ArmazenamentoDao.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/dao/Processador/ProcessadorDao.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/dao/Fonte/FonteDao.java</file>
+            <file>file:/C:/Projetos/PFC-ADS/src/java/dao/MemoriaRam/MemoriaRamDao.java</file>
         </group>
     </open-files>
 </project-private>
