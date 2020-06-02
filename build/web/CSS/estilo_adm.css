@@ -256,8 +256,23 @@ nav ul a li:hover {
 }
 /* listar */
 #lista-produtos {
-	width: 75%;
+	width: 60%;
 	overflow-x: scroll;
+}
+.tabela-produtos{
+    margin-top: 5%;
+    font-size: 20px;
+    border-collapse: collapse;
+    border:2px solid black;
+}
+.tabela-produtos-componentes{
+    background-color: #D8D8D8;
+    color:black;
+    border-collapse: collapse;
+    border:2px solid #6E6E6E;
+}
+.coluna{
+    width:5%;
 }
 /* avaliacoes */
 .msg-avaliacao-tela {

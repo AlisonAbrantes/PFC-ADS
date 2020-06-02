@@ -1,0 +1,61 @@
+<%-- 
+    Document   : listar_produtos
+    Created on : 01/06/2020, 23:35:48
+    Author     : Gabriel
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/estilo_adm.css" rel="stylesheet" type="text/css"/>
+    <title>Produtos</title>
+</head>
+<body>
+    <div class="overlay toggle-modal"> </div>
+   <nav>
+        <h1 class="titulo"> COINS</h1>
+        <ul>
+            <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
+            <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
+            <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
+            <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
+            <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
+        </ul>
+    </nav>
+
+    <div class="conteudo">
+        <section class="geral">
+            <h1 class="pag-title">Lista de produtos com todos seus componentes</h1>
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <table border="1px" class="tabela-produtos-componentes">
+                        <tr>
+                            <th class="coluna">Placa Mãe</th>
+                            <th class="coluna">Processador</th>
+                            <th class="coluna">Armazenamento</th>
+                            <th class="coluna">Memória RAM</th>
+                             <th class="coluna">Excluir</th>
+                        </tr>
+                        <tr>                     
+                        <c:forEach var="Produto" items="${arrproduto}">   
+                            <td class="coluna">NVidia 300gramas de ram</td>
+                            <td class="coluna">Processador I10</td>
+                            <td class="coluna">10k de giga</td>
+                            <td class="coluna">9g de Perereca</td>
+                            <td class="coluna"><a href="listar_produtos.jsp">Excluir </a></td>
+                        </c:forEach>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="JS/main.js"></script>
+    
+</body>
+</html>

@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="CSS/adm.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/estilo_adm.css" rel="stylesheet" type="text/css"/>
     <link href="Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
     <title>Perfil</title>
 </head> 

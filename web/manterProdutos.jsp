@@ -17,7 +17,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
-    <link href="CSS/adm.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/estilo_adm.css" rel="stylesheet" type="text/css"/>
     <title>Produtos</title>
 </head>
 <body>
@@ -101,15 +101,23 @@
         </div>
         <div class="modal-body">
             <div class="row">
-                <div class="col-sm-12 col-md-12 offset-md-5">
-                     <div class="myprod">
-                         <h1>aaaaaaaaaaaaaaaaaaa</h1>
-                     </div>
+                <div class="col-sm-12 col-md-12">
+                    <table border="1px" class="tabela-produtos">
+                        <tr>
+                            <th class="coluna">#</th>
+                            <th class="coluna">Descrição</th>
+                            <th class="coluna">Categoria</th>
+                            <th class="coluna"><a href="listar_produtos.jsp">Consultar </a></th>
+                        </tr>
+                        <tr>                     
                         <c:forEach var="Produto" items="${arrproduto}">
-                            <td>${Produto.id}</td>
-                            <td>${Produto.descricao}</td>
-                            <td>${Produto.categoria.descricao}</td>
+                            <td class="coluna">aaaaaa</td>
+                            <td class="coluna">aaaaaaaaaa</td>
+                            <td class="coluna">eeeeeeeeee</td>
+                            <td class="coluna"><a href="listar_produtos.jsp">Consultar </a></td>
                         </c:forEach>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
