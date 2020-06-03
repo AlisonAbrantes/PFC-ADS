@@ -35,8 +35,6 @@
             arrprod = (ArrayList<Produto>) request.getSession().getAttribute("arrproduto");
             for (Produto obj : arrprod)
             {
-   
-   
    %>
     <div class="conteudo">
         <section class="geral">
@@ -51,18 +49,15 @@
                             <th class="coluna">Memoria Ram</th>
                             <th class="coluna">Disco Rigido</th>
                             <th class="coluna">Fonte</th>
-                             <th class="coluna">Excluir</th>
+                            <th class="coluna">Excluir</th>
                         </tr>
                         
-                        <tr>                     
+                        <tr>    
                             <td class="coluna" ><% obj.getDescricao(); %></td>
-                           <!-- <td class="coluna"><c:out value="${produto.componente.descricao}"></c:out></td>
-                            <td class="coluna"><c:out value="${produto.componente.descricao}"></c:out></td>
-                            <td class="coluna"><c:out value="${produto.componente.descricao}"></c:out></td>
-                            <td class="coluna"><c:out value="${produto.componente.descricao}"></c:out></td>
-                            <td class="coluna"><c:out value="${produto.componente.descricao}"></c:out></td>
-                            <td class="coluna"><a href="listar_produtos.jsp">Excluir </a></td> !-->
-                       
+                            <c:forEach var="componentes" items="produto.componente">
+                            <td class="coluna"><c:out value="${componentes.descricao}"></c:out></td>
+                            </c:forEach>
+                            <td class="coluna"><a href="listar_produtos.jsp">Excluir </a></td>                
                         </tr>
                         
                     </table>
@@ -70,7 +65,9 @@
             </div>
         </section>
     </div>
-    <%  }%>
+         <%  
+            }
+         %>
     <script src="JS/main.js"></script>
     
 </body>
