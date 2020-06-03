@@ -9,15 +9,15 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link href="../CSS/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../CSS/questionario.css">
+    <link rel="stylesheet" type="text/css" href="CSS/questionario.css">
     <title>Questionario</title>
 </head>
 <body>
     <section class="full-height principal">
         <a href="pagina_usuario.jsp"> 
-            <img class="btn-voltar" title="voltar para a pagina inicial" alt="retornar para a pagina inicial" src="../imagens/btn-voltar.png">
+            <img class="btn-voltar" title="voltar para a pagina inicial" alt="retornar para a pagina inicial" src="imagens/btn-voltar.png">
         </a>
         <div class="container-fluid">
             <div class="row">
@@ -36,7 +36,7 @@
         </div>
 
     </section>
-    <script src="../JS/questionario.js"></script>
+    <script src="JS/questionario.js"></script>
 
 </body>
 </html>

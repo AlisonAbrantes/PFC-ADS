@@ -7,16 +7,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="modelo.Categoria" %>
-<%@page import="modelo.PlacaMae" %>
 <%@page import="modelo.Produto" %>
-<%@page import="modelo.Componente" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
+    <link href="Bootstrap/boadm.cotstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
     <link href="CSS/estilo_adm.css" rel="stylesheet" type="text/css"/>
     <title>Produtos</title>
 </head>
@@ -94,46 +92,32 @@
         </div>
     </div>
 
-    <div class="modal" id="lista-produtos">
-        <div class="modal-header">
-            <h1 class="title-modal"> Lista de produtos</h1>
-            <button class="close-modal toggle-modal-listar"> X</button>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-sm-12 col-md-12">
-                    <table border="1px" class="tabela-produtos">
-                        <tr>
-                            <th class="coluna">#</th>
-                            <th class="coluna">Descrição</th>
-                            <th class="coluna">Categoria</th>
-                            <th class="coluna"><a href="listar_produtos.jsp">Consultar </a></th>
-                        </tr>
-                        <tr>                     
-                        <c:forEach var="Produto" items="${arrproduto}">
-                            <td class="coluna">aaaaaa</td>
-                            <td class="coluna">aaaaaaaaaa</td>
-                            <td class="coluna">eeeeeeeeee</td>
-                            <td class="coluna"><a href="listar_produtos.jsp">Consultar </a></td>
-                        </c:forEach>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-    </div>
- 
-
     <div class="conteudo">
         <section class="geral">
             <h1 class="pag-title">Produtos</h1>
             <div class="row">
                 <div class="col-sm-12 col-md-12">
                     <button class="btn novo-prod toggle-modal-cadastrar"> Novo produto</button>
-                    <button class="btn list toggle-modal-listar"> Listar produtos</button>
+                   <form  action="<%= application.getContextPath()%>/ControleProduto" method="=POST">
+                    <input type="submit" name="acao" value="Listar" id="acao" class="btn novo-prod">
+                   </form>
                 </div>
             </div>
+             <table border="1px" class="tabela-produtos-componentes">
+                        <tr>
+                            <th class="coluna">#</th>
+                            <th class="coluna">Descrição</th>
+                            <th class="coluna">Categoria</th>
+                        </tr>
+                         <c:forEach var="Produto" items="${arrproduto}">
+                        <tr>                     
+                            <td class="coluna">${Produto.id}</td>
+                            <td class="coluna">${Produto.descricao}</td>
+                            <td class="coluna">${Produto.categoria.descricao}</td>
+                            <td class="coluna"><a href="<%= application.getContextPath()%>/ControleProduto?acao=Buscar&id=${Produto.id}">BUSCAR</a></td>
+                        </tr>
+                        </c:forEach>
+                    </table>
         </section>
     </div>
     

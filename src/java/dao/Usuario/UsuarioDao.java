@@ -23,15 +23,15 @@ public class UsuarioDao implements IUsuarioDao{
     private Connection conexao;
    
     @Override
-    public void login(final Usuario usuario) {
+    public void login(Usuario usuario) {
 
         try {
             conexao = ConectaBanco.getConexao();
-            final PreparedStatement pstmt = conexao.prepareStatement(LOGIN);
+            PreparedStatement pstmt = conexao.prepareStatement(LOGIN);
             pstmt.setString(1, usuario.getEmail());
             pstmt.setString(2, usuario.getSenha());
 
-            final ResultSet rs = pstmt.executeQuery();
+            ResultSet rs = pstmt.executeQuery();
 
             rs.next();
 
@@ -40,7 +40,7 @@ public class UsuarioDao implements IUsuarioDao{
             usuario.setEmail(rs.getString("email"));
             usuario.setSenha(rs.getString("senha"));
 
-        } catch (final Exception e) {
+        } catch (Exception e) {
 
             usuario.setId(0);
             usuario.setEmail("");
@@ -50,7 +50,7 @@ public class UsuarioDao implements IUsuarioDao{
 
             try {
                 conexao.close();
-            } catch (final SQLException ex) {
+            } catch (SQLException ex) {
                 Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

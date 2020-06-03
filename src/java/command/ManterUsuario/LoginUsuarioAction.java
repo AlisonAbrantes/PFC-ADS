@@ -33,7 +33,7 @@ public class LoginUsuarioAction implements ICommand{
                 user.setSenha("");
                 session.setAttribute("user", user);
 
-                return "Usuario/Pagina_usuario.jsp";
+                return "pagina_usuario.jsp";
                 
             } else {
                 return "Home.jsp";

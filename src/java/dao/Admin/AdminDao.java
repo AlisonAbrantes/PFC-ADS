@@ -31,14 +31,14 @@ public class AdminDao implements IAdminDao{
     private Object pstmt;
     private Connection conexao;
    
-    public void login(final Administrador adm) {
+    public void login( Administrador adm) {
         try {
             conexao = ConectaBanco.getConexao();
-            final PreparedStatement pstmt = conexao.prepareStatement(LOGIN);
+            PreparedStatement pstmt = conexao.prepareStatement(LOGIN);
             pstmt.setString(1, adm.getEmail());
             pstmt.setString(2, adm.getSenha());
 
-            final ResultSet rs = pstmt.executeQuery();
+             ResultSet rs = pstmt.executeQuery();
 
             rs.next();
 
@@ -47,7 +47,7 @@ public class AdminDao implements IAdminDao{
             adm.setEmail(rs.getString("email"));
             adm.setSenha(rs.getString("senha"));
 
-        } catch (final Exception e) {
+        } catch ( Exception e) {
 
             adm.setId(0);
             adm.setEmail("");
@@ -57,7 +57,7 @@ public class AdminDao implements IAdminDao{
 
             try {
                 conexao.close();
-            } catch (final SQLException ex) {
+            } catch (SQLException ex) {
                 Logger.getLogger(AdminDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

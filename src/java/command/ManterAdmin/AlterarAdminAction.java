@@ -18,7 +18,8 @@ public class AlterarAdminAction {
     public String executar(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         Administrador adm = new Administrador();
- 
+        
+    if (request.getParameter("txtemail") != null && request.getParameter("txtsenha") != null) {
         adm.setNome(request.getParameter("txtnome"));
         adm.setEmail(request.getParameter("txtemail"));
        
@@ -27,7 +28,10 @@ public class AlterarAdminAction {
         AdminDao admdao = new AdminDao();
 
         admdao.alterar(adm);
-
+    }else
+    {
+        return "perfil.jsp";
+    }
         return "/ControleAdministrador?acao=Login";
     }
 }

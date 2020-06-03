@@ -5,7 +5,6 @@
  */
 package command.Produto;
 
-import command.produto.*;
 import command.ICommand;
 import dao.Armazenamento.ArmazenamentoDao;
 import dao.Categoria.CategoriaDao;

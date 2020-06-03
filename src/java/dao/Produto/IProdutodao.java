@@ -21,9 +21,9 @@ public interface IProdutodao {
     public void buscar(Produto produto);
 
     public boolean alterar(Produto produto);
-
-    public boolean excluir(Produto produto);
     
     public boolean cadastrar(Produto produto, CompDao compDao);
+    
+    public void buscarComponente(Produto produto);
 
 }

@@ -64,8 +64,7 @@ public final class consultar_005fmensagens_jsp extends org.apache.jasper.runtime
       out.write("<head>\r\n");
       out.write("    <meta charset=\"UTF-8\">\r\n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
-      out.write("    <link rel=\"stylesheet\" type=\"text/css\" href=\"CSS/adm.css\">\r\n");
-      out.write("    <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/adm.css\">\r\n");
+      out.write("    <link href=\"CSS/estilo_adm.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
       out.write("    <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/bootstrap-grid.min.css\">\r\n");
       out.write("    <link href=\"Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
       out.write("    <title>Consultar Mensagens</title>\r\n");

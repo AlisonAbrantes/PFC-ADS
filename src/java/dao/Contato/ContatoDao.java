@@ -22,7 +22,7 @@ import util.ConectaBanco;
  */
 public class ContatoDao implements IContatoDao{
         
-    private static final String SELECT_ALL = "SELECT * FROM contato where email ilike ? "; // Listar
+    private static final String SELECT_ALL = "SELECT * FROM contato where email ilike ? order by id desc"; // Listar
     private static final String INSERT = "INSERT INTO contato(nome, email, telefone, mensagem) values(?,?,?, ?);"; // Cadastrar
     private static final String BUSCAR = "SELECT * FROM contato WHERE id=?;"; // Buscar
     private static final String DELETE = "DELETE FROM contato where id=?";//Deletar

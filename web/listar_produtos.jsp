@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="modelo.Produto" %>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modelo.PlacaMae" %>
+<%@page import="modelo.Componente" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,7 +31,13 @@
             <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
         </ul>
     </nav>
-
+   <% ArrayList<Produto> arrprod =  new ArrayList<Produto>();
+            arrprod = (ArrayList<Produto>) request.getSession().getAttribute("arrproduto");
+            for (Produto obj : arrprod)
+            {
+   
+   
+   %>
     <div class="conteudo">
         <section class="geral">
             <h1 class="pag-title">Lista de produtos com todos seus componentes</h1>
@@ -36,25 +47,30 @@
                         <tr>
                             <th class="coluna">Placa Mãe</th>
                             <th class="coluna">Processador</th>
-                            <th class="coluna">Armazenamento</th>
-                            <th class="coluna">Memória RAM</th>
+                            <th class="coluna">Placa de Video</th>
+                            <th class="coluna">Memoria Ram</th>
+                            <th class="coluna">Disco Rigido</th>
+                            <th class="coluna">Fonte</th>
                              <th class="coluna">Excluir</th>
                         </tr>
+                        
                         <tr>                     
-                        <c:forEach var="Produto" items="${arrproduto}">   
-                            <td class="coluna">NVidia 300gramas de ram</td>
-                            <td class="coluna">Processador I10</td>
-                            <td class="coluna">10k de giga</td>
-                            <td class="coluna">9g de Perereca</td>
-                            <td class="coluna"><a href="listar_produtos.jsp">Excluir </a></td>
-                        </c:forEach>
+                            <td class="coluna" ><% obj.getDescricao(); %></td>
+                           <!-- <td class="coluna"><c:out value="${produto.componente.descricao}"></c:out></td>
+                            <td class="coluna"><c:out value="${produto.componente.descricao}"></c:out></td>
+                            <td class="coluna"><c:out value="${produto.componente.descricao}"></c:out></td>
+                            <td class="coluna"><c:out value="${produto.componente.descricao}"></c:out></td>
+                            <td class="coluna"><c:out value="${produto.componente.descricao}"></c:out></td>
+                            <td class="coluna"><a href="listar_produtos.jsp">Excluir </a></td> !-->
+                       
                         </tr>
+                        
                     </table>
                 </div>
             </div>
         </section>
     </div>
-    
+    <%  }%>
     <script src="JS/main.js"></script>
     
 </body>

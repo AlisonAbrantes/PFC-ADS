@@ -13,25 +13,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD:web/Usuario/pagina_usuario.jsp
-    <link rel="stylesheet" type="text/css" href="../CSS/pagina_usuario.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/pagina_usuario.css">
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap-grid.min.css">
     <title>Pagina Usuario</title>
-=======
-    <link href="../CSS/pagina_usuario.css" rel="stylesheet" type="text/css"/>
-    <link href="../Bootstrap/bootstrap-4.4.1-dist/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
-    <title>Document</title>
->>>>>>> e6fda1687730ec281df6fc429067f6110a6bd775:web/Usuario/Pagina_usuario.jsp
 </head>
 <body>
     <div class="overlay toggle-modal"> </div>
     <nav>
         <h1 class="titulo"> COINS</h1>
         <ul>
-            <a href="pagina_usuario.jsp"><li class="active"><img class="icon" src="../imagens/perfil_icon.png"> Perfil</li></a>
-           <a href="#"> <li><img class="icon" src="../imagens/questionario_icon.png"> Iniciar questionario</li></a>
-           <a href="usuario_produtos.jsp"> <li><img class="icon" src="../imagens/lista_icon.png">Produtos salvos</li></a>
-            <a href="#"><li><img class="icon" src="../imagens/logout_icon.png"> Sair</li></a>
+            <a href="pagina_usuario.jsp"><li class="active"><img class="icon" src="imagens/perfil_icon.png"> Perfil</li></a>
+            <a href="questionario.jsp"> <li><img class="icon" src="imagens/questionario_icon.png"> Iniciar questionario</li></a>
+            <a href="usuario_produtos.jsp"> <li><img class="icon" src="imagens/lista_icon.png">Produtos salvos</li></a>
+            <a href="Home.jsp"><li><img class="icon" src="imagens/logout_icon.png"> Sair</li></a>
         </ul>
     </nav>
      <%  
@@ -105,6 +99,6 @@
                 </div>
             </section>
      </div>
-        <script src="../JS/main.js" type="text/javascript"></script>
+        <script src="JS/main.js" type="text/javascript"></script>
 </body>
 </html>

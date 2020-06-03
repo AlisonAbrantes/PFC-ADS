@@ -18,18 +18,23 @@ import util.Md5;
 public class AlterarUsuarioAction {
     public String executar(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        Usuario user = new Usuario();
- 
+       
+  if (request.getParameter("txtemail") != null && request.getParameter("txtsenha") != null) {
+      
+       Usuario user = new Usuario();
+       
         user.setNome(request.getParameter("txtnome"));
         user.setEmail(request.getParameter("txtemail"));
-        user.setSenha(Md5.senhamd5(request.getParameter("txtsenha")));
-
-        
         user.setId(Integer.parseInt(request.getParameter("id")));
-
+        
         UsuarioDao userdao = new UsuarioDao();
 
         userdao.alterarSenha(user);
+        
+  }else{
+      return "pagina_usuario";
+  }
+       // user.setSenha(Md5.senhamd5(request.getParameter("txtsenha")));
 
         return "/ControleUsuario?acao=Login";
     }

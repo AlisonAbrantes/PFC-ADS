@@ -23,7 +23,7 @@ import util.ConectaBanco;
  */
 public class AvaliacaoDao implements IAvaliacaoDao{
     
-    private static final String SELECT_ALL = "SELECT * FROM avaliacao where sugestao ilike ? "; // Listar
+    private static final String SELECT_ALL = "SELECT * FROM avaliacao where sugestao ilike ? order by id desc"; // Listar
     private static final String INSERT = "INSERT INTO avaliacao(sugestao, nivel_satisfacao,cliente) values(?,?,?);"; // Cadastrar
     private static final String BUSCAR = "SELECT * FROM avaliacao WHERE id=?;"; // Buscar
     

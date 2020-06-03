@@ -46,7 +46,8 @@
                           <input type="hidden" name="acao" id="acao" value="Alterar">
                         <input type="text" name="txtnome" placeholder="Novo nome" class="field-form">
                         <input type="text" name="txtemail" placeholder="Novo Email" class="field-form">
-                        <input type="submit" name="salvar" value="Alterar" class="field-form cadastrar">
+                        <input type="hidden" id="id" name="id" value="<%= objAdm.getId()%>">
+                        <button type="submit" name="acao" id="acao" value="Alterar" class="field-form cadastrar">Salvar</button>
                         <button class="toggle-modal-alterarInfo field-form btn-cancelar"> Cancelar</button>
                       </div>
                     </form>

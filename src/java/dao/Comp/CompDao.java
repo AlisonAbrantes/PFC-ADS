@@ -15,10 +15,12 @@ import modelo.Categoria;
 import modelo.Componente;
 import modelo.Fonte;
 import modelo.MemoriaRam;
+import modelo.Peso;
 import modelo.PlacaMae;
 import modelo.PlacaVideo;
 import modelo.Processador;
 import modelo.Produto;
+import modelo.TipoComponente;
 import util.ConectaBanco;
 /**
  *
@@ -26,7 +28,8 @@ import util.ConectaBanco;
  */
 public class CompDao implements ICompDao{
     private static final String INSERT = "INSERT INTO produto_componente (produto,componente) values(?,?);";
-    private static final String LISTARCOMPONENTE =" SELECT componente FROM produto_componente where produto = ? ";
+    private static final String LISTARCOMPONENTE =" SELECT * FROM produto_componente where produto = ? ";
+     private static final String SELECT =" SELECT * FROM componente where id = ? ";
     private Connection conexao;
     
     public boolean cadastrar(ArrayList<Componente> arrcomp,long key){
@@ -50,16 +53,35 @@ public class CompDao implements ICompDao{
         }
     }
     
-    public void buscar(Componente obj ) {
-         try {
+        public void buscar(Componente obj) {
+        try {
             conexao = ConectaBanco.getConexao();
-            PreparedStatement pstmt = conexao.prepareStatement(LISTARCOMPONENTE);
+            PreparedStatement pstmt = conexao.prepareStatement(SELECT);
+
+            pstmt.setInt(1, obj.getId());
+            ResultSet rs = pstmt.executeQuery();
+            rs.next();
+
+            obj.setDescricao(rs.getString("descricao"));
             
-              pstmt.setInt(1, obj.getId());
-              
-              pstmt.execute();
-           
-        } catch (Exception e) {
+            Peso objPeso = new Peso();
+            objPeso.setId(rs.getInt("peso"));
+            
+            obj.setPeso(objPeso);
+
+            TipoComponente objtipocomp = new TipoComponente();
+            objtipocomp.setId(rs.getInt("tipo"));
+
+ //UPDATE FUTURO           
+//            if (objtipocomp.getId() == 1) {//fonte
+//                
+//            }
+//            
+//            TipoComponenteDao objtipocompdao = new TipoComponenteDao();
+//            objtipocompdao.buscar(objtipocomp);
+
+              obj.setTipocomponente(objtipocomp);
+            } catch (Exception e) {
 
             //
         } finally {
@@ -72,4 +94,33 @@ public class CompDao implements ICompDao{
         }
     }
     
+     public ArrayList<Componente> ListarComponentes(Produto produto) {
+                  ArrayList<Componente> arrcomp = new ArrayList<Componente>();
+        
+         try {
+            conexao = ConectaBanco.getConexao();
+            PreparedStatement pstmt = conexao.prepareStatement(LISTARCOMPONENTE);
+            
+                pstmt.setInt(1, produto.getId());
+                ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                Componente objcomp = new Componente();
+                objcomp.setId(rs.getInt("componente"));
+                buscar(objcomp);
+                arrcomp.add(objcomp);
+            }
+            
+        }catch (Exception e) {
+
+            //
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProcessadorDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+            return arrcomp;
+    }
 }
