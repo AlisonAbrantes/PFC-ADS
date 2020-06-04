@@ -20,14 +20,15 @@
 </head>
 <body>
     <div class="overlay toggle-modal"> </div>
-   <nav>
+      <nav>
         <h1 class="titulo"> COINS</h1>
         <ul>
-            <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
-            <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
-            <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
-            <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
-            <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
+            <a href="perfil.jsp"><li class="btn-perfil">Perfil</li></a>
+            <a href="adicionar_adm.jsp"><li class="btn-add-adm">Adicionar ADM</li></a>
+            <a href="manterProdutos.jsp"> <li class="btn-manter active"> Manter produtos</li></a>
+            <a href="avaliacoes.jsp"> <li class="btn-avl">Avaliações</li></a>
+            <a href="consultar_mensagens.jsp"> <li class="btn-msg">Consultar mensagens</li></a>
+            <a href="Admin.jsp"><li class="btn-logout"> Sair</li></a>
         </ul>
     </nav>
     <div class="modal" id="cadastro-produtos">
@@ -93,14 +94,14 @@
     </div>
 
     <div class="conteudo">
-        <section class="geral">
+        <section class="geral manter-produtos">
             <h1 class="pag-title">Produtos</h1>
             <div class="row">
                 <div class="col-sm-12 col-md-12">
             <input onchange="<%= application.getContextPath()%>/ControleProduto" type="submit" class="btn novo-prod toggle-modal-cadastrar" name="acao" value="Cadastrar" id="acao">
                     
                    <form  action="<%= application.getContextPath()%>/ControleProduto" method="=POST">
-                        <input type="submit" name="acao" value="Listar" id="acao" class="btn novo-prod">
+                        <input type="submit" name="acao" value="Listar" id="acao" class="btn listar">
                    </form>
                 </div>
             </div>
@@ -115,7 +116,7 @@
                             <td class="coluna">${Produto.id}</td>
                             <td class="coluna">${Produto.descricao}</td>
                             <td class="coluna">${Produto.categoria.descricao}</td>
-                            <td class="coluna"><a href="<%= application.getContextPath()%>/ControleProduto?acao=Buscar&id=${Produto.id}">BUSCAR</a></td>
+                            <td class="coluna td-center"><a class="buscar" href="<%= application.getContextPath()%>/ControleProduto?acao=Buscar&id=${Produto.id}">BUSCAR</a></td>
                         </tr>
                         </c:forEach>
                     </table>

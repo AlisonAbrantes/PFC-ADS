@@ -21,16 +21,17 @@
     </head>
     <body>
         <div class="overlay toggle-modal"> </div>
-        <nav>
-            <h1 class="titulo"> COINS</h1>
-            <ul>
-                <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
-                <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
-                <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
-                <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
-                <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
-            </ul>
-        </nav>
+      <nav>
+        <h1 class="titulo"> COINS</h1>
+        <ul>
+            <a href="perfil.jsp"><li class="btn-perfil">Perfil</li></a>
+            <a href="adicionar_adm.jsp"><li class="btn-add-adm">Adicionar ADM</li></a>
+            <a href="manterProdutos.jsp"> <li class="btn-manter active"> Manter produtos</li></a>
+            <a href="avaliacoes.jsp"> <li class="btn-avl">Avaliações</li></a>
+            <a href="consultar_mensagens.jsp"> <li class="btn-msg">Consultar mensagens</li></a>
+            <a href="Admin.jsp"><li class="btn-logout"> Sair</li></a>
+        </ul>
+    </nav>
         <div class="conteudo">
             <section class="geral">
                 <h1 class="pag-title">Lista dos Componentes do Produto</h1>

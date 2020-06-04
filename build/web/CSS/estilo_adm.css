@@ -10,7 +10,7 @@
 		height: 90vh;
 		padding: 20px;
 		box-sizing: border-box;
-		background-color: rgb(33, 34, 33);
+		background-color: rgb(250, 253, 255);
 		position: relative;
 		display: block;
 		margin: 3% auto;
@@ -24,15 +24,12 @@
 		opacity: 1;
 	}
 }
-a {
-	text-decoration: none;
-}
 nav {
 	position: absolute;
 	width: 20%;
 	height: 100%;
 	display: block;
-	background-image: linear-gradient(to bottom, rgb(29, 29, 31), rgb(41, 51, 73));
+	background-color: rgb(38, 64, 110);
 	color: white;
 }
 .titulo {
@@ -45,7 +42,7 @@ nav {
 nav ul {
 	list-style: none;
 	display: block;
-	margin-top: 30%;
+	margin-top: 15%;
 }
 nav ul a {
 	text-decoration: none;
@@ -64,9 +61,13 @@ nav ul li {
 }
 nav ul a li:hover {
 	border: 1px solid white;
-	background-color: rgb(60, 70, 94);
+	background-color: #36628C;
 	transition: all 0.9s ease-out;
 	transform-origin: left;
+}
+.active{
+    	border: 1px solid white;
+	background-color: #36628C;
 }
 .btn-perfil {
 	background-image: url('../imagens/icon-perfil.png');
@@ -75,6 +76,11 @@ nav ul a li:hover {
 }
 .btn-manter {
 	background-image: url('../imagens/icon-manter.png');
+	background-repeat: no-repeat;
+	background-position: 5% center;
+}
+.btn-add-adm {
+	background-image: url('../imagens/icon-adicionar-adm.png');
 	background-repeat: no-repeat;
 	background-position: 5% center;
 }
@@ -98,14 +104,14 @@ nav ul a li:hover {
 	height: 100vh;
 	display: block;
 	float: right;
-	background-color: rgb(77, 80, 85);
+	background-color: rgb(55, 84, 134);
 }
 .geral {
 	width: 50%;
 	height: 90vh;
 	padding: 20px;
 	box-sizing: border-box;
-	background-color: rgb(33, 34, 33);
+	background-color: #F2F2F2;
 	position: relative;
 	display: block;
 	margin: -100% auto;
@@ -114,7 +120,7 @@ nav ul a li:hover {
 }
 
 .pag-title {
-	color: white;
+	color: #1D5E90;
 	font-size: 50px;
 	text-align: center;
 	margin-bottom: 3%;
@@ -131,7 +137,7 @@ nav ul a li:hover {
 	width: 100%;
 	display: table;
 	position: relative;
-	margin-top: 3%;
+	margin-top: 2%;
 }
 .formulario label {
 	margin-bottom: 1%;
@@ -143,22 +149,33 @@ nav ul a li:hover {
 	width: 50%;
 	height: 45px;
 	border: none;
-	color: rgb(166, 175, 175);
+	color: #1C1C1C;
 	display: block;
-	background-color: rgb(65, 65, 65);
+	background-color: #BDBDBD;
 	border-radius: 4px;
 	text-indent: 10px;
 	font-size: 17px;
 }
-.btn-alterar {
+.btn-form-adm{
 	width: 50%;
 	height: 45px;
 	border: none;
 	border-radius: 4px;
-	margin-top: 2%;
+	margin-top: 1%;
 	cursor: pointer;
+        font-size:18px;
+        color:white;   
 }
-
+.adm-alt-info{
+    background-color: #36628C;
+}
+.adm-alt-senha{
+    background-color: #585858;
+}
+/* adicionar novo adm */
+.cadastrar-adm{
+ 	background-color: #36628C;
+}
 /* MANTER PRODUTOS */
 .overlay {
 	width: 100%;
@@ -170,19 +187,37 @@ nav ul a li:hover {
 	left: 0;
 	background-color: rgba(59, 59, 59, 0.9);
 }
+.manter-produtos{
+    overflow-y:scroll;
+}
+.btn {
+	width: 50%;
+	height: 90px;
+	display: block;
+	border: none;
+	margin: 3% auto 1% auto;
+	cursor: pointer;
+	font-size: 17px;
+	font-weight: 700;
+	transition: all 0.4s ease-out;
+}
 .btn:hover {
 	transform: scale(0.9);
-	background-color: rgb(65, 144, 218);
+	background-color: #2CBE5F;
 }
 .novo-prod {
 	background-image: url('../imagens/add.png');
+        background-color: #2486A7;
 	background-repeat: no-repeat;
 	background-position: 10% center;
+        color:white;
 }
-.list {
+.listar {
 	background-image: url('../imagens/list.png');
 	background-repeat: no-repeat;
 	background-position: 10% center;
+        background-color: #368FCE;
+        color:white;
 }
 .modal {
 	width: 40%;
@@ -242,18 +277,7 @@ nav ul a li:hover {
 	border: none;
 	cursor: pointer;
 }
-.btn {
-	width: 50%;
-	height: 90px;
-	display: block;
-	border: none;
-	margin: 3% auto 1% auto;
-	background-color: rgb(172, 172, 172);
-	cursor: pointer;
-	font-size: 17px;
-	font-weight: 700;
-	transition: all 0.4s ease-out;
-}
+
 /* listar */
 #lista-produtos {
 	width: 60%;
@@ -266,13 +290,20 @@ nav ul a li:hover {
     border:2px solid black;
 }
 .tabela-produtos-componentes{
-    background-color: #D8D8D8;
+    background-color: #F1EFEF;
     color:black;
     border-collapse: collapse;
     border:2px solid #6E6E6E;
+    margin-top:3%;
 }
 .coluna{
     width:5%;
+    height:30px;
+}
+.buscar{
+    color:#194890;
+    font-weight: 700;
+    text-align:center;
 }
 /* avaliacoes */
 .msg-avaliacao-tela {
@@ -287,6 +318,7 @@ nav ul a li:hover {
 	padding: 10px;
 	box-sizing: border-box;
 	position: relative;
+        border:1px solid #A4A4A4;
 }
 .box-msg-avaliacao-header {
 	float: left;
@@ -296,7 +328,7 @@ nav ul a li:hover {
 	margin-top: 3%;
 }
 .box-msg-avaliacao-body {
-	margin-top: 2%;
+	margin-top: 4%;
 	font-size: 19px;
 	font-weight: normal;
 	position: absolute;
@@ -308,20 +340,29 @@ nav ul a li:hover {
 .box-msg-avaliacao-body span {
 	color: rgb(121, 116, 116);
 }
-.box-msg-avaliacao-bot {
-	margin-top: 5%;
-	margin-right: 5%;
-	display: table;
-}
-.excluir-avl {
-	width: 10%;
+.excluir-msg{
+	width: 40px;
 	height: 40px;
-	background-color: rgb(6, 76, 141);
+        display:block;
+	background-color: #DF0101;
 	border: none;
 	cursor: pointer;
 	color: white;
 	border: 4px;
-	float: right;
+        margin-top:5%;
+        border-radius:100%;
+}
+.listar-msg-avl{
+    width:10%;
+    height:40px;
+    display:block;
+    background-color:rgb(6, 76, 141); 
+    color:white;
+    border:none;
+    cursor:pointer;
+    float:right;
+    margin-right:4%;
+    margin-bottom:2%;
 }
 /* CLASSES UTILITÁRIAS */
 .icon-adm {
@@ -357,6 +398,9 @@ nav ul a li:hover {
 .title-modal {
 	text-align: center;
 }
+.td-center{
+    text-align: center;
+}
 .btn-cancelar {
 	width: 80%;
 	height: 45px;
@@ -369,8 +413,6 @@ nav ul a li:hover {
 	font-weight: 700;
 	font-size: 17px;
 }
-/* MODAL DE EXCLUIR PRODUTO */
-#excluir-contato{
-    	width: 30%;
-        height:90px;
+a {
+	text-decoration: none;
 }
