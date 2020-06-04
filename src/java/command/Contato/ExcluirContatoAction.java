@@ -22,28 +22,14 @@ public class ExcluirContatoAction implements ICommand {
     public String executar(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         Contato objContato = new Contato();
-
         ContatoDao daoContato = new ContatoDao();
         
         objContato.setId(Integer.parseInt(request.getParameter("id")));
 
-        if (request.getParameter("confirmaexclusao") != null) {
-            if (Integer.parseInt(request.getParameter("confirmaexclusao")) == 2) {
                 daoContato.excluir(objContato);
                 return "/ControleContato?acao=Listar";
-            }
-            return "consultar_mensagem.jsp";
-            
-        } else {
-
-            daoContato.buscar(objContato);
-
-            HttpSession session = request.getSession();
-
-            session.setAttribute("objContato", objContato);
-
-            return "Admin/pag_adm.jsp";
+        
         }
-    }
-
 }
+
+

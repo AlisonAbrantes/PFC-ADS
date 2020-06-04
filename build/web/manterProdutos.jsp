@@ -32,6 +32,7 @@
     </nav>
     <div class="modal" id="cadastro-produtos">
         <div class="modal-header">
+            <button class="close-modal toggle-modal-cadastrar">X</button>
             <h1 class="title-modal"> Cadastrar produtos</h1>
         </div>
         <div class="modal-body">
@@ -84,7 +85,6 @@
                         </c:forEach>
                         </select>
                         <input type="submit" name="salvar" value="Cadastrar" id="btncadastrar" class="field-form cadastrar">
-                        <button class="toggle-modal-cadastrar field-form btn-cancelar"> Cancelar</button>
                       </div>
                     </form>
                 </div>
@@ -97,9 +97,10 @@
             <h1 class="pag-title">Produtos</h1>
             <div class="row">
                 <div class="col-sm-12 col-md-12">
-                    <button class="btn novo-prod toggle-modal-cadastrar"> Novo produto</button>
+            <input onchange="<%= application.getContextPath()%>/ControleProduto" type="submit" class="btn novo-prod toggle-modal-cadastrar" name="acao" value="Cadastrar" id="acao">
+                    
                    <form  action="<%= application.getContextPath()%>/ControleProduto" method="=POST">
-                    <input type="submit" name="acao" value="Listar" id="acao" class="btn novo-prod">
+                        <input type="submit" name="acao" value="Listar" id="acao" class="btn novo-prod">
                    </form>
                 </div>
             </div>

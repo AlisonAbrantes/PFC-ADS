@@ -34,8 +34,11 @@
             <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
         </ul>
     </nav>
+    
+    <!-- MODAL DE ALTERAR !-->
     <div class="modal" id="alterar-perfil">
         <div class="modal-header">
+            <button class="close-modal toggle-modal-alterarInfo">X</button>
             <h1 class="title-modal"> Alterar informações</h1>
         </div>
         <div class="modal-body">
@@ -43,20 +46,20 @@
                 <div class="col-sm-12">
                     <form class="formulario" action="<%= application.getContextPath()%>/ControleAdmin" method="=post">
                       <div class="col-sm-12 col-md-12">
-                          <input type="hidden" name="acao" id="acao" value="Alterar">
                         <input type="text" name="txtnome" placeholder="Novo nome" class="field-form">
                         <input type="text" name="txtemail" placeholder="Novo Email" class="field-form">
                         <input type="hidden" id="id" name="id" value="<%= objAdm.getId()%>">
-                        <button type="submit" name="acao" id="acao" value="Alterar" class="field-form cadastrar">Salvar</button>
-                        <button class="toggle-modal-alterarInfo field-form btn-cancelar"> Cancelar</button>
+                        <input type="submit" name="acao" id="acao" value="Alterar" class="field-form cadastrar">
                       </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+                        
     <div class="modal" id="alterar-perfil-senha">
         <div class="modal-header">
+            <button class="close-modal toggle-modal-alterarSenha">X</button>
             <h1 class="title-modal"> Alterar Senha</h1>
         </div>
         <div class="modal-body">
@@ -64,10 +67,9 @@
                 <div class="col-sm-12">
                     <form class="formulario" action="<%= application.getContextPath()%>/ControleAdmin" method="=post">
                       <div class="col-sm-12 col-md-12">
-                        <input type="hidden" name="acao" id="acao" value="Senha">
-                        <input type="text" name="txtsenha" placeholder="Nova Senha" class="field-form">
-                        <input type="submit" name="salvar" value="Alterar" class="field-form cadastrar">
-                        <button class="toggle-modal-alterarSenha field-form btn-cancelar"> Cancelar</button>
+                        <input type="password" name="txtsenha" placeholder="Nova Senha" class="field-form">
+                        <input type="hidden" id="id" name="id" value="<%= objAdm.getId()%>">
+                        <input type="submit"name="acao" id="acao" value="AlterarSenha" class="field-form cadastrar">
                       </div>
 
                     </form>
@@ -75,6 +77,7 @@
             </div>
         </div>
     </div>
+                      
     <div class="conteudo">
             <section class="geral">
                 <h1 class="pag-title"> Perfil</h1>

@@ -42,7 +42,7 @@ public class ControleContato extends HttpServlet{
 
         } catch (Exception ex) {
 
-            RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("perfil.jsp");
 
             rd.forward(request, response);
         }

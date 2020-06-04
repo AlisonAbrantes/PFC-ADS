@@ -25,7 +25,7 @@ import util.Md5;
 public class AdminDao implements IAdminDao{
    private static final String LOGIN = "SELECT * FROM administrador WHERE email=? and senha=?;";
    private static final String INSERT = "INSERT INTO administrador (nome,email,senha) values(?,?,?);";
-   private static final String UPDATE = "UPDATE administrador set nome=? , email=? , senha=? WHERE id=?";
+   private static final String UPDATE = "UPDATE administrador set nome=? , email=?  WHERE id=?";
    private static final String UPDATESENHA = "UPDATE administrador set senha=? WHERE id=?";
 
     private Object pstmt;

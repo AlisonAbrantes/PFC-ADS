@@ -176,12 +176,11 @@ public class CadastrarProdutoAction implements ICommand {
                 //ASSIM PODEMOS RETORNAR O ARRAY DE COMPONENTES PARA A AGREGAÇÃO
                 produto.setCategoria(categoria);//aqui acontece a agregação
                 produto.setComponente(arrcomp);
-               
              
                     CompDao compDao = new CompDao();
                     ProdutoDao prodDao = new ProdutoDao();
                     prodDao.cadastrar(produto,compDao);
-                return "perfil.jsp";
+                return "/ControleProduto?acao=Listar";
             }
         } catch (Exception ex) {
             return "manterProdutos.jsp";

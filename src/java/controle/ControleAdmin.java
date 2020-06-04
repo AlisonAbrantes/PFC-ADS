@@ -45,7 +45,7 @@ public class ControleAdmin extends HttpServlet{
 
         } catch (Exception ex) {
 
-            RequestDispatcher rd = request.getRequestDispatcher("erro.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("Admin.jsp");
 
             rd.forward(request, response);
         }

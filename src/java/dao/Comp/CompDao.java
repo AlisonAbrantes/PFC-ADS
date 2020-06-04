@@ -41,8 +41,10 @@ public class CompDao implements ICompDao{
           
           for (Componente obj: arrcomp){
             
+              
               pstmt.setLong(1, key);
               pstmt.setInt(2, obj.getId());
+              
               
               pstmt.execute();
         }

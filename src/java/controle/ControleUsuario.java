@@ -45,7 +45,7 @@ public class ControleUsuario extends HttpServlet{
 
         } catch (Exception ex) {
 
-            RequestDispatcher rd = request.getRequestDispatcher("erro.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
 
             rd.forward(request, response);
         }

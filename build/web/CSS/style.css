@@ -1,7 +1,6 @@
-* {
+body {
 	overflow-x: hidden;
 	margin: 0;
-        font-family: 'Roboto', sans-serif;
 }
 /* formatação global */
 nav {
@@ -45,7 +44,7 @@ nav {
 	display: block;
 	width: 100%;
 	color: red;
-	margin-top: 1%;
+	margin-top: -2%;
 	font-weight: bold;
 }
 
@@ -61,6 +60,16 @@ nav {
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
+}
+.botaoQuest {
+	width: 50%;
+	height: 50px;
+	border: 0;
+	background-image: linear-gradient(to right, rgb(14, 71, 109), rgb(22, 52, 117));
+	color: white;
+	box-shadow: 8px 6px 0 rgba(0, 0, 0, 0.4);
+	margin-top: 3%;
+	cursor: pointer;
 }
 
 .efeito {
@@ -79,12 +88,14 @@ nav {
 	background-image: linear-gradient(to right, rgb(6, 23, 34), rgb(5, 27, 75));
 	padding: 20px;
 	box-sizing: border-box;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .featurette-heading {
 	margin-left: 5.5%;
 	font-weight: bold;
 }
 .row {
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	background-color: white;
 }
 
@@ -105,6 +116,7 @@ nav {
 	width: 100%;
 	margin-bottom: 5%;
 	background-color: white;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* FIM da formatação global */
@@ -133,6 +145,7 @@ nav {
 		display: table;
 		margin: 10% auto;
 		color: azure;
+		font-family: Georgia, 'Times New Roman', Times, serif;
 		text-align: center;
 	}
 	.slogan h2 {
@@ -305,6 +318,7 @@ nav {
 		display: table;
 		margin: 5% auto;
 		color: azure;
+		font-family: Georgia, 'Times New Roman', Times, serif;
 		text-align: center;
 	}
 	.slogan h2 {
@@ -448,11 +462,13 @@ footer {
 	clear: both;
 	width: 100%;
 	height: 100px;
-        background-image: linear-gradient(to right, rgb(10, 50, 77), rgb(29, 77, 179));
+	background: #0489b1;
 }
-footer h4{
-    font-size: 18px;
-    text-align: center;
-    line-height: 100px;
-    color:white;
+
+
+/* VALIDAÇÃO */
+.erro{
+    color:#721c24;
+    display:block;
+    margin-bottom: 30px;
 }

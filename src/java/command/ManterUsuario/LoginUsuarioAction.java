@@ -36,6 +36,8 @@ public class LoginUsuarioAction implements ICommand{
                 return "pagina_usuario.jsp";
                 
             } else {
+            String msg ="Login incorreto.";
+            session.setAttribute("msg", msg);
                 return "Home.jsp";
             }
         } else {

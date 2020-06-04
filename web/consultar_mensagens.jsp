@@ -30,30 +30,39 @@
             <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
         </ul>
     </nav>
+        
     <div class="conteudo">
         <form action="<%= application.getContextPath()%>/ControleContato" method="POST"> 
-        <section class="geral msg-avaliacao-tela">
-            <h1  class="pag-title"> Mensagens</h1>
             <input type="hidden" name="acao" id="acao" value="Listar">
             <input type="submit" value="Listar" id="Listar" name="btnbuscar"> 
+        </form> 
+        <section class="geral msg-avaliacao-tela">
+            <h1  class="pag-title"> Mensagens</h1>
              <c:forEach var="contato" items="${arrcontato}">
             <div class="row">
                 <div class="box-msg-avaliacao">
                     <div class="col-sm-12 col-md-4 box-msg-avaliacao-header">
-                       
                         <p class="text-19"> Nome: ${contato.nome}</p>
                         <p class="text-19 top-3"> Email: ${contato.email}</p>
                         <p class="text-19 top-3"> Telefone: ${contato.telefone}</p>
-                    </div>      
-                    <div class="col-sm-12 col-md-7 offset-md-5 box-msg-avaliacao-body">
-                        <h3> Mensagem</h3>
+                    </div>  
+                    <h3 class=""> Mensagem</h3>
+                    <div class="col-sm-12 col-md-7 offset-md-7 box-msg-avaliacao-body">
                         <span>${contato.mensagem} </span>
                     </div>
-                </div>
+                   <div class="row">
+                        <div class="col-sm-12 col-md-12 offset-md-10">
+                            <form action="<%= application.getContextPath()%>/ControleContato?acao=Excluir" method="POST"> 
+                                 <input name="id" id="id" type="hidden" value="${contato.id}">
+                                 <input type="submit" name="Excluir" id="Excluir" value="Excluir">
+                            </form>
+                        </div>
+                    </div>
+              </div>
             </div>
              </c:forEach>
         </section>
-        </form>
+        
     </div>
         
 

@@ -35,6 +35,7 @@
     %>
     <div class="modal" id="alterar-perfil">
         <div class="modal-header">
+             <button class="close-modal toggle-modal-alterarInfo">X</button>
             <h1 class="title-modal"> Alterar informações</h1>
         </div>
         <div class="modal-body">
@@ -45,7 +46,6 @@
                         <input type="text" name="nome" placeholder="Novo nome" class="field-form">
                         <input type="text" name="nome" placeholder="Novo Email" class="field-form">
                         <input type="submit" name="salvar" value="Alterar" class="field-form cadastrar">
-                        <button class="toggle-modal-alterarInfo field-form btn-cancelar"> Cancelar</button>
                       </div>
 
                     </form>
