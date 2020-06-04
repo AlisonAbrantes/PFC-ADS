@@ -239,7 +239,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <p class=\"lead\">  Nosso sistema pode auxiliá-lo a escolher a melhor máquina para seu uso pessoal ou profissional. Através de um rápido questionário será possível identificar sua necessidade, recomendando as melhores opções de desempenho e custo beneficio que lhe atendam, seja para jogar, trabalhar ou estudar. </p>\r\n");
       out.write("        </div>\r\n");
       out.write("        <div class=\"col-md-5\">\r\n");
-      out.write("            <img class=\"serv1\" src=\"imagens/duvida.jpg\">\r\n");
+      out.write("            <img class=\"serv1\" src=\"imagens/pc.jpeg\">\r\n");
       out.write("        </div>\r\n");
       out.write("    </div>\r\n");
       out.write("\r\n");
@@ -270,7 +270,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </p>\r\n");
       out.write("        </div>\r\n");
       out.write("        <div class=\"col-md-5\">\r\n");
-      out.write("            <img class=\"serv1\" src=\"imagens/pc.jpeg\">      </div>\r\n");
+      out.write("            <img class=\"serv1\" src=\"imagens/22.jpg\">      </div>\r\n");
       out.write("    </div>\r\n");
       out.write("\r\n");
       out.write("    <hr class=\"featurette-divider\">\r\n");

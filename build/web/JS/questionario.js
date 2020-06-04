@@ -16,6 +16,11 @@ var resp2Click = function () {
     btnConfirmar.style.display = 'block';
 };
 
+btnConfirmar.addEventListener('click', function(){
+    window.location.href = "questionario_finalidade.jsp";
+});
+
+
 function cancelar()
 {
     op2.classList.remove('btn-click');

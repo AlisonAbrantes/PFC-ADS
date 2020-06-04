@@ -29,7 +29,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-8 offset-md-2">
-                    <button class="text-white font-w-700 avancar btn-control radius-4 float-right" id="confirmar" action="#"> Confirmar </button>
+                    <button class="text-white font-w-700 avancar btn-control radius-4 float-right" id="confirmar"> Confirmar </button>
                     <button class="text-white font-w-700 cancelar btn-control radius-4 float-left" id="cancelar" onclick="cancelar()"> Cancelar </button>
                 </div>
             </div>

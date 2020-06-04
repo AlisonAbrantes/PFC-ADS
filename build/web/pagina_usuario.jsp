@@ -24,7 +24,6 @@
         <ul>
             <a href="pagina_usuario.jsp"><li class="active"><img class="icon" src="imagens/perfil_icon.png"> Perfil</li></a>
             <a href="questionario.jsp"> <li><img class="icon" src="imagens/questionario_icon.png"> Iniciar questionario</li></a>
-            <a href="usuario_produtos.jsp"> <li><img class="icon" src="imagens/lista_icon.png">Produtos salvos</li></a>
             <a href="Home.jsp"><li><img class="icon" src="imagens/logout_icon.png"> Sair</li></a>
         </ul>
     </nav>

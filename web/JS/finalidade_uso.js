@@ -9,17 +9,18 @@ var resp1Click = function () {
     op1.classList.add('btn-click');
     op2.classList.remove('btn-click');
     btnConfirmar.style.display = 'block';
+    btnConfirmar.addEventListener('click', function(){
+        window.location.href = "questionario_estudo_1.jsp";
+    });
 };
 var resp2Click = function () {
     op1.classList.remove('btn-click');
     op2.classList.add('btn-click');
     btnConfirmar.style.display = 'block';
+        btnConfirmar.addEventListener('click', function(){
+        window.location.href = "questionario_jogos1.jsp";
+    });
 };
-
-btnConfirmar.addEventListener('click', function(){
-    window.location.href = "questionario_finalidade.jsp";
-});
-
 
 function cancelar()
 {

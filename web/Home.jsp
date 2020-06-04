@@ -124,48 +124,8 @@
 
     <!-- Testando validação-->
 
-    <script>
-        var isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        var nome = document.getElementById('txtnome');
-        var email = document.getElementById('txtemail');
-        var senha = document.getElementById('txtsenha');
-        function getNome() {
-            var strnome = nome.value;
-            if (strnome.length < 3)
-            {
-                window.alert('Nome inválido (mínimo 3 caracteres)')
-                document.querySelector('#btncad').disabled = true;
-            } else
-            {
-                document.querySelector('#btncad').disabled = false;
-            }
-        }
-        function getEmail() {
-            if(email.value.indexOf("@") === -1 ||
-            email.valueOf.indexOf(".") === -1 ||
-            email.value === "" ||
-            email.value === null)
-            {
-                window.alert(' Por favor, informe um formato de email válido, exemplo: (example@gmail.com)');
-                document.querySelector('#btncad').disabled = true;
-            } else
-            {
-                document.querySelector('#btncad').disabled = false;
-            }
-        }
-        function getSenha() {
-            var strsenha = senha.value;
-            if (strsenha.length < 8)
-            {
-                window.alert(' Formato de senha inválido (mínimo 8 caracteres');
-                document.querySelector('#btncad').disabled = true;
-            } else
-            {
-                document.querySelector('#btncad').disabled = false;
-            }
-        }
+ 
 
-    </script>
 
     <!--Fim modal-->
 
@@ -196,7 +156,7 @@
             <p class="lead">  Nosso sistema pode auxiliá-lo a escolher a melhor máquina para seu uso pessoal ou profissional. Através de um rápido questionário será possível identificar sua necessidade, recomendando as melhores opções de desempenho e custo beneficio que lhe atendam, seja para jogar, trabalhar ou estudar. </p>
         </div>
         <div class="col-md-5">
-            <img class="serv1" src="imagens/duvida.jpg">
+            <img class="serv1" src="imagens/pc.jpeg">
         </div>
     </div>
 
@@ -227,7 +187,7 @@
             </p>
         </div>
         <div class="col-md-5">
-            <img class="serv1" src="imagens/pc.jpeg">      </div>
+            <img class="serv1" src="imagens/22.jpg">      </div>
     </div>
 
     <hr class="featurette-divider">
