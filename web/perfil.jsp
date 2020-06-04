@@ -24,16 +24,17 @@
     
     %>
     <div class="overlay toggle-modal"> </div>
-    <nav>
-        <h1 class="titulo"> COINS</h1>
-        <ul>
-            <a href="perfil.jsp" class="btn-perfil"><li>Perfil</li></a>
-            <a href="manterProdutos.jsp" class="btn-prod"> <li> Manter produtos</li></a>
-            <a href="avaliacoes.jsp" class="btn-avl"> <li>Avaliações</li></a>
-            <a href="consultar_mensagens.jsp" class="btn-msg"> <li>Consultar mensagens</li></a>
-            <a href="Admin.jsp" class="btn-logout"><li> Sair</li></a>
-        </ul>
-    </nav>
+        <nav>
+            <h1 class="titulo"> COINS</h1>
+            <ul>
+                <a href="perfil.jsp"><li class="btn-perfil active">Perfil</li></a>
+                <a href="adicionar_adm.jsp"><li class="btn-add-adm">Adicionar ADM</li></a>
+                <a href="manterProdutos.jsp"> <li class="btn-manter"> Manter produtos</li></a>
+                <a href="avaliacoes.jsp"> <li class="btn-avl">Avaliações</li></a>
+                <a href="consultar_mensagens.jsp"> <li class="btn-msg ">Consultar mensagens</li></a>
+                <a href="Admin.jsp"><li class="btn-logout"> Sair</li></a>
+            </ul>
+        </nav>
     
     <!-- MODAL DE ALTERAR !-->
     <div class="modal" id="alterar-perfil">
@@ -69,9 +70,8 @@
                       <div class="col-sm-12 col-md-12">
                         <input type="password" name="txtsenha" placeholder="Nova Senha" class="field-form">
                         <input type="hidden" id="id" name="id" value="<%= objAdm.getId()%>">
-                        <input type="submit"name="acao" id="acao" value="AlterarSenha" class="field-form cadastrar">
+                        <input type="submit" name="acao" id="acao" value="AlterarSenha" class="field-form cadastrar">
                       </div>
-
                     </form>
                 </div>
             </div>
@@ -98,8 +98,8 @@
                      </form>
                      <div class="row">
                         <div class="col-sm-12 offset-sm-3 col-md-12 offset-md-3 mar-bot-2">
-                            <button class="toggle-modal-alterarInfo btn-alterar"> Alterar informações</button>
-                            <button class="toggle-modal-alterarSenha btn-alterar"> Alterar senha</button>
+                            <button class="toggle-modal-alterarInfo btn-form-adm cadastrar-adm"> Alterar informações</button>
+                            <button class="toggle-modal-alterarSenha btn-form-adm cadastrar-adm"> Alterar senha</button>
                         </div>
                     </div>
                     </div>

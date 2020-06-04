@@ -25,31 +25,29 @@ public class CadastrarAdminAction implements ICommand{
            adm.setNome(request.getParameter("txtnome"));
            adm.setEmail(request.getParameter("txtemail"));
            
+             // Esta condição é para validar se o Admininstrador digitou email e senha
+           if(adm.getNome().length()==0 && adm.getEmail().length()==0)
+           {
+               return "adicionar_adm.jsp";
+           }
            // Esta condição é para validar se o Administradir entrou com uma Senha.
             if (request.getParameter("txtsenha") != null)
             {
              adm.setSenha(Md5.senhamd5(request.getParameter("txtsenha")));
+             
+                 AdminDao admDao = new AdminDao();
+                admDao.Cadastrar(adm);
+               
+               return "perfil.jsp";
             }
             else
             {
-                return "/Home.jsp";
+                return "adicionar_adm.jsp";
             }
            
-            // Esta condição é para validar se o Admininstrador digitou email e senha
-           if(adm.getNome().length()==0 && adm.getEmail().length()==0)
-           {
-               return "/Home.jsp";
-           }
-           else
-           {
-               AdminDao admDao = new AdminDao();
-               admDao.Cadastrar(adm);
-               
-               return "/login.jsp";
-           }
        }catch (Exception ex){
           
-        return "/Home.jsp";
+        return "perfil.jsp";
        }     
     }
 }

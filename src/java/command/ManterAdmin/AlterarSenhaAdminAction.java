@@ -26,15 +26,16 @@ public class AlterarSenhaAdminAction implements ICommand{
             if (request.getParameter("txtsenha") != null)
                 {
                  adm.setSenha(Md5.senhamd5(request.getParameter("txtsenha")));
+                 
+                 AdminDao admdao = new AdminDao();
+                 admdao.alterarSenha(adm);
                 }
             else
                 {
                     return "perfil.jsp";
                 }
 
-            AdminDao admdao = new AdminDao();
-
-            admdao.alterarSenha(adm);
+            
 
         return "/ControleAdmin?acao=Login";
     }

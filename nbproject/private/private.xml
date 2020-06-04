@@ -3,20 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/JS/finalidade_uso.js</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/JS/questionario_jogos2.js</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/JS/questionario_jogos3.js</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/JS/questionario_jogos4.js</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/questionario_finalidade.jsp</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/JS/questionario_jogos1.js</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/questionario_jogos3.jsp</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/questionario_jogos5.jsp</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/JS/questionario_estudo.js</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/questionario_jogos1.jsp</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/resultados.jsp</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/JS/questionario.js</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/questionario_jogos2.jsp</file>
-            <file>file:/C:/Users/Gabriel/Desktop/PFC-ADS/web/questionario_jogos4.jsp</file>
+            <file>file:/C:/Users/Alison/OneDrive/Área%20de%20Trabalho/Faculdade/Mei/PFC-ADS/web/pagina_usuario.jsp</file>
+            <file>file:/C:/Users/Alison/OneDrive/Área%20de%20Trabalho/Faculdade/Mei/PFC-ADS/src/java/command/ManterUsuario/AlterarSenhaUsuarioAction.java</file>
+            <file>file:/C:/Users/Alison/OneDrive/Área%20de%20Trabalho/Faculdade/Mei/PFC-ADS/src/java/dao/Usuario/UsuarioDao.java</file>
+            <file>file:/C:/Users/Alison/OneDrive/Área%20de%20Trabalho/Faculdade/Mei/PFC-ADS/web/perfil.jsp</file>
+            <file>file:/C:/Users/Alison/OneDrive/Área%20de%20Trabalho/Faculdade/Mei/PFC-ADS/src/java/controle/ControleUsuario.java</file>
+            <file>file:/C:/Users/Alison/OneDrive/Área%20de%20Trabalho/Faculdade/Mei/PFC-ADS/src/java/command/ManterUsuario/AlterarUsuarioAction.java</file>
         </group>
     </open-files>
 </project-private>

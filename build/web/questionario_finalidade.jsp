@@ -22,7 +22,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-md-8 offset-md-2">
-                    <h1 class="text-white mar-top-15 mar-bot-5 font-w-700"> 2 - Você usará este computador/notebook para qual finalidade? </h1>
+                    <h1 class="text-white mar-top-15 mar-bot-5 font-w-700"> 2 - Você usará para qual finalidade? </h1>
                     <button id="op1" class="text-white font-w-700 btn-resposta radius-4" onclick="resp1Click()"> Estudo/Trabalho </button>
                     <button id="op2" class="text-white font-w-700 btn-resposta radius-4" onclick="resp2Click()"> Jogos </button>
                 </div>

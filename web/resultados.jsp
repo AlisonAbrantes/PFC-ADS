@@ -22,7 +22,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-md-8 offset-md-2">
-                    <h1 class="text-white mar-top-15 mar-bot-5 font-w-700"> Obrigado por utilizar o nosso sistema</h1>
+                    <h1 class="text-white mar-top-15 mar-bot-5 font-w-700"> Desculpe, ainda estamos em desenvolvimento...</h1>
                 </div>
             </div>
         </div>

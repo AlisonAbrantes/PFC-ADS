@@ -32,20 +32,20 @@
                 <h1 class="pag-title"> Cadastrar novo Administrador</h1>
                 <div class="row">
                     <div class="col-sm-12">
-                        <form class="formulario">
-
+                        <form class="formulario" action="<%= application.getContextPath()%>/ControleAdmin" method="POST"> 
+                            <input type="hidden" id="acao"  name="acao" value="Cadastrar">
                             <div class="row">
                                 <div class="col-sm-12 offset-sm-3 col-md-12 offset-md-3 mar-bot-2">
                                     <label for="nome" class="text-light lbl-form">Nome</label>
-                                    <input type="nome" name="nome" id="nome" class="field"/>
+                                    <input type="nome" name="txtnome" id="txtnome" class="field"/>
                                 </div>
                                 <div class="col-sm-12 offset-sm-3 col-md-12 offset-md-3 mar-bot-2">
                                     <label for="email" class="text-light lbl-form"> Email </label>
-                                    <input type="email" name="email" id="email" class="field"/>
+                                    <input type="email" name="txtemail" id="txtemail" class="field"/>
                                 </div>
                                 <div class="col-sm-12 offset-sm-3 col-md-12 offset-md-3 mar-bot-2">
                                     <label for="senha" class="text-light lbl-form"> Senha </label>
-                                    <input type="password" name="senha" id="senha" class="field"/>
+                                    <input type="password" name="txtsenha" id="txtsenha" class="field"/>
                                 </div>
                             </div>
                             <div class="row">

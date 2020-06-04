@@ -40,11 +40,12 @@
         <div class="modal-body">
             <div class="row">
                 <div class="col-sm-12">
-                    <form class="formulario" action="#" method="=post">
+                   <form class="formulario" action="<%= application.getContextPath()%>/ControleUsuario" method="=POST">
                       <div class="col-sm-12 col-md-12">
-                        <input type="text" name="nome" placeholder="Novo nome" class="field-form">
-                        <input type="text" name="nome" placeholder="Novo Email" class="field-form">
-                        <input type="submit" name="salvar" value="Alterar" class="field-form cadastrar">
+                        <input type="text" name="txtnome" placeholder="Novo nome" class="field-form">
+                        <input type="text" name="txtemail" placeholder="Novo Email" class="field-form">
+                        <input type="hidden" id="id" name="id" value="<%= objUser.getId()%>">
+                        <input type="submit" name="acao" id="acao" value="Alterar" class="field-form cadastrar">
                       </div>
 
                     </form>
@@ -54,16 +55,17 @@
     </div>
     <div class="modal" id="alterar-perfil-senha">
         <div class="modal-header">
+            <button class="close-modal toggle-modal-alterarSenha">X</button>
             <h1 class="title-modal"> Alterar Senha</h1>
         </div>
         <div class="modal-body">
             <div class="row">
                 <div class="col-sm-12">
-                    <form class="formulario" action="#" method="=post">
+                    <form class="formulario" action="<%= application.getContextPath()%>/ControleUsuario" method="=POST">
                       <div class="col-sm-12 col-md-12">
-                        <input type="text" name="senha" placeholder="Nova Senha" class="field-form">
-                        <input type="submit" name="salvar" value="Alterar" class="field-form cadastrar">
-                        <button class="toggle-modal-alterarSenha field-form btn-cancelar"> Cancelar</button>
+                        <input type="text" name="txtsenha" placeholder="Nova Senha" class="field-form">
+                        <input type="hidden" id="id" name="id" value="<%= objUser.getId()%>">
+                        <input type="submit" name="acao" value="AlterarSenha" id="acao" class="field-form cadastrar">
                       </div>
 
                     </form>
