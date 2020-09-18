@@ -1,5 +1,5 @@
 # Projeto Final de Curso - Analise e Desenvolvimento de Sistemas
-#C.O.I.N.S
+# C.O.I.N.S <br>
 Trata-se de Sistema Web que identifica qual o computador ideal para o úsuario que utilizar o site.
 
 A identificação ocorre através de um questionário de perguntas, que o usuário irá preencher e ao final o sistema fará uma busca no banco de dados e retornará um computador que atenda aos requisitos.
