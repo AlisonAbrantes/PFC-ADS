@@ -5,9 +5,9 @@ Trata-se de Sistema Web que identifica qual o computador ideal para o úsuario q
 A identificação ocorre através de um questionário de perguntas, que o usuário irá preencher e ao final o sistema fará uma busca no banco de dados e retornará um computador que atenda aos requisitos.
 
 Possui uma página de administrador onde poderá efetuar o Cadastro dos Computadores, consultar mensagens encaminhadas pelos usuários, consultar avaliações de satisfação realizadas pelos usuários.
-A lógica no código identifica o computador cadastrado pelo administrador através dos componentes que ele esta cadastrando, podendo diferenciar uma arquitetura boa performance de uma média e alta.
+A lógica no código identifica o computador cadastrado pelo administrador através dos componentes que ele esta cadastrando, podendo diferenciar uma arquitetura boa de uma média ou alta.
 
-A ideia é poder ajudar consumidores a identificarem qual o computador melhor atende as suas necessidades.
+A ideia é poder ajudar os consumidores a identificarem qual o computador melhor atende as suas necessidades.
 
 <h2>OBS: Neste projeto, colocamos em prática os conhecimentos adquiridos ao longo da faculdade. Porém contiuamos estudando e iremos reestruturar a aplicação.</h2>
 
