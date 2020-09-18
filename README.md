@@ -9,9 +9,9 @@ A lógica no código identifica o computador cadastrado pelo administrador atrav
 
 A ideia é poder ajudar consumidores a identificarem qual o computador melhor atende as suas necessidades.
 
-# OBS: Neste projeto, colocamos em prática os conhecimentos adquiridos ao longo da faculdade. Porém contiuamos estudando e iremos reestruturar a aplicação.
+<h2>OBS: Neste projeto, colocamos em prática os conhecimentos adquiridos ao longo da faculdade. Porém contiuamos estudando e iremos reestruturar a aplicação.</h2>
 
 # Desenvolvidor por:
-Alison Duarte - Programador (Full-stack) e analista de sistemas.
+Alison Duarte - Programador (Back-end) e analista de sistemas.
 Vinicius Oliveira - Programador (Back-end) e analista de sistemas.
 Gabriel Leme - Desenvolvedor Web (Front-end e UX/UI).
